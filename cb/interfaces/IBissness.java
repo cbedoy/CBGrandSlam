@@ -10,6 +10,13 @@ package cb.interfaces;
  *
  * @author Carlos
  */
-public class IBissness {
+public interface IBissness {
+    
+    public void     getAllITems(String query);
+    public void     insertItem(String query);
+    public void     deleteITem(String query);
+    public void     editITem(String query);
+    public void     getITem(String query);
+    
     
 }

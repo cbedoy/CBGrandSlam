@@ -13,13 +13,6 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 
-/*
-    CLASE CONEXION
-    Esta clase sirve para realizar la conexion a la base de datos
-    con la que trabaja el sistema
-
-*/
-
 public class ConectionDB {
     private Connection ct;
     private Statement st;  
@@ -35,17 +28,7 @@ public class ConectionDB {
             ct = DriverManager.getConnection(db, "root", "");
             st = ct.createStatement();
             conectado = true;
-            
-        } catch (ClassNotFoundException e) {
-            message = e.getMessage();
-            JOptionPane.showMessageDialog(null, e);
-        } catch (InstantiationException e) {
-            message = e.getMessage();
-            JOptionPane.showMessageDialog(null, e);
-        } catch (IllegalAccessException e) {
-            message = e.getMessage();
-            JOptionPane.showMessageDialog(null, e);
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e) {
             message = e.getMessage();
             JOptionPane.showMessageDialog(null, e);
         } 
@@ -62,7 +45,7 @@ public class ConectionDB {
         return st;
     }
     
-    public void CerrarConexion(){
+    public void closeConnection(){
         try {
             ct.close();
         } catch (SQLException ex) { 
