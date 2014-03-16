@@ -6,11 +6,13 @@
 
 package cb.models;
 
+import cb.interfaces.IModel;
+
 /**
  *
  * @author Carlos
  */
-public class Player {
+public class Player implements IModel{
     private int id;
     private float amount;
     private String category;

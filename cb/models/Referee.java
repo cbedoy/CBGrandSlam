@@ -6,11 +6,13 @@
 
 package cb.models;
 
+import cb.interfaces.IModel;
+
 /**
  *
  * @author Carlos
  */
-public class Referee {
+public class Referee implements IModel{
     private int id;
     private String name;
     private String nacionality;

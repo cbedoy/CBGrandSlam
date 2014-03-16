@@ -6,11 +6,13 @@
 
 package cb.models;
 
+import cb.interfaces.IModel;
+
 /**
  *
  * @author Carlos
  */
-public class Game {
+public class Game implements IModel{
     private int id;
     private String modality;
 
