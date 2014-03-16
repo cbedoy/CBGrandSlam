@@ -11,9 +11,6 @@ import cb.interfaces.IBissness;
 import cb.interfaces.IModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -21,7 +18,7 @@ import java.util.logging.Logger;
  */
 public abstract class BaseModel implements IModel, IBissness{
 
-    private  final       ConectionDB connection;
+    private  ConectionDB connection;
     private  ResultSet   rs;
     private  boolean     status;
     
@@ -33,7 +30,7 @@ public abstract class BaseModel implements IModel, IBissness{
     @Override
     public void getAllITems(String query) {
         try {
-            this.rs  = connection.getSt().executeQuery(query);
+            this.setRs(getConnection().getSt().executeQuery(query));
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -42,7 +39,7 @@ public abstract class BaseModel implements IModel, IBissness{
     @Override
     public void insertItem(String query) {
         try {
-            this.status = connection.getSt().execute(query);
+            this.setStatus(getConnection().getSt().execute(query));
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -51,7 +48,7 @@ public abstract class BaseModel implements IModel, IBissness{
     @Override
     public void deleteITem(String query) {
         try {
-            this.status = connection.getSt().execute(query);
+            this.setStatus(getConnection().getSt().execute(query));
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -60,7 +57,7 @@ public abstract class BaseModel implements IModel, IBissness{
     @Override
     public void editITem(String query) {
         try {
-            this.status = connection.getSt().execute(query);
+            this.setStatus(getConnection().getSt().execute(query));
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
@@ -69,10 +66,34 @@ public abstract class BaseModel implements IModel, IBissness{
     @Override
     public void getITem(String query) {
         try {
-            this.rs  = connection.getSt().executeQuery(query);
+            this.setRs(getConnection().getSt().executeQuery(query));
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+    }
+
+    public ConectionDB getConnection() {
+        return connection;
+    }
+
+    public void setConnection(ConectionDB connection) {
+        this.connection = connection;
+    }
+
+    public ResultSet getRs() {
+        return rs;
+    }
+
+    public void setRs(ResultSet rs) {
+        this.rs = rs;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
     
 }
