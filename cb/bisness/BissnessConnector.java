@@ -20,6 +20,11 @@ public class BissnessConnector {
     private IModel Referee;
     private IModel Trainer;
 
+    
+    public  BissnessConnector(){
+        
+    }
+    
     public IModel getAward() {
         return Award;
     }
