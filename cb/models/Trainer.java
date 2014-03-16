@@ -6,11 +6,13 @@
 
 package cb.models;
 
+import cb.interfaces.IModel;
+
 /**
  *
  * @author Carlos
  */
-public class Trainer {
+public class Trainer implements IModel{
     private int id;
     private String name;
     private String initialDate;
