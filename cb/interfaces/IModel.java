@@ -10,6 +10,6 @@ package cb.interfaces;
  *
  * @author Carlos
  */
-public class IModel {
+public interface IModel {
     
 }
