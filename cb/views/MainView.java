@@ -213,67 +213,65 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     }// </editor-fold>//GEN-END:initComponents
 
     private void optionAwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionAwardActionPerformed
-        AwardView view = new AwardView();
-        view.setBounds(0,0, widthView, heightView);
-        System.out.println("H: "+view.getHeight());
-        System.out.println("W: "+view.getWidth());
-        view.setDelegate(this);
+        JPanel view = (JPanel) this.viewConecctor.getAwardView();
+        view.setVisible(true);
+        view.setBounds(0, 0, this.widthView, this.heightView);
         container.add(view);
     }//GEN-LAST:event_optionAwardActionPerformed
 
     private void optionCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionCountryActionPerformed
-        JPanel view = new CountryView();
-        view.setBounds(0,0, widthView, heightView);
+        JPanel view = (JPanel) this.viewConecctor.getCountryView();
         view.setVisible(true);
+        view.setBounds(0, 0, this.widthView, this.heightView);
         container.add(view);
     }//GEN-LAST:event_optionCountryActionPerformed
 
     private void optionGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionGameActionPerformed
-        JPanel view = new GameView();
-        view.setBounds(0,0, widthView, heightView);
+        JPanel view = (JPanel) this.viewConecctor.getGameView();
         view.setVisible(true);
+        view.setBounds(0, 0, this.widthView, this.heightView);
         container.add(view);
     }//GEN-LAST:event_optionGameActionPerformed
 
     private void optionGrandSlamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionGrandSlamActionPerformed
-        JPanel view = new GrandSlamView();
-        view.setBounds(0,0, widthView, heightView);
+        JPanel view = (JPanel) this.viewConecctor.getGrandSlam();
         view.setVisible(true);
+        view.setBounds(0, 0, this.widthView, this.heightView);
         container.add(view);
     }//GEN-LAST:event_optionGrandSlamActionPerformed
 
     private void optionLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionLocationActionPerformed
-        JPanel view = new LocationView();
-        view.setBounds(0,0, widthView, heightView);
+        JPanel view = (JPanel) this.viewConecctor.getLocationView();
         view.setVisible(true);
+        view.setBounds(0, 0, this.widthView, this.heightView);
         container.add(view);
     }//GEN-LAST:event_optionLocationActionPerformed
 
     private void optionNacionalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionNacionalityActionPerformed
-        JPanel view = new NationalityView();
-        view.setBounds(0,0, widthView, heightView);
+        JPanel view = (JPanel) this.viewConecctor.getNationalityView();
         view.setVisible(true);
+        view.setBounds(0, 0, this.widthView, this.heightView);
         container.add(view);
     }//GEN-LAST:event_optionNacionalityActionPerformed
 
     private void optionPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionPlayerActionPerformed
-        JPanel view = new PlayerView();
-        view.setBounds(0,0, widthView, heightView);
+        JPanel view = (JPanel) this.viewConecctor.getPlayerView();
         view.setVisible(true);
+        view.setBounds(0, 0, this.widthView, this.heightView);
         container.add(view);
     }//GEN-LAST:event_optionPlayerActionPerformed
 
     private void optionRefereeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionRefereeActionPerformed
-        JPanel view = new RefereeView();
-        view.setBounds(0,0, widthView, heightView);
+        JPanel view = (JPanel) this.viewConecctor.getRefereeView();
         view.setVisible(true);
+        view.setBounds(0, 0, this.widthView, this.heightView);
         container.add(view);
     }//GEN-LAST:event_optionRefereeActionPerformed
 
     private void optionTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionTrainerActionPerformed
-        JPanel view = new TrainerView();
-        view.setBounds(0,0, widthView, heightView);
+        JPanel view = (JPanel) this.viewConecctor.getTrainerView();
         view.setVisible(true);
+        view.setBounds(0, 0, this.widthView, this.heightView);
         container.add(view);
     }//GEN-LAST:event_optionTrainerActionPerformed
 
@@ -334,8 +332,8 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
 
     @Override
     public void removeView(IArtifact artifact) {
-        JPanel o = (JPanel) artifact;
-        o.setVisible(false);   
+        JPanel view = (JPanel) artifact;
+        view.setVisible(false);   
     }
 
     public void setViewConecctor(ViewConecctor viewConecctor) {
