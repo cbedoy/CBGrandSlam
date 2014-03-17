@@ -6,6 +6,7 @@
 
 package cb.bisness;
 
+import cb.interfaces.IModel;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,7 +14,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 
-public class ConectionDB {
+public class ConectionDB implements IModel{
     private Connection ct;
     private Statement st;  
     private final static String driver = "com.mysql.jdbc.Driver";
