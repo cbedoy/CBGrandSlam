@@ -15,17 +15,21 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
+import cb.delegates.IMainViewDelegate;
+import cb.interfaces.IArtifact;
+import java.awt.Color;
+import java.awt.Component;
 import javax.swing.JPanel;
 
 /**
  *
  * @author Carlos
  */
-public class MainView extends javax.swing.JFrame {
+public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
 
    
-    private final int widthView     = 500;
-    private final int heightView    = 500;
+    private final int widthView     = 700;
+    private final int heightView    = 700;
     /**
      * Creates new form MainView
      */
@@ -207,9 +211,11 @@ public class MainView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void optionAwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionAwardActionPerformed
-        JPanel view = new AwardView();
+        AwardView view = new AwardView();
         view.setBounds(0,0, widthView, heightView);
-        view.setVisible(true);
+        System.out.println("H: "+view.getHeight());
+        System.out.println("W: "+view.getWidth());
+        view.setDelegate(this);
         container.add(view);
     }//GEN-LAST:event_optionAwardActionPerformed
 
@@ -323,4 +329,18 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenuItem optionReferee;
     private javax.swing.JMenuItem optionTrainer;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void removeView(IArtifact artifact) {
+        JPanel o = (JPanel) artifact;
+        o.setVisible(false);
+        System.out.println(container.getComponents().length);
+        container.removeAll();
+        System.out.println(container.getComponents().length);
+        container.validate();
+        
+            
+            
+        
+    }
 }

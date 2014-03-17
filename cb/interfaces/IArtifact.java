@@ -4,15 +4,12 @@
  * and open the template in the editor.
  */
 
-package cb.delegates;
-
-import cb.interfaces.IArtifact;
-
+package cb.interfaces;
 
 /**
  *
  * @author Carlos
  */
-public interface IMainViewDelegate {
-    public void removeView(IArtifact artifact);
+public interface IArtifact {
+    
 }
