@@ -1,6 +1,9 @@
-![alt tag](https://github.com/cbedoy/CBGrandSlam/blob/master/cb/assets/logo.png)
+![alt tag](http://www.clker.com/cliparts/3/7/7/6/1307046599992047297grand_slam_trans.png)
 
-# CBGrandSlam - Taller II - Medium Term Project
+# CBGrandSlam 
+
+
+## Taller II Medium Term Project
 
 
 ## Project Develop by Carlos Bedoy
