@@ -13,7 +13,7 @@ import cb.delegates.IViewDelegate;
  *
  * @author Carlos
  */
-public class GrandSlamBusiness extends BaseModel implements IViewDelegate {
+public class TournamentBusiness extends BaseModel implements IViewDelegate {
 
     @Override
     public void userPressInsert(String query) {

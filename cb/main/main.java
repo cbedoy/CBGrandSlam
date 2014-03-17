@@ -9,7 +9,7 @@ package cb.main;
 import cb.artifacts.AwardView;
 import cb.artifacts.CountryView;
 import cb.artifacts.GameView;
-import cb.artifacts.GrandSlamView;
+import cb.artifacts.TournamentView;
 import cb.artifacts.LocationView;
 import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
@@ -30,7 +30,7 @@ public class main {
         IArtifact awardView = new AwardView();
         IArtifact countryView = new CountryView();
         IArtifact gameView = new GameView();
-        IArtifact grandSlam = new GrandSlamView();
+        IArtifact tournamentView = new TournamentView();
         IArtifact locationView = new LocationView();
         IArtifact nationalityView  = new NationalityView();
         IArtifact playerView = new PlayerView();
@@ -42,7 +42,7 @@ public class main {
         viewConecctor.setAwardView(awardView);
         viewConecctor.setCountryView(countryView);
         viewConecctor.setGameView(gameView);
-        viewConecctor.setGrandSlam(grandSlam);
+        viewConecctor.setTournamentView(tournamentView);
         viewConecctor.setLocationView(locationView);
         viewConecctor.setNationalityView(nationalityView);
         viewConecctor.setPlayerView(playerView);

@@ -13,13 +13,13 @@ import cb.interfaces.IArtifact;
  *
  * @author Carlos
  */
-public class GrandSlamView extends javax.swing.JPanel implements IArtifact {
+public class TournamentView extends javax.swing.JPanel implements IArtifact {
 
     private IMainViewDelegate delegate;
     /**
      * Creates new form GrandSlamView
      */
-    public GrandSlamView() {
+    public TournamentView() {
         initComponents();
     }
 

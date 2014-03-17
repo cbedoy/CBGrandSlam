@@ -6,20 +6,9 @@
 
 package cb.views;
 
-import cb.artifacts.AwardView;
-import cb.artifacts.CountryView;
-import cb.artifacts.GameView;
-import cb.artifacts.GrandSlamView;
-import cb.artifacts.LocationView;
-import cb.artifacts.NationalityView;
-import cb.artifacts.PlayerView;
-import cb.artifacts.RefereeView;
-import cb.artifacts.TrainerView;
 import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
-import java.awt.Color;
-import java.awt.Component;
 import javax.swing.JPanel;
 
 /**
@@ -234,7 +223,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     }//GEN-LAST:event_optionGameActionPerformed
 
     private void optionGrandSlamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionGrandSlamActionPerformed
-        JPanel view = (JPanel) this.viewConecctor.getGrandSlam();
+        JPanel view = (JPanel) this.viewConecctor.getTournamentView();
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
         container.add(view);
