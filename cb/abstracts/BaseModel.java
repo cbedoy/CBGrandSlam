@@ -6,8 +6,8 @@
 
 package cb.abstracts;
 
-import cb.bisness.ConectionDB;
-import cb.interfaces.IBissness;
+import cb.business.ConectionDB;
+import cb.interfaces.IBussiness;
 import cb.interfaces.IModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,14 +16,14 @@ import java.sql.SQLException;
  *
  * @author Carlos
  */
-public abstract class BaseModel implements IModel, IBissness{
+public abstract class BaseModel implements IModel, IBussiness{
 
     private  ConectionDB connection;
     private  ResultSet   rs;
     private  boolean     status;
     
     public BaseModel(){
-            connection =  new ConectionDB();
+            
     }
     
  

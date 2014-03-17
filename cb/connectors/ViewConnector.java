@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cb.bisness;
+package cb.connectors;
 
 import cb.interfaces.IArtifact;
 
@@ -12,7 +12,7 @@ import cb.interfaces.IArtifact;
  *
  * @author Carlos
  */
-public class ViewConecctor {
+public class ViewConnector {
     private IArtifact AwardView;
     private IArtifact CountryView;
     private IArtifact GameView;

@@ -10,7 +10,7 @@ package cb.interfaces;
  *
  * @author Carlos
  */
-public interface IBissness {
+public interface IBussiness {
     
     public void     getAllITems(String query);
     public void     insertItem(String query);

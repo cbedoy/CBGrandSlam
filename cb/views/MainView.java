@@ -15,7 +15,7 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
-import cb.bisness.ViewConecctor;
+import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
 import java.awt.Color;
@@ -31,7 +31,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
    
     private final int widthView     = 700;
     private final int heightView    = 700;
-    private ViewConecctor viewConecctor;
+    private ViewConnector viewConecctor;
     /**
      * Creates new form MainView
      */
@@ -336,7 +336,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         view.setVisible(false);   
     }
 
-    public void setViewConecctor(ViewConecctor viewConecctor) {
+    public void setViewConecctor(ViewConnector viewConecctor) {
         this.viewConecctor = viewConecctor;
     }
 }

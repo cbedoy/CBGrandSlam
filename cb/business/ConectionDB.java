@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cb.bisness;
+package cb.business;
 
 import cb.interfaces.IModel;
 import java.sql.Connection;
@@ -14,7 +14,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 
-public class ConectionDB implements IModel{
+public class ConectionDB implements IModel {
     private Connection ct;
     private Statement st;  
     private final static String driver = "com.mysql.jdbc.Driver";
