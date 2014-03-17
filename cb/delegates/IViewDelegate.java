@@ -11,9 +11,9 @@ package cb.delegates;
  * @author Carlos
  */
 public interface IViewDelegate {
-    public void userPressInsert();
-    public void userPressDelete();
-    public void userPressAfter();
-    public void userPressSearch();
+    public void userPressInsert(String query);
+    public void userPressDelete(String query);
+    public void userPressAfter(String query);
+    public void userPressSearch(String query);
     
 }
