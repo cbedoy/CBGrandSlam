@@ -17,7 +17,7 @@ import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
 import cb.connectors.ViewConnector;
 import cb.interfaces.IArtifact;
-import cb.models.GrandSlam;
+
 import cb.views.*;
 
 /**

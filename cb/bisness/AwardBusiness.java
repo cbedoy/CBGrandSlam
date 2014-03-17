@@ -6,13 +6,13 @@
 
 package cb.bisness;
 
-import cb.connectors.BissnessConnector;
+import cb.connectors.BusinessConnector;
 import cb.abstracts.BaseModel;
 
 /**
  *
  * @author Carlos
  */
-public class AwardBisness extends BaseModel{
-    private BissnessConnector bissnessConnector; 
+public class AwardBusiness extends BaseModel{
+    private BusinessConnector bissnessConnector; 
 }
