@@ -17,7 +17,7 @@ public class Award extends BaseModel implements IModel{
     private int id;
     private float amount;
     private float category;
-    private GrandSlam grandSlam;
+    private Tournament grandSlam;
     private Player player;
     private Trainer trainer;
     
@@ -46,11 +46,11 @@ public class Award extends BaseModel implements IModel{
         this.category = category;
     }
 
-    public GrandSlam getGrandSlam() {
+    public Tournament getGrandSlam() {
         return grandSlam;
     }
 
-    public void setGrandSlam(GrandSlam grandSlam) {
+    public void setGrandSlam(Tournament grandSlam) {
         this.grandSlam = grandSlam;
     }
 
