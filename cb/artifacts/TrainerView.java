@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 
-package cb.views;
+package cb.artifacts;
 
 /**
  *
  * @author Carlos
  */
-public class NationalityView extends javax.swing.JPanel {
+public class TrainerView extends javax.swing.JPanel {
 
     /**
-     * Creates new form NationalityView
+     * Creates new form TrainerView
      */
-    public NationalityView() {
+    public TrainerView() {
         initComponents();
     }
 

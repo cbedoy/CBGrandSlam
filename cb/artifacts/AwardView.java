@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 
-package cb.views;
+package cb.artifacts;
 
 /**
  *
  * @author Carlos
  */
-public class RefereeView extends javax.swing.JPanel {
+public class AwardView extends javax.swing.JPanel {
 
     /**
-     * Creates new form RefereeView
+     * Creates new form AwardView
      */
-    public RefereeView() {
+    public AwardView() {
         initComponents();
     }
 
@@ -32,7 +32,7 @@ public class RefereeView extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 467, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

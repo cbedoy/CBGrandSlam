@@ -4,18 +4,18 @@
  * and open the template in the editor.
  */
 
-package cb.views;
+package cb.artifacts;
 
 /**
  *
  * @author Carlos
  */
-public class LocationView extends javax.swing.JPanel {
+public class PlayerView extends javax.swing.JPanel {
 
     /**
-     * Creates new form LocationView
+     * Creates new form PlayerView
      */
-    public LocationView() {
+    public PlayerView() {
         initComponents();
     }
 
