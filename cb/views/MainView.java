@@ -6,6 +6,7 @@
 
 package cb.views;
 
+import cb.artifacts.AwardView;
 import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
@@ -18,8 +19,8 @@ import javax.swing.JPanel;
 public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
 
    
-    private final int widthView     = 700;
-    private final int heightView    = 700;
+    private final int widthView     = 500;
+    private final int heightView    = 300;
     private ViewConnector viewConecctor;
     /**
      * Creates new form MainView
@@ -202,10 +203,12 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     }// </editor-fold>//GEN-END:initComponents
 
     private void optionAwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionAwardActionPerformed
-        JPanel view = (JPanel) this.viewConecctor.getAwardView();
+        AwardView view = (AwardView) this.viewConecctor.getAwardView();
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setDelegate(this);
         container.add(view);
+        container.revalidate();
     }//GEN-LAST:event_optionAwardActionPerformed
 
     private void optionCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionCountryActionPerformed
@@ -321,6 +324,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
 
     @Override
     public void removeView(IArtifact artifact) {
+        
         JPanel view = (JPanel) artifact;
         view.setVisible(false);   
     }
