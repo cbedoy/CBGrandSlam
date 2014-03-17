@@ -15,6 +15,7 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
+import cb.bisness.ViewConecctor;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
 import java.awt.Color;
@@ -30,6 +31,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
    
     private final int widthView     = 700;
     private final int heightView    = 700;
+    private ViewConecctor viewConecctor;
     /**
      * Creates new form MainView
      */
@@ -333,11 +335,10 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     @Override
     public void removeView(IArtifact artifact) {
         JPanel o = (JPanel) artifact;
-        o.setVisible(false);
-        
-        
-            
-            
-        
+        o.setVisible(false);   
+    }
+
+    public void setViewConecctor(ViewConecctor viewConecctor) {
+        this.viewConecctor = viewConecctor;
     }
 }
