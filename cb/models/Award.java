@@ -16,6 +16,10 @@ public class Award implements IModel{
     private int id;
     private float amount;
     private float category;
+    private GrandSlam grandSlam;
+    private Player player;
+    private Trainer trainer;
+    
 
     public int getId() {
         return id;
@@ -39,5 +43,29 @@ public class Award implements IModel{
 
     public void setCategory(float category) {
         this.category = category;
+    }
+
+    public GrandSlam getGrandSlam() {
+        return grandSlam;
+    }
+
+    public void setGrandSlam(GrandSlam grandSlam) {
+        this.grandSlam = grandSlam;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Trainer getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
     }
 }
