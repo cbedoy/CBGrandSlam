@@ -349,6 +349,36 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     @Override
     public void removeView(IArtifact artifact) {
         
+        
+        switch(artifact.getClass().getName()){
+            case "cb.artifacts.AwardView":
+                this.viewConecctor.setAwardView(artifact);
+                break;
+            case "cb.artifacts.CountryView":
+                this.viewConecctor.setCountryView(artifact);
+                break;
+            case "cb.artifacts.GameView":
+                this.viewConecctor.setGameView(artifact);
+                break;
+            case "cb.artifacts.LocationView":
+                this.viewConecctor.setLocationView(artifact);
+                break;
+            case "cb.artifacts.NationalityView":
+                this.viewConecctor.setNationalityView(artifact);
+                break;
+            case "cb.artifacts.PlayerView":
+                this.viewConecctor.setPlayerView(artifact);
+                break;
+            case "cb.artifacts.RefereeView":
+                this.viewConecctor.setRefereeView(artifact);
+                break;
+            case "cb.artifacts.TournamentView":
+                this.viewConecctor.setTournamentView(artifact);
+                break;
+            case "cb.artifacts.TrainerView":
+                this.viewConecctor.setTrainerView(artifact);
+                break;                
+        }
         JPanel view = (JPanel) artifact;
         view.setVisible(false);   
     }
