@@ -19,7 +19,7 @@ public class Player extends BaseModel implements IModel{
     private int age;
     private float amount;
     private Trainer trainer;
-    private Nacionality nacionality;
+    private Nationality nationality;
 
     public int getId() {
         return id;
@@ -61,13 +61,15 @@ public class Player extends BaseModel implements IModel{
         this.trainer = trainer;
     }
 
-    public Nacionality getNacionality() {
-        return nacionality;
+    public Nationality getNationality() {
+        return nationality;
     }
 
-    public void setNacionality(Nacionality nacionality) {
-        this.nacionality = nacionality;
+    public void setNationality(Nationality nationality) {
+        this.nationality = nationality;
     }
+
+
 
    
     

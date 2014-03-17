@@ -13,7 +13,7 @@ import cb.interfaces.IModel;
  *
  * @author Carlos
  */
-public class Nacionality extends BaseModel implements IModel{
+public class Nationality extends BaseModel implements IModel{
     private int id;
     private String name;
 
