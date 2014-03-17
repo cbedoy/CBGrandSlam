@@ -6,11 +6,13 @@
 
 package cb.artifacts;
 
+import cb.interfaces.IArtifact;
+
 /**
  *
  * @author Carlos
  */
-public class NationalityView extends javax.swing.JPanel {
+public class NationalityView extends javax.swing.JPanel implements IArtifact {
 
     /**
      * Creates new form NationalityView

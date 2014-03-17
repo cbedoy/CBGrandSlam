@@ -6,11 +6,13 @@
 
 package cb.artifacts;
 
+import cb.interfaces.IArtifact;
+
 /**
  *
  * @author Carlos
  */
-public class TrainerView extends javax.swing.JPanel {
+public class TrainerView extends javax.swing.JPanel implements IArtifact {
 
     /**
      * Creates new form TrainerView
