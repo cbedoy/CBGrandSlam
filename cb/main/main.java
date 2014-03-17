@@ -6,6 +6,9 @@
 
 package cb.main;
 
+import cb.artifacts.AwardView;
+import cb.bisness.ViewConecctor;
+import cb.interfaces.IArtifact;
 import cb.views.MainView;
 
 /**
@@ -14,6 +17,12 @@ import cb.views.MainView;
  */
 public class main {
     public static void main(String[]cbedoy){
-        new MainView();
+        IArtifact awardView = new AwardView();
+        
+        ViewConecctor viewConecctor = new ViewConecctor();
+        viewConecctor.setAwardView(awardView);
+        
+        MainView mainView = new MainView();
+        mainView.setViewConecctor(viewConecctor);
     }
 }
