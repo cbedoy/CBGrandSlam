@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cb.bisness;
+package cb.business;
 
 import cb.connectors.BusinessConnector;
 import cb.abstracts.BaseModel;
@@ -14,5 +14,5 @@ import cb.abstracts.BaseModel;
  * @author Carlos
  */
 public class AwardBusiness extends BaseModel{
-    private BusinessConnector bissnessConnector; 
+    
 }

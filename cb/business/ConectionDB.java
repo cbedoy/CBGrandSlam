@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cb.bisness;
+package cb.business;
 
 import cb.interfaces.IModel;
 import java.sql.Connection;

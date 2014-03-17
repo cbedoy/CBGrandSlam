@@ -6,7 +6,7 @@
 
 package cb.abstracts;
 
-import cb.bisness.ConectionDB;
+import cb.business.ConectionDB;
 import cb.interfaces.IBissness;
 import cb.interfaces.IModel;
 import java.sql.ResultSet;
