@@ -42,6 +42,9 @@ public class MainView extends javax.swing.JFrame {
         container = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
+        actionReload = new javax.swing.JMenuItem();
+        actionAbout = new javax.swing.JMenuItem();
+        actionExit = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         optionAward = new javax.swing.JMenuItem();
         optionCountry = new javax.swing.JMenuItem();
@@ -74,6 +77,16 @@ public class MainView extends javax.swing.JFrame {
         jMenu5.setForeground(new java.awt.Color(51, 51, 51));
         jMenu5.setText("Home");
         jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        actionReload.setText("Reload");
+        jMenu5.add(actionReload);
+
+        actionAbout.setText("About");
+        jMenu5.add(actionAbout);
+
+        actionExit.setText("Exit");
+        jMenu5.add(actionExit);
+
         jMenuBar1.add(jMenu5);
 
         jMenu1.setForeground(new java.awt.Color(51, 51, 51));
@@ -292,6 +305,9 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem actionAbout;
+    private javax.swing.JMenuItem actionExit;
+    private javax.swing.JMenuItem actionReload;
     private javax.swing.JPanel container;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
