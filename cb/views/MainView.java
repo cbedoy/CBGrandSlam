@@ -7,6 +7,14 @@
 package cb.views;
 
 import cb.artifacts.AwardView;
+import cb.artifacts.CountryView;
+import cb.artifacts.GameView;
+import cb.artifacts.LocationView;
+import cb.artifacts.NationalityView;
+import cb.artifacts.PlayerView;
+import cb.artifacts.RefereeView;
+import cb.artifacts.TournamentView;
+import cb.artifacts.TrainerView;
 import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
@@ -212,59 +220,75 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     }//GEN-LAST:event_optionAwardActionPerformed
 
     private void optionCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionCountryActionPerformed
-        JPanel view = (JPanel) this.viewConecctor.getCountryView();
+        CountryView view = (CountryView) this.viewConecctor.getCountryView();
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setDelegate(this);
         container.add(view);
+        container.revalidate();
     }//GEN-LAST:event_optionCountryActionPerformed
 
     private void optionGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionGameActionPerformed
-        JPanel view = (JPanel) this.viewConecctor.getGameView();
+        GameView view = (GameView) this.viewConecctor.getGameView();
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setDelegate(this);
         container.add(view);
+        container.revalidate();
     }//GEN-LAST:event_optionGameActionPerformed
 
     private void optionGrandSlamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionGrandSlamActionPerformed
-        JPanel view = (JPanel) this.viewConecctor.getTournamentView();
+        TournamentView view = (TournamentView) this.viewConecctor.getTournamentView();
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setDelegate(this);
         container.add(view);
+        container.revalidate();
     }//GEN-LAST:event_optionGrandSlamActionPerformed
 
     private void optionLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionLocationActionPerformed
-        JPanel view = (JPanel) this.viewConecctor.getLocationView();
+        LocationView view = (LocationView) this.viewConecctor.getLocationView();
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setDelegate(this);
         container.add(view);
+        container.revalidate();
     }//GEN-LAST:event_optionLocationActionPerformed
 
     private void optionNacionalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionNacionalityActionPerformed
-        JPanel view = (JPanel) this.viewConecctor.getNationalityView();
+        NationalityView view = (NationalityView) this.viewConecctor.getNationalityView();
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setDelegate(this);
         container.add(view);
+        container.revalidate();
     }//GEN-LAST:event_optionNacionalityActionPerformed
 
     private void optionPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionPlayerActionPerformed
-        JPanel view = (JPanel) this.viewConecctor.getPlayerView();
+        PlayerView view = (PlayerView) this.viewConecctor.getPlayerView();
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setDelegate(this);
         container.add(view);
+        container.revalidate();
     }//GEN-LAST:event_optionPlayerActionPerformed
 
     private void optionRefereeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionRefereeActionPerformed
-        JPanel view = (JPanel) this.viewConecctor.getRefereeView();
+        RefereeView view = (RefereeView) this.viewConecctor.getRefereeView();
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setDelegate(this);
         container.add(view);
+        container.revalidate();
     }//GEN-LAST:event_optionRefereeActionPerformed
 
     private void optionTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionTrainerActionPerformed
-        JPanel view = (JPanel) this.viewConecctor.getTrainerView();
+        TrainerView view = (TrainerView) this.viewConecctor.getTrainerView();
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setDelegate(this);
         container.add(view);
+        container.revalidate();
     }//GEN-LAST:event_optionTrainerActionPerformed
 
     /**
