@@ -1,0 +1,97 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package cb.bisness;
+
+import cb.interfaces.IArtifact;
+
+/**
+ *
+ * @author Carlos
+ */
+public class ViewConecctor {
+    private IArtifact AwardView;
+    private IArtifact CountryView;
+    private IArtifact GameView;
+    private IArtifact GrandSlam;
+    private IArtifact LocationView;
+    private IArtifact NationalityView;
+    private IArtifact PlayerView;
+    private IArtifact RefereeView;
+    private IArtifact TrainerView;
+
+    public IArtifact getAwardView() {
+        return AwardView;
+    }
+
+    public void setAwardView(IArtifact AwardView) {
+        this.AwardView = AwardView;
+    }
+
+    public IArtifact getCountryView() {
+        return CountryView;
+    }
+
+    public void setCountryView(IArtifact CountryView) {
+        this.CountryView = CountryView;
+    }
+
+    public IArtifact getGameView() {
+        return GameView;
+    }
+
+    public void setGameView(IArtifact GameView) {
+        this.GameView = GameView;
+    }
+
+    public IArtifact getGrandSlam() {
+        return GrandSlam;
+    }
+
+    public void setGrandSlam(IArtifact GrandSlam) {
+        this.GrandSlam = GrandSlam;
+    }
+
+    public IArtifact getLocationView() {
+        return LocationView;
+    }
+
+    public void setLocationView(IArtifact LocationView) {
+        this.LocationView = LocationView;
+    }
+
+    public IArtifact getNationalityView() {
+        return NationalityView;
+    }
+
+    public void setNationalityView(IArtifact NationalityView) {
+        this.NationalityView = NationalityView;
+    }
+
+    public IArtifact getPlayerView() {
+        return PlayerView;
+    }
+
+    public void setPlayerView(IArtifact PlayerView) {
+        this.PlayerView = PlayerView;
+    }
+
+    public IArtifact getRefereeView() {
+        return RefereeView;
+    }
+
+    public void setRefereeView(IArtifact RefereeView) {
+        this.RefereeView = RefereeView;
+    }
+
+    public IArtifact getTrainerView() {
+        return TrainerView;
+    }
+
+    public void setTrainerView(IArtifact TrainerView) {
+        this.TrainerView = TrainerView;
+    }
+}
