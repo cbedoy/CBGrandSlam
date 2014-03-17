@@ -13,11 +13,10 @@ import cb.interfaces.IModel;
  *
  * @author Carlos
  */
-public class Trainer extends BaseModel implements IModel{
+public class Location extends BaseModel implements IModel{
     private int id;
     private String name;
-    private String initialDate;
-    private String finalizeDate;
+    private Country country;
 
     public int getId() {
         return id;
@@ -35,19 +34,11 @@ public class Trainer extends BaseModel implements IModel{
         this.name = name;
     }
 
-    public String getInitialDate() {
-        return initialDate;
+    public Country getCountry() {
+        return country;
     }
 
-    public void setInitialDate(String initialDate) {
-        this.initialDate = initialDate;
-    }
-
-    public String getFinalizeDate() {
-        return finalizeDate;
-    }
-
-    public void setFinalizeDate(String finalizeDate) {
-        this.finalizeDate = finalizeDate;
+    public void setCountry(Country country) {
+        this.country = country;
     }
 }

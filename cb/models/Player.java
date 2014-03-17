@@ -6,16 +6,20 @@
 
 package cb.models;
 
+import cb.abstracts.BaseModel;
 import cb.interfaces.IModel;
 
 /**
  *
  * @author Carlos
  */
-public class Player implements IModel{
+public class Player extends BaseModel implements IModel{
     private int id;
+    private String name;
+    private int age;
     private float amount;
-    private String category;
+    private Trainer trainer;
+    private Nacionality nacionality;
 
     public int getId() {
         return id;
@@ -23,6 +27,22 @@ public class Player implements IModel{
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public float getAmount() {
@@ -33,12 +53,22 @@ public class Player implements IModel{
         this.amount = amount;
     }
 
-    public String getCategory() {
-        return category;
+    public Trainer getTrainer() {
+        return trainer;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
     }
+
+    public Nacionality getNacionality() {
+        return nacionality;
+    }
+
+    public void setNacionality(Nacionality nacionality) {
+        this.nacionality = nacionality;
+    }
+
+   
     
 }

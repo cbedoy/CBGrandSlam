@@ -6,15 +6,20 @@
 
 package cb.models;
 
+import cb.abstracts.BaseModel;
 import cb.interfaces.IModel;
 
 /**
  *
  * @author Carlos
  */
-public class Game implements IModel{
+public class Game extends BaseModel implements IModel{
     private int id;
     private String modality;
+    private Referee referee;
+    private Player player;
+    private Trainer trainer;
+    private GrandSlam grandSlam;
 
     public int getId() {
         return id;
@@ -30,5 +35,37 @@ public class Game implements IModel{
 
     public void setModality(String modality) {
         this.modality = modality;
+    }
+
+    public Referee getReferee() {
+        return referee;
+    }
+
+    public void setReferee(Referee referee) {
+        this.referee = referee;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Trainer getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(Trainer trainer) {
+        this.trainer = trainer;
+    }
+
+    public GrandSlam getGrandSlam() {
+        return grandSlam;
+    }
+
+    public void setGrandSlam(GrandSlam grandSlam) {
+        this.grandSlam = grandSlam;
     }
 }
