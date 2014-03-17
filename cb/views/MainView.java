@@ -43,7 +43,25 @@ public class MainView extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
+        jMenuItem18 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem19 = new javax.swing.JMenuItem();
+        jMenuItem20 = new javax.swing.JMenuItem();
+        jMenuItem21 = new javax.swing.JMenuItem();
+        jMenuItem22 = new javax.swing.JMenuItem();
+        jMenuItem23 = new javax.swing.JMenuItem();
+        jMenuItem24 = new javax.swing.JMenuItem();
+        jMenuItem25 = new javax.swing.JMenuItem();
+        jMenuItem26 = new javax.swing.JMenuItem();
+        jMenuItem27 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,10 +141,112 @@ public class MainView extends javax.swing.JFrame {
 
         jMenu3.setForeground(new java.awt.Color(51, 51, 51));
         jMenu3.setText("Edit");
+
+        jMenuItem10.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem10.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem10.setText("Award");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem10);
+
+        jMenuItem11.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem11.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem11.setText("Country");
+        jMenu3.add(jMenuItem11);
+
+        jMenuItem12.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem12.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem12.setText("Game");
+        jMenu3.add(jMenuItem12);
+
+        jMenuItem13.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem13.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem13.setText("GrandSlam");
+        jMenu3.add(jMenuItem13);
+
+        jMenuItem14.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem14.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem14.setText("Location");
+        jMenu3.add(jMenuItem14);
+
+        jMenuItem15.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem15.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem15.setText("Nacionality");
+        jMenu3.add(jMenuItem15);
+
+        jMenuItem16.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem16.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem16.setText("Player");
+        jMenu3.add(jMenuItem16);
+
+        jMenuItem17.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem17.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem17.setText("Referee");
+        jMenu3.add(jMenuItem17);
+
+        jMenuItem18.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem18.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem18.setText("Trainer");
+        jMenu3.add(jMenuItem18);
+
         jMenuBar1.add(jMenu3);
 
         jMenu4.setForeground(new java.awt.Color(51, 51, 51));
         jMenu4.setText("Delete");
+
+        jMenuItem19.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem19.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem19.setText("Award");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem19);
+
+        jMenuItem20.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem20.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem20.setText("Country");
+        jMenu4.add(jMenuItem20);
+
+        jMenuItem21.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem21.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem21.setText("Game");
+        jMenu4.add(jMenuItem21);
+
+        jMenuItem22.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem22.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem22.setText("GrandSlam");
+        jMenu4.add(jMenuItem22);
+
+        jMenuItem23.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem23.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem23.setText("Location");
+        jMenu4.add(jMenuItem23);
+
+        jMenuItem24.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem24.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem24.setText("Nacionality");
+        jMenu4.add(jMenuItem24);
+
+        jMenuItem25.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem25.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem25.setText("Player");
+        jMenu4.add(jMenuItem25);
+
+        jMenuItem26.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem26.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem26.setText("Referee");
+        jMenu4.add(jMenuItem26);
+
+        jMenuItem27.setBackground(new java.awt.Color(238, 239, 243));
+        jMenuItem27.setForeground(new java.awt.Color(51, 51, 51));
+        jMenuItem27.setText("Trainer");
+        jMenu4.add(jMenuItem27);
+
         jMenuBar1.add(jMenu4);
 
         setJMenuBar(jMenuBar1);
@@ -148,6 +268,14 @@ public class MainView extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,7 +319,25 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem18;
+    private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem20;
+    private javax.swing.JMenuItem jMenuItem21;
+    private javax.swing.JMenuItem jMenuItem22;
+    private javax.swing.JMenuItem jMenuItem23;
+    private javax.swing.JMenuItem jMenuItem24;
+    private javax.swing.JMenuItem jMenuItem25;
+    private javax.swing.JMenuItem jMenuItem26;
+    private javax.swing.JMenuItem jMenuItem27;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
