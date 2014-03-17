@@ -16,7 +16,7 @@ public class ViewConnector {
     private IArtifact AwardView;
     private IArtifact CountryView;
     private IArtifact GameView;
-    private IArtifact GrandSlam;
+    private IArtifact TournamentView;
     private IArtifact LocationView;
     private IArtifact NationalityView;
     private IArtifact PlayerView;
@@ -47,13 +47,7 @@ public class ViewConnector {
         this.GameView = GameView;
     }
 
-    public IArtifact getGrandSlam() {
-        return GrandSlam;
-    }
 
-    public void setGrandSlam(IArtifact GrandSlam) {
-        this.GrandSlam = GrandSlam;
-    }
 
     public IArtifact getLocationView() {
         return LocationView;
@@ -93,5 +87,13 @@ public class ViewConnector {
 
     public void setTrainerView(IArtifact TrainerView) {
         this.TrainerView = TrainerView;
+    }
+
+    public IArtifact getTournamentView() {
+        return TournamentView;
+    }
+
+    public void setTournamentView(IArtifact TournamentView) {
+        this.TournamentView = TournamentView;
     }
 }

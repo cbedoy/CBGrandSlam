@@ -17,7 +17,7 @@ public class BusinessConnector {
     private BaseModel AwardBusiness;
     private BaseModel CountryBusiness;
     private BaseModel GameBusiness;
-    private BaseModel GrandSlamBusiness;
+    private BaseModel TournamentBusiness;
     private BaseModel LocationBusiness;
     private BaseModel NAtionalityBusiness;
     private BaseModel PlayerBusiness;
@@ -53,12 +53,12 @@ public class BusinessConnector {
         this.GameBusiness = GameBusiness;
     }
 
-    public BaseModel getGrandSlamBusiness() {
-        return GrandSlamBusiness;
+    public BaseModel getTournamentBusiness() {
+        return TournamentBusiness;
     }
 
-    public void setGrandSlamBusiness(BaseModel GrandSlamBusiness) {
-        this.GrandSlamBusiness = GrandSlamBusiness;
+    public void setGrandSlamBusiness(BaseModel TournamentBusiness) {
+        this.TournamentBusiness = TournamentBusiness;
     }
 
     public BaseModel getLocationBusiness() {
