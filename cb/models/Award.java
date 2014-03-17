@@ -6,13 +6,14 @@
 
 package cb.models;
 
+import cb.abstracts.BaseModel;
 import cb.interfaces.IModel;
 
 /**
  *
  * @author Carlos
  */
-public class Award implements IModel{
+public class Award extends BaseModel implements IModel{
     private int id;
     private float amount;
     private float category;

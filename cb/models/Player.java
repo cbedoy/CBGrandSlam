@@ -6,13 +6,14 @@
 
 package cb.models;
 
+import cb.abstracts.BaseModel;
 import cb.interfaces.IModel;
 
 /**
  *
  * @author Carlos
  */
-public class Player implements IModel{
+public class Player extends BaseModel implements IModel{
     private int id;
     private String name;
     private int age;

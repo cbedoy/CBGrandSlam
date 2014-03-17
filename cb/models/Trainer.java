@@ -6,13 +6,14 @@
 
 package cb.models;
 
+import cb.abstracts.BaseModel;
 import cb.interfaces.IModel;
 
 /**
  *
  * @author Carlos
  */
-public class Trainer implements IModel{
+public class Trainer extends BaseModel implements IModel{
     private int id;
     private String name;
     private String initialDate;

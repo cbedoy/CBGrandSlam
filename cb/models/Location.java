@@ -6,11 +6,14 @@
 
 package cb.models;
 
+import cb.abstracts.BaseModel;
+import cb.interfaces.IModel;
+
 /**
  *
  * @author Carlos
  */
-public class Location {
+public class Location extends BaseModel implements IModel{
     private int id;
     private String name;
     private Country country;

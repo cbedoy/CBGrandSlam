@@ -6,13 +6,14 @@
 
 package cb.models;
 
+import cb.abstracts.BaseModel;
 import cb.interfaces.IModel;
 
 /**
  *
  * @author Carlos
  */
-public class GrandSlam implements IModel{
+public class GrandSlam extends BaseModel implements IModel{
     private int id;
     private String name;
     private String date;
