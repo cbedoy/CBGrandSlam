@@ -334,10 +334,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     public void removeView(IArtifact artifact) {
         JPanel o = (JPanel) artifact;
         o.setVisible(false);
-        System.out.println(container.getComponents().length);
-        container.removeAll();
-        System.out.println(container.getComponents().length);
-        container.validate();
+        
         
             
             
