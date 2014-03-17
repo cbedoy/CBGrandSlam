@@ -26,7 +26,9 @@ import cb.views.*;
  */
 public class main {
     public static void main(String[]cbedoy){
+        long initial = System.currentTimeMillis();
         //Artifacts 
+        
         IArtifact awardView = new AwardView();
         IArtifact countryView = new CountryView();
         IArtifact gameView = new GameView();
@@ -53,5 +55,7 @@ public class main {
         //MainView
         MainView mainView = new MainView();
         mainView.setViewConecctor(viewConecctor);
+        
+        System.out.println(System.currentTimeMillis()-initial+" milisegs");
     }
 }
