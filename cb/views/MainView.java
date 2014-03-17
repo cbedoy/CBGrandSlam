@@ -17,6 +17,7 @@ public class MainView extends javax.swing.JFrame {
      */
     public MainView() {
         initComponents();
+        setVisible(true);
     }
 
     /**

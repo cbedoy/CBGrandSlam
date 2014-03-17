@@ -6,10 +6,14 @@
 
 package cb.main;
 
+import cb.views.MainView;
+
 /**
  *
  * @author Carlos
  */
 public class main {
-    
+    public static void main(String[]cbedoy){
+        new MainView();
+    }
 }
