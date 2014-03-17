@@ -31,12 +31,22 @@ public class MainView extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
+        optionAward = new javax.swing.JMenuItem();
+        optionCountry = new javax.swing.JMenuItem();
+        optionGame = new javax.swing.JMenuItem();
+        optionGrandSlam = new javax.swing.JMenuItem();
+        optionLocation = new javax.swing.JMenuItem();
+        optionNacionality = new javax.swing.JMenuItem();
+        optionPlayer = new javax.swing.JMenuItem();
+        optionReferee = new javax.swing.JMenuItem();
+        optionTrainer = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(238, 239, 243));
+        jPanel1.setBackground(new java.awt.Color(71, 71, 71));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -46,17 +56,75 @@ public class MainView extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 462, Short.MAX_VALUE)
+            .addGap(0, 461, Short.MAX_VALUE)
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(71, 71, 71));
+        jMenuBar1.setBackground(new java.awt.Color(238, 239, 243));
 
-        jMenu1.setForeground(new java.awt.Color(238, 239, 243));
-        jMenu1.setText("File");
+        jMenu5.setForeground(new java.awt.Color(51, 51, 51));
+        jMenu5.setText("Home");
+        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jMenuBar1.add(jMenu5);
+
+        jMenu1.setForeground(new java.awt.Color(51, 51, 51));
+        jMenu1.setText("Option");
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        optionAward.setBackground(new java.awt.Color(238, 239, 243));
+        optionAward.setForeground(new java.awt.Color(51, 51, 51));
+        optionAward.setText("Award");
+        optionAward.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                optionAwardActionPerformed(evt);
+            }
+        });
+        jMenu1.add(optionAward);
+
+        optionCountry.setBackground(new java.awt.Color(238, 239, 243));
+        optionCountry.setForeground(new java.awt.Color(51, 51, 51));
+        optionCountry.setText("Country");
+        jMenu1.add(optionCountry);
+
+        optionGame.setBackground(new java.awt.Color(238, 239, 243));
+        optionGame.setForeground(new java.awt.Color(51, 51, 51));
+        optionGame.setText("Game");
+        jMenu1.add(optionGame);
+
+        optionGrandSlam.setBackground(new java.awt.Color(238, 239, 243));
+        optionGrandSlam.setForeground(new java.awt.Color(51, 51, 51));
+        optionGrandSlam.setText("GrandSlam");
+        jMenu1.add(optionGrandSlam);
+
+        optionLocation.setBackground(new java.awt.Color(238, 239, 243));
+        optionLocation.setForeground(new java.awt.Color(51, 51, 51));
+        optionLocation.setText("Location");
+        jMenu1.add(optionLocation);
+
+        optionNacionality.setBackground(new java.awt.Color(238, 239, 243));
+        optionNacionality.setForeground(new java.awt.Color(51, 51, 51));
+        optionNacionality.setText("Nacionality");
+        jMenu1.add(optionNacionality);
+
+        optionPlayer.setBackground(new java.awt.Color(238, 239, 243));
+        optionPlayer.setForeground(new java.awt.Color(51, 51, 51));
+        optionPlayer.setText("Player");
+        jMenu1.add(optionPlayer);
+
+        optionReferee.setBackground(new java.awt.Color(238, 239, 243));
+        optionReferee.setForeground(new java.awt.Color(51, 51, 51));
+        optionReferee.setText("Referee");
+        jMenu1.add(optionReferee);
+
+        optionTrainer.setBackground(new java.awt.Color(238, 239, 243));
+        optionTrainer.setForeground(new java.awt.Color(51, 51, 51));
+        optionTrainer.setText("Trainer");
+        jMenu1.add(optionTrainer);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setForeground(new java.awt.Color(238, 239, 243));
-        jMenu2.setText("Edit");
+        jMenu2.setForeground(new java.awt.Color(51, 51, 51));
+        jMenu2.setText("Search");
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -74,6 +142,10 @@ public class MainView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void optionAwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionAwardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_optionAwardActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,7 +185,17 @@ public class MainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem optionAward;
+    private javax.swing.JMenuItem optionCountry;
+    private javax.swing.JMenuItem optionGame;
+    private javax.swing.JMenuItem optionGrandSlam;
+    private javax.swing.JMenuItem optionLocation;
+    private javax.swing.JMenuItem optionNacionality;
+    private javax.swing.JMenuItem optionPlayer;
+    private javax.swing.JMenuItem optionReferee;
+    private javax.swing.JMenuItem optionTrainer;
     // End of variables declaration//GEN-END:variables
 }
