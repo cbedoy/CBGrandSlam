@@ -23,7 +23,7 @@ public abstract class BaseModel implements IModel, IBissness{
     private  boolean     status;
     
     public BaseModel(){
-        connection =  new ConectionDB();
+            connection =  new ConectionDB();
     }
     
  
@@ -34,6 +34,8 @@ public abstract class BaseModel implements IModel, IBissness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        this.connection.closeConnection();
+        
     }
 
     @Override
@@ -43,6 +45,7 @@ public abstract class BaseModel implements IModel, IBissness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        this.connection.closeConnection();
     }
 
     @Override
@@ -52,6 +55,7 @@ public abstract class BaseModel implements IModel, IBissness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        this.connection.closeConnection();
     }
 
     @Override
@@ -61,6 +65,7 @@ public abstract class BaseModel implements IModel, IBissness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        this.connection.closeConnection();
     }
 
     @Override
@@ -70,6 +75,7 @@ public abstract class BaseModel implements IModel, IBissness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+        this.connection.closeConnection();
     }
 
     public ConectionDB getConnection() {
