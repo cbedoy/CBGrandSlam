@@ -6,6 +6,7 @@
 
 package cb.bisness;
 
+import cb.connectors.BissnessConnector;
 import cb.abstracts.BaseModel;
 
 /**

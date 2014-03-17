@@ -15,7 +15,7 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
-import cb.bisness.ViewConecctor;
+import cb.connectors.ViewConnector;
 import cb.interfaces.IArtifact;
 import cb.models.GrandSlam;
 import cb.views.*;
@@ -38,7 +38,7 @@ public class main {
         IArtifact trainerView = new TrainerView();
         
         //ViewConnector
-        ViewConecctor viewConecctor = new ViewConecctor();
+        ViewConnector viewConecctor = new ViewConnector();
         viewConecctor.setAwardView(awardView);
         viewConecctor.setCountryView(countryView);
         viewConecctor.setGameView(gameView);
