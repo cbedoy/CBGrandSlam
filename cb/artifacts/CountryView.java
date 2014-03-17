@@ -35,10 +35,10 @@ public class CountryView extends javax.swing.JPanel implements IArtifact {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         sName = new javax.swing.JTextField();
-        actionAdd = new javax.swing.JButton();
-        actionEdit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         sOption = new javax.swing.JComboBox();
+        actionAdd = new javax.swing.JButton();
+        actionEdit = new javax.swing.JButton();
         actionDelete = new javax.swing.JButton();
         actionSearch = new javax.swing.JButton();
 
@@ -53,23 +53,23 @@ public class CountryView extends javax.swing.JPanel implements IArtifact {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Name");
 
-        actionAdd.setBackground(new java.awt.Color(0, 204, 51));
-        actionAdd.setText("Add");
-
-        actionEdit.setBackground(new java.awt.Color(255, 153, 0));
-        actionEdit.setText("Edit");
-
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Choose an option");
 
         sOption.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        actionAdd.setBackground(new java.awt.Color(0, 204, 51));
+        actionAdd.setText("Add");
+
+        actionEdit.setBackground(new java.awt.Color(255, 153, 0));
+        actionEdit.setText("Edit");
+
         actionDelete.setBackground(new java.awt.Color(255, 0, 0));
         actionDelete.setText("Delete");
 
         actionSearch.setBackground(new java.awt.Color(0, 102, 204));
-        actionSearch.setText("Seach");
+        actionSearch.setText("Search");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -83,19 +83,19 @@ public class CountryView extends javax.swing.JPanel implements IArtifact {
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(sName)
-                            .addComponent(sOption, 0, 248, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 130, Short.MAX_VALUE)
-                        .addComponent(actionAdd)
+                            .addComponent(sOption, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 132, Short.MAX_VALUE)
+                        .addComponent(actionAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(actionEdit)
+                        .addComponent(actionEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(actionSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(actionSearch)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(actionDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(actionDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -111,7 +111,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(sName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(actionAdd)
                     .addComponent(actionEdit)
