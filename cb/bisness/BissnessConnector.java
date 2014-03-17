@@ -19,7 +19,7 @@ public class BissnessConnector {
     private IModel Player;
     private IModel Referee;
     private IModel Trainer;
-
+    private IModel Conection;
     
     public  BissnessConnector(){
         
@@ -71,6 +71,14 @@ public class BissnessConnector {
 
     public void setTrainer(IModel Trainer) {
         this.Trainer = Trainer;
+    }
+
+    public IModel getConection() {
+        return Conection;
+    }
+
+    public void setConection(IModel Conection) {
+        this.Conection = Conection;
     }
     
     
