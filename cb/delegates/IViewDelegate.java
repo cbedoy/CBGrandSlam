@@ -10,6 +10,10 @@ package cb.delegates;
  *
  * @author Carlos
  */
-public class IBusinessDelegate {
+public interface IViewDelegate {
+    public void userPressInsert();
+    public void userPressDelete();
+    public void userPressAfter();
+    public void userPressSearch();
     
 }
