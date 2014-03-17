@@ -8,11 +8,32 @@ package cb.business;
 
 import cb.connectors.BusinessConnector;
 import cb.abstracts.BaseModel;
+import cb.delegates.IViewDelegate;
 
 /**
  *
  * @author Carlos
  */
-public class AwardBusiness extends BaseModel{
+public class AwardBusiness extends BaseModel implements IViewDelegate{
+
+    @Override
+    public void userPressInsert(String query) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void userPressDelete(String query) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void userPressAfter(String query) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void userPressSearch(String query) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

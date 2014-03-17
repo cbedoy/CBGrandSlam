@@ -14,7 +14,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 
-public class ConectionDB implements IModel{
+public class ConectionDB implements IModel {
     private Connection ct;
     private Statement st;  
     private final static String driver = "com.mysql.jdbc.Driver";
