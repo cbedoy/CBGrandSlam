@@ -6,6 +6,7 @@
 
 package cb.bisness;
 
+import cb.abstracts.BaseModel;
 import cb.interfaces.IModel;
 
 /**
@@ -13,64 +14,91 @@ import cb.interfaces.IModel;
  * @author Carlos
  */
 public class BissnessConnector {
-    private IModel Award;
-    private IModel Game;
-    private IModel GrandSlam;
-    private IModel Player;
-    private IModel Referee;
-    private IModel Trainer;
-    private IModel Conection;
+    private BaseModel AwardBisness;
+    private BaseModel CountryBisness;
+    private BaseModel GameBisness;
+    private BaseModel GrandSlamBisness;
+    private BaseModel LocationBisness;
+    private BaseModel NAtionalityBisness;
+    private BaseModel PlayerBisness;
+    private BaseModel RefereeBisness;
+    private BaseModel TrainerBisness;
+    private IModel    Conection;
     
     public  BissnessConnector(){
         
     }
-    
-    public IModel getAward() {
-        return Award;
+
+    public BaseModel getAwardBisness() {
+        return AwardBisness;
     }
 
-    public void setAward(IModel Award) {
-        this.Award = Award;
+    public void setAwardBisness(BaseModel AwardBisness) {
+        this.AwardBisness = AwardBisness;
     }
 
-    public IModel getGame() {
-        return Game;
+    public BaseModel getCountryBisness() {
+        return CountryBisness;
     }
 
-    public void setGame(IModel Game) {
-        this.Game = Game;
+    public void setCountryBisness(BaseModel CountryBisness) {
+        this.CountryBisness = CountryBisness;
     }
 
-    public IModel getGrandSlam() {
-        return GrandSlam;
+    public BaseModel getGameBisness() {
+        return GameBisness;
     }
 
-    public void setGrandSlam(IModel GrandSlam) {
-        this.GrandSlam = GrandSlam;
+    public void setGameBisness(BaseModel GameBisness) {
+        this.GameBisness = GameBisness;
     }
 
-    public IModel getPlayer() {
-        return Player;
+    public BaseModel getGrandSlamBisness() {
+        return GrandSlamBisness;
     }
 
-    public void setPlayer(IModel Player) {
-        this.Player = Player;
+    public void setGrandSlamBisness(BaseModel GrandSlamBisness) {
+        this.GrandSlamBisness = GrandSlamBisness;
     }
 
-    public IModel getReferee() {
-        return Referee;
+    public BaseModel getLocationBisness() {
+        return LocationBisness;
     }
 
-    public void setReferee(IModel Referee) {
-        this.Referee = Referee;
+    public void setLocationBisness(BaseModel LocationBisness) {
+        this.LocationBisness = LocationBisness;
     }
 
-    public IModel getTrainer() {
-        return Trainer;
+    public BaseModel getNAtionalityBisness() {
+        return NAtionalityBisness;
     }
 
-    public void setTrainer(IModel Trainer) {
-        this.Trainer = Trainer;
+    public void setNAtionalityBisness(BaseModel NAtionalityBisness) {
+        this.NAtionalityBisness = NAtionalityBisness;
+    }
+
+    public BaseModel getPlayerBisness() {
+        return PlayerBisness;
+    }
+
+    public void setPlayerBisness(BaseModel PlayerBisness) {
+        this.PlayerBisness = PlayerBisness;
+    }
+
+    public BaseModel getRefereeBisness() {
+        return RefereeBisness;
+    }
+
+    public void setRefereeBisness(BaseModel RefereeBisness) {
+        this.RefereeBisness = RefereeBisness;
+    }
+
+    public BaseModel getTrainerBisness() {
+        return TrainerBisness;
+    }
+
+    public void setTrainerBisness(BaseModel TrainerBisness) {
+        this.TrainerBisness = TrainerBisness;
     }
 
     public IModel getConection() {
@@ -80,6 +108,8 @@ public class BissnessConnector {
     public void setConection(IModel Conection) {
         this.Conection = Conection;
     }
+    
+    
     
     
 }

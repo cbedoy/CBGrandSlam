@@ -13,8 +13,5 @@ import cb.abstracts.BaseModel;
  * @author Carlos
  */
 public class AwardBisness extends BaseModel{
-    private BissnessConnector bissnessConnector;
-    
-    
-    
+    private BissnessConnector bissnessConnector; 
 }

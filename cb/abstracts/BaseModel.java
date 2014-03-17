@@ -23,7 +23,7 @@ public abstract class BaseModel implements IModel, IBissness{
     private  boolean     status;
     
     public BaseModel(){
-            connection =  new ConectionDB();
+            
     }
     
  
