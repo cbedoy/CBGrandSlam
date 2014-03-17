@@ -11,3 +11,6 @@
 ### Degree Information Technology 8B 
 
 #### Universidad Autonoma De Aguascalientes
+
+
+Project develop in Java 1.8, manage support on Oracle and Mysql
