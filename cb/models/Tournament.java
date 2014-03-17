@@ -13,9 +13,11 @@ import cb.interfaces.IModel;
  *
  * @author Carlos
  */
-public class Nacionality extends BaseModel implements IModel{
+public class Tournament extends BaseModel implements IModel{
     private int id;
     private String name;
+    private String date;
+    private Country country;
 
     public int getId() {
         return id;
@@ -32,4 +34,22 @@ public class Nacionality extends BaseModel implements IModel{
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+    
+    
 }

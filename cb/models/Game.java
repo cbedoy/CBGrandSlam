@@ -19,7 +19,7 @@ public class Game extends BaseModel implements IModel{
     private Referee referee;
     private Player player;
     private Trainer trainer;
-    private GrandSlam grandSlam;
+    private Tournament tournament;
 
     public int getId() {
         return id;
@@ -61,11 +61,12 @@ public class Game extends BaseModel implements IModel{
         this.trainer = trainer;
     }
 
-    public GrandSlam getGrandSlam() {
-        return grandSlam;
+    public Tournament getTournament() {
+        return tournament;
     }
 
-    public void setGrandSlam(GrandSlam grandSlam) {
-        this.grandSlam = grandSlam;
+    public void setTournament(Tournament tournament) {
+        this.tournament = tournament;
     }
+
 }
