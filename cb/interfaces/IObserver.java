@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 
-package cb.models;
-
-import cb.abstracts.BaseModel;
-import cb.interfaces.IModel;
+package cb.interfaces;
 
 /**
  *
@@ -21,24 +18,6 @@ import cb.interfaces.IModel;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Country extends BaseModel implements IModel{
-    private int id;
-    private String name;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
+public interface IObserver {
+    public void reload();
 }
