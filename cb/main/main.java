@@ -22,7 +22,15 @@ import cb.views.*;
 
 /**
  *
- * @author Carlos
+ * Carlos Alfredo Cervantes Bedoy
+ * Mobile Developer
+ * CBGrandSlam
+ * Email:           carlos.bedoy@gmail.com
+ * Facebook:        https://www.facebook.com/carlos.bedoy
+ * Github:          https://github.com/cbedoy
+ * WebSite:         http://cbedoy.github.io/
+ *
+ * 17-mar-2014 - 22:22:34
  */
 public class main {
     public static void main(String[]cbedoy){
