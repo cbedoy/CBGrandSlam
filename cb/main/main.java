@@ -15,6 +15,7 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
+import cb.bussinessTest.ConectionDB;
 import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.interfaces.IArtifact;
@@ -97,6 +98,10 @@ public class main {
         MainView mainView = new MainView();
         mainView.setViewConecctor(viewConecctor);
         mainView.setModelConnector(modelConnector);
+        
+        //Business
+        ConectionDB conection = new ConectionDB();
+        
         
         System.out.println(System.currentTimeMillis()-initial+" milisegs");
     }

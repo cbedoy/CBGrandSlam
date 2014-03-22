@@ -30,7 +30,7 @@ public class ConectionDB implements IModel {
     private Connection ct;
     private Statement st;  
     private final static String driver = "com.mysql.jdbc.Driver";
-    private final static String db = "jdbc:mysql://localhost:3306/codice";
+    private final static String db = "jdbc:mysql://localhost:3306/grandslam";
     private String message;
     private boolean conectado;
     
