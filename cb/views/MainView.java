@@ -21,6 +21,7 @@ import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
 import cb.interfaces.IModel;
+import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 
 /**
@@ -51,6 +52,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     public MainView() {
         initComponents();
         setVisible(true);
+        setLocationRelativeTo(null);
     }
 
 
@@ -84,7 +86,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         container.setLayout(containerLayout);
         containerLayout.setHorizontalGroup(
             containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 714, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         containerLayout.setVerticalGroup(
             containerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,6 +106,11 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         jMenu5.add(actionAbout);
 
         actionExit.setText("Exit");
+        actionExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionExitActionPerformed(evt);
+            }
+        });
         jMenu5.add(actionExit);
 
         jMenuBar1.add(jMenu5);

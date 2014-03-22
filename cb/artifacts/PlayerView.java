@@ -8,6 +8,10 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.models.Nationality;
+import cb.models.Player;
+import cb.models.Trainer;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -25,7 +29,10 @@ import java.util.Observer;
  */
 public class PlayerView extends javax.swing.JPanel implements IArtifact, Observer {
 
-    private IMainViewDelegate delegate;
+    private IMainViewDelegate       delegate;
+    private ArrayList<Trainer>      listTrainer;
+    private ArrayList<Nationality>  listNationality;
+    private Player                  currentModel;
     /**
      * Creates new form PlayerView
      */
@@ -43,21 +50,21 @@ public class PlayerView extends javax.swing.JPanel implements IArtifact, Observe
     private void initComponents() {
 
         jLabel5 = new javax.swing.JLabel();
-        sCategory = new javax.swing.JTextField();
-        sTournement = new javax.swing.JComboBox();
+        sAge = new javax.swing.JTextField();
+        sTrainer = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        sAmount = new javax.swing.JTextField();
+        sName = new javax.swing.JTextField();
         actionAdd = new javax.swing.JButton();
         actionEdit = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         actionDelete = new javax.swing.JButton();
-        sPlayer = new javax.swing.JComboBox();
+        sNationality = new javax.swing.JComboBox();
         actionSearch = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         sOption = new javax.swing.JComboBox();
-        sCategory1 = new javax.swing.JTextField();
+        sAmount = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 71, 71));
@@ -67,7 +74,7 @@ public class PlayerView extends javax.swing.JPanel implements IArtifact, Observe
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Trainer");
 
-        sTournement.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        sTrainer.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -79,6 +86,11 @@ public class PlayerView extends javax.swing.JPanel implements IArtifact, Observe
 
         actionAdd.setBackground(new java.awt.Color(0, 204, 51));
         actionAdd.setText("Add");
+        actionAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionAddActionPerformed(evt);
+            }
+        });
 
         actionEdit.setBackground(new java.awt.Color(255, 153, 0));
         actionEdit.setText("Edit");
@@ -94,7 +106,7 @@ public class PlayerView extends javax.swing.JPanel implements IArtifact, Observe
         actionDelete.setBackground(new java.awt.Color(255, 0, 0));
         actionDelete.setText("Delete");
 
-        sPlayer.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        sNationality.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         actionSearch.setBackground(new java.awt.Color(0, 102, 204));
         actionSearch.setText("Search");
@@ -127,11 +139,11 @@ public class PlayerView extends javax.swing.JPanel implements IArtifact, Observe
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sCategory1)
-                            .addComponent(sPlayer, 0, 346, Short.MAX_VALUE)
-                            .addComponent(sTournement, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sCategory)
                             .addComponent(sAmount)
+                            .addComponent(sNationality, 0, 346, Short.MAX_VALUE)
+                            .addComponent(sTrainer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sAge)
+                            .addComponent(sName)
                             .addComponent(sOption, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -156,22 +168,22 @@ public class PlayerView extends javax.swing.JPanel implements IArtifact, Observe
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(sAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sCategory1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sTournement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sNationality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -182,6 +194,17 @@ public class PlayerView extends javax.swing.JPanel implements IArtifact, Observe
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
+        // TODO add your handling code here:
+        Player player = currentModel;
+        player.setName(sName.getText());
+        player.setAmount(Float.parseFloat(sAmount.getText()));
+        player.setAge(Integer.parseInt(sAge.getText()));
+        player.setNationality(listNationality.get(sNationality.getSelectedIndex()));
+        player.setTrainer(listTrainer.get(sTrainer.getSelectedIndex()));
+        
+    }//GEN-LAST:event_actionAddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -196,12 +219,12 @@ public class PlayerView extends javax.swing.JPanel implements IArtifact, Observe
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField sAge;
     private javax.swing.JTextField sAmount;
-    private javax.swing.JTextField sCategory;
-    private javax.swing.JTextField sCategory1;
+    private javax.swing.JTextField sName;
+    private javax.swing.JComboBox sNationality;
     private javax.swing.JComboBox sOption;
-    private javax.swing.JComboBox sPlayer;
-    private javax.swing.JComboBox sTournement;
+    private javax.swing.JComboBox sTrainer;
     // End of variables declaration//GEN-END:variables
 
     public void setDelegate(IMainViewDelegate delegate) {

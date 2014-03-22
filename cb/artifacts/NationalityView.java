@@ -8,6 +8,7 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.models.Nationality;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -25,7 +26,8 @@ import java.util.Observer;
  */
 public class NationalityView extends javax.swing.JPanel implements IArtifact, Observer {
 
-    private IMainViewDelegate delegate;
+    private IMainViewDelegate   delegate;
+    private Nationality         currentModel;
     /**
      * Creates new form NationalityView
      */
@@ -63,6 +65,11 @@ public class NationalityView extends javax.swing.JPanel implements IArtifact, Ob
 
         actionAdd.setBackground(new java.awt.Color(0, 204, 51));
         actionAdd.setText("Add");
+        actionAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionAddActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,6 +137,12 @@ public class NationalityView extends javax.swing.JPanel implements IArtifact, Ob
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
+        // TODO add your handling code here:
+        Nationality nationality = currentModel;
+        nationality.setName(sName.getText());
+    }//GEN-LAST:event_actionAddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

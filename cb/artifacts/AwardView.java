@@ -4,6 +4,11 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.models.Award;
+import cb.models.Player;
+import cb.models.Tournament;
+import cb.models.Trainer;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -22,6 +27,10 @@ import java.util.Observer;
 public class AwardView extends javax.swing.JPanel implements IArtifact, Observer{
 
     private IMainViewDelegate delegate;
+    private Award currentModel;
+    private ArrayList<Tournament>   listTournament;
+    private ArrayList<Player>       listPlayer;
+    private ArrayList<Trainer>      listTrainer;
     /**
      * Creates new form AwardView
      */
@@ -52,13 +61,13 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
         actionSearch = new javax.swing.JButton();
         actionEdit = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        sCategory = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         sTournement = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
         sPlayer = new javax.swing.JComboBox();
         jLabel7 = new javax.swing.JLabel();
         sTrainer = new javax.swing.JComboBox();
+        sCategory = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(71, 71, 71));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -70,6 +79,11 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
 
         actionAdd.setBackground(new java.awt.Color(0, 204, 51));
         actionAdd.setText("Add");
+        actionAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionAddActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -116,6 +130,8 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
 
         sTrainer.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        sCategory.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,6 +148,11 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sTrainer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sPlayer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sTournement, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(sAmount)
+                    .addComponent(sOption, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(actionAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -141,12 +162,7 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(actionDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(sTrainer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sPlayer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sTournement, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sCategory)
-                    .addComponent(sAmount)
-                    .addComponent(sOption, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(sCategory, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -163,10 +179,10 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
                     .addComponent(jLabel2)
                     .addComponent(sAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(sCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sTournement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
@@ -194,6 +210,18 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
         delegate.removeView(this);
     }//GEN-LAST:event_formMouseClicked
 
+    private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
+        // TODO add your handling code here:
+        Award award = currentModel;
+        award.setAmount(Float.parseFloat(this.sAmount.getText()));
+        award.setCategory((String) this.sCategory.getSelectedItem());
+        award.setGrandSlam(this.listTournament.get(this.sTournement.getSelectedIndex()));
+        award.setPlayer(this.listPlayer.get(this.sPlayer.getSelectedIndex()));
+        award.setTrainer(this.listTrainer.get(this.sTrainer.getSelectedIndex()));
+        
+        
+    }//GEN-LAST:event_actionAddActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actionAdd;
@@ -208,7 +236,7 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField sAmount;
-    private javax.swing.JTextField sCategory;
+    private javax.swing.JComboBox sCategory;
     private javax.swing.JComboBox sOption;
     private javax.swing.JComboBox sPlayer;
     private javax.swing.JComboBox sTournement;
@@ -222,6 +250,7 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
 
     @Override
     public void update(Observable o, Object o1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+    
     }
 }

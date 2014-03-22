@@ -25,9 +25,9 @@ import java.util.Observer;
  */
 public class CountryView extends javax.swing.JPanel implements IArtifact, Observer{
 
-    private IMainViewDelegate delegate;
-    private Country currentModel;
-    private ArrayList<Country> data;
+    private IMainViewDelegate   delegate;
+    private Country             currentModel;
+    private ArrayList<Country>  data;
 
     public CountryView() {
         initComponents();
