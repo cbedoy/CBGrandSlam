@@ -8,6 +8,8 @@ import cb.interfaces.IArtifact;
 import cb.interfaces.IModel;
 import cb.models.Country;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -28,6 +30,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
     private IMainViewDelegate delegate;
     private IModel model;
     private IModel conection;
+    private Map<Integer, Country> data;
     /**
      * Creates new form CountryView
      */
@@ -85,6 +88,11 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
         actionDelete.setBackground(new java.awt.Color(255, 0, 0));
         actionDelete.setText("Delete");
+        actionDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionDeleteActionPerformed(evt);
+            }
+        });
 
         actionSearch.setBackground(new java.awt.Color(0, 102, 204));
         actionSearch.setText("Search");
@@ -160,6 +168,10 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         
     }//GEN-LAST:event_actionAddActionPerformed
 
+    private void actionDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actionDeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actionAdd;
@@ -203,9 +215,11 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         Country country = (Country) model;
         country.reloadData();
         ArrayList<Country> listCountry = country.getListCountry();
+        data = new HashMap<>();
         sOption.removeAllItems();
         for(Country c : listCountry){
             sOption.addItem(c.getName());
+            data.put(c.getId(), c);
         }
     }
 }
