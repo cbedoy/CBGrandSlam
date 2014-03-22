@@ -16,6 +16,7 @@ import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
 import cb.bussiness.ConectionDB;
+import cb.bussiness.ViewObserver;
 import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.interfaces.IArtifact;
@@ -75,6 +76,13 @@ public class main {
         viewConecctor.setRefereeView(refereeView);
         viewConecctor.setTrainerView(trainerView);
         
+        //Observers
+        ViewObserver viewObserver = new ViewObserver();
+        viewObserver.addObserver(awardView);
+        view
+        
+        
+        
         //Business
         ConectionDB conection = new ConectionDB();
         
@@ -100,6 +108,8 @@ public class main {
         refereeModel.setConnection(conection);
         tournamentModel.setConnection(conection);
         trainerModel.setConnection(conection);
+        
+        
         
         
         ModelConnector modelConnector = new ModelConnector();

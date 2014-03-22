@@ -15,6 +15,7 @@ import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TournamentView;
 import cb.artifacts.TrainerView;
+import cb.bussiness.ViewObserver;
 import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
@@ -42,6 +43,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private final int       posY          = 22;
     private ViewConnector   viewConecctor;
     private ModelConnector  modelConnector;
+    private ViewObserver    viewObserver;
     /**
      * Creates new form MainView
      */
@@ -412,5 +414,13 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     @Override
     public void reloadAllData() {
        
+    }
+
+    public ViewObserver getViewObserver() {
+        return viewObserver;
+    }
+
+    public void setViewObserver(ViewObserver viewObserver) {
+        this.viewObserver = viewObserver;
     }
 }
