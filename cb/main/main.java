@@ -32,6 +32,7 @@ import cb.models.Tournament;
 import cb.models.Trainer;
 
 import cb.views.*;
+import java.util.Observer;
 
 /**
  *
@@ -54,15 +55,15 @@ public class main {
         
         //Artifacts 
         
-        IArtifact   awardView =         new AwardView();
-        IArtifact   countryView =       new CountryView();
-        IArtifact   gameView =          new GameView();
-        IArtifact   tournamentView =    new TournamentView();
-        IArtifact   locationView =      new LocationView();
-        IArtifact   nationalityView  =  new NationalityView();
-        IArtifact   playerView =        new PlayerView();
-        IArtifact   refereeView =       new RefereeView();
-        IArtifact   trainerView =       new TrainerView();
+        AwardView       awardView =         new AwardView();
+        CountryView     countryView =       new CountryView();
+        GameView        gameView =          new GameView();
+        TournamentView  tournamentView =    new TournamentView();
+        LocationView    locationView =      new LocationView();
+        NationalityView nationalityView  =  new NationalityView();
+        PlayerView      playerView =        new PlayerView();
+        RefereeView     refereeView =       new RefereeView();
+        TrainerView     trainerView =       new TrainerView();
         
         //ViewConnector
         ViewConnector viewConecctor =   new ViewConnector();
@@ -77,9 +78,18 @@ public class main {
         viewConecctor.setTrainerView(trainerView);
         
         //Observers
-        ViewObserver viewObserver = new ViewObserver();
+        ViewObserver viewObserver =         new ViewObserver();
         viewObserver.addObserver(awardView);
-        view
+        viewObserver.addObserver(countryView);
+        viewObserver.addObserver(gameView);
+        viewObserver.addObserver(tournamentView);
+        viewObserver.addObserver(nationalityView);
+        viewObserver.addObserver(playerView);
+        viewObserver.addObserver(refereeView);
+        viewObserver.addObserver(trainerView);
+        
+        
+        
         
         
         
@@ -130,6 +140,7 @@ public class main {
         MainView mainView = new MainView();
         mainView.setViewConecctor(viewConecctor);
         mainView.setModelConnector(modelConnector);
+        mainView.setViewObserver(viewObserver);
         splash.dispose();
 
         
