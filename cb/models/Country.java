@@ -66,7 +66,7 @@ public class Country extends BaseModel implements IModel, IModelDelegate{
 
     @Override
     public void userPressAlter() {
-        String query = "update pais set nombre = '"+name+"'";
+        String query = "update pais set nombre = '"+name+"' where idpais = "+id;
         super.editITem(query);
         
     }

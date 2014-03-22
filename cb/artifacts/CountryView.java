@@ -27,7 +27,6 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
     private IMainViewDelegate delegate;
     private IModel model;
-    private IModel conection;
     private ArrayList<Country> data;
     /**
      * Creates new form CountryView
@@ -169,7 +168,6 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
     private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
         // TODO add your handling code here:
         Country country = (Country) model;
-        country.setConnection((ConectionDB) conection);
         country.setName(this.sName.getText());
         country.userPressInsert();
         country.reloadData();
@@ -229,17 +227,9 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         this.model = model;
     }
 
-    public IModel getConection() {
-        return conection;
-    }
-
-    public void setConection(IModel conection) {
-        this.conection = conection;
-    }
-    
+   
     public void reloadData(){
         Country country = (Country) model;
-        country.setConnection((ConectionDB) conection);
         country.reloadData();
         data = country.getListCountry();
         sOption.removeAllItems();

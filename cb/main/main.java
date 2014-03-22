@@ -47,6 +47,10 @@ import cb.views.*;
 public class main {
     public static void main(String[]cbedoy){
         long initial = System.currentTimeMillis();
+            
+          
+        
+        
         //Artifacts 
         
         IArtifact awardView = new AwardView();
@@ -71,17 +75,32 @@ public class main {
         viewConecctor.setRefereeView(refereeView);
         viewConecctor.setTrainerView(trainerView);
         
+        //Business
+        ConectionDB conection = new ConectionDB();
         
         //Models
-        IModel awardModel = new Award();
-        IModel countryModel = new Country();
-        IModel gameModel = new Game();
-        IModel locationModel = new Location();
-        IModel nationalityModel = new Nationality();
-        IModel playerModel = new Player();
-        IModel refereeModel = new Referee();
-        IModel tournamentModel = new Tournament();
-        IModel trainerModel = new Trainer();
+        Award       awardModel =        new Award();
+        Country     countryModel =      new Country();
+        Game        gameModel =         new Game();
+        Location    locationModel =     new Location();
+        Nationality nationalityModel =  new Nationality();
+        Player      playerModel =       new Player();
+        Referee     refereeModel =      new Referee();
+        Tournament  tournamentModel =   new Tournament();
+        Trainer     trainerModel =      new Trainer();
+        
+        
+        //SetConnections to model
+        awardModel.setConnection(conection);
+        countryModel.setConnection(conection);
+        gameModel.setConnection(conection);
+        locationModel.setConnection(conection);
+        nationalityModel.setConnection(conection);
+        playerModel.setConnection(conection);
+        refereeModel.setConnection(conection);
+        tournamentModel.setConnection(conection);
+        trainerModel.setConnection(conection);
+        
         
         ModelConnector modelConnector = new ModelConnector();
         modelConnector.setAward(awardModel);
@@ -94,9 +113,8 @@ public class main {
         modelConnector.setTournament(tournamentModel);
         modelConnector.setTrainer(trainerModel);
     
-        //Business
-        ConectionDB conection = new ConectionDB();
-        modelConnector.setConectionDB(conection);
+        
+        
         
         //MainView
         MainView mainView = new MainView();
