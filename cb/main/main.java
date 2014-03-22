@@ -15,8 +15,19 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
+import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.interfaces.IArtifact;
+import cb.interfaces.IModel;
+import cb.models.Award;
+import cb.models.Country;
+import cb.models.Game;
+import cb.models.Location;
+import cb.models.Nationality;
+import cb.models.Player;
+import cb.models.Referee;
+import cb.models.Tournament;
+import cb.models.Trainer;
 
 import cb.views.*;
 
@@ -59,6 +70,28 @@ public class main {
         viewConecctor.setRefereeView(refereeView);
         viewConecctor.setTrainerView(trainerView);
         
+        
+        //Models
+        IModel awardModel = new Award();
+        IModel countryModel = new Country();
+        IModel gameModel = new Game();
+        IModel locationModel = new Location();
+        IModel nationalityModel = new Nationality();
+        IModel playerModel = new Player();
+        IModel refereeModel = new Referee();
+        IModel tournamentModel = new Tournament();
+        IModel trainerModel = new Trainer();
+        
+        ModelConnector modelConnector = new ModelConnector();
+        modelConnector.setAward(awardModel);
+        modelConnector.setCountry(countryModel);
+        modelConnector.setGame(gameModel);
+        modelConnector.setLocation(locationModel);
+        modelConnector.setNationality(nationalityModel);
+        modelConnector.setPlayer(playerModel);
+        modelConnector.setReferee(refereeModel);
+        modelConnector.setTournament(tournamentModel);
+        modelConnector.setTrainer(trainerModel);
         
         //MainView
         MainView mainView = new MainView();
