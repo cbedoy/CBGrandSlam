@@ -93,19 +93,22 @@ public class main {
         modelConnector.setReferee(refereeModel);
         modelConnector.setTournament(tournamentModel);
         modelConnector.setTrainer(trainerModel);
+    
+        //Business
+        ConectionDB conection = new ConectionDB();
+        modelConnector.setConectionDB(conection);
         
         //MainView
         MainView mainView = new MainView();
         mainView.setViewConecctor(viewConecctor);
         mainView.setModelConnector(modelConnector);
         
-        //Business
-        ConectionDB conection = new ConectionDB();
-        
-        
+
         
         System.out.println(conection.getConectado()?"OK":"Error");
         
+        
+    
         System.out.println(System.currentTimeMillis()-initial+" milisegs");
     }
 }
