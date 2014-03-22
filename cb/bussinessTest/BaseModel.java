@@ -1,7 +1,7 @@
 
-package cb.abstracts;
+package cb.bussinessTest;
 
-import cb.business.ConectionDB;
+import cb.bussinessTest.ConectionDB;
 import cb.interfaces.IBussiness;
 import cb.interfaces.IModel;
 import java.sql.ResultSet;

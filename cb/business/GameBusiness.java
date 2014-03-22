@@ -6,7 +6,7 @@
 
 package cb.business;
 
-import cb.abstracts.BaseModel;
+import cb.bussinessTest.BaseModel;
 import cb.delegates.IViewDelegate;
 
 /**

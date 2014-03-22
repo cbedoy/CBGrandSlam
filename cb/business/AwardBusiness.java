@@ -7,7 +7,7 @@
 package cb.business;
 
 import cb.connectors.BusinessConnector;
-import cb.abstracts.BaseModel;
+import cb.bussinessTest.BaseModel;
 import cb.delegates.IViewDelegate;
 
 /**
@@ -26,7 +26,7 @@ public class AwardBusiness extends BaseModel implements IViewDelegate{
 
     @Override
     public void userPressInsert(String query) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     @Override
