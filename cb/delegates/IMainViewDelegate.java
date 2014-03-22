@@ -22,4 +22,6 @@ import cb.interfaces.IArtifact;
  */
 public interface IMainViewDelegate {
     public void removeView(IArtifact artifact);
+    
+    public void reloadAllData();
 }
