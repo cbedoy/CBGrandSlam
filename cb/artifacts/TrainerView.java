@@ -8,6 +8,11 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.interfaces.IModel;
+import cb.models.Country;
+import cb.models.Trainer;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -26,6 +31,8 @@ import java.util.Observer;
 public class TrainerView extends javax.swing.JPanel implements IArtifact, Observer {
 
     private IMainViewDelegate delegate;
+    private Trainer currentModel;
+    private ArrayList<Trainer> data;
     /**
      * Creates new form TrainerView
      */
@@ -49,18 +56,23 @@ public class TrainerView extends javax.swing.JPanel implements IArtifact, Observ
         actionDelete = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         actionSearch = new javax.swing.JButton();
-        sAmount = new javax.swing.JTextField();
+        sName = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        sCategory1 = new javax.swing.JTextField();
-        sCategory = new javax.swing.JTextField();
         sOption = new javax.swing.JComboBox();
+        sInitialDate = new com.toedter.calendar.JDateChooser();
+        sLastDate = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(71, 71, 71));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         actionEdit.setBackground(new java.awt.Color(255, 153, 0));
         actionEdit.setText("Edit");
+        actionEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionEditActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -68,6 +80,11 @@ public class TrainerView extends javax.swing.JPanel implements IArtifact, Observ
 
         actionAdd.setBackground(new java.awt.Color(0, 204, 51));
         actionAdd.setText("Add");
+        actionAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionAddActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,6 +92,11 @@ public class TrainerView extends javax.swing.JPanel implements IArtifact, Observ
 
         actionDelete.setBackground(new java.awt.Color(255, 0, 0));
         actionDelete.setText("Delete");
+        actionDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionDeleteActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -118,10 +140,10 @@ public class TrainerView extends javax.swing.JPanel implements IArtifact, Observ
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sCategory1)
-                            .addComponent(sCategory)
-                            .addComponent(sAmount)
-                            .addComponent(sOption, javax.swing.GroupLayout.Alignment.TRAILING, 0, 345, Short.MAX_VALUE))))
+                            .addComponent(sName)
+                            .addComponent(sOption, javax.swing.GroupLayout.Alignment.TRAILING, 0, 345, Short.MAX_VALUE)
+                            .addComponent(sInitialDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sLastDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
@@ -136,24 +158,63 @@ public class TrainerView extends javax.swing.JPanel implements IArtifact, Observ
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(sAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(sInitialDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sCategory1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(actionAdd)
-                    .addComponent(actionEdit)
-                    .addComponent(actionDelete)
-                    .addComponent(actionSearch))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(actionAdd)
+                            .addComponent(actionEdit)
+                            .addComponent(actionDelete)
+                            .addComponent(actionSearch)))
+                    .addComponent(sLastDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
+        // TODO add your handling code here:
+        Trainer model = currentModel;
+        model.setName(this.sName.getText());
+        
+        String initial =    new SimpleDateFormat("yyyy-MM-dd").format(this.sInitialDate.getDate());
+        String finalize =   new SimpleDateFormat("yyyy-MM-dd").format(this.sLastDate.getDate());
+        model.setInitialDate(initial);
+        model.setFinalizeDate(finalize);
+        model.userPressInsert();
+        model.reloadData();
+        reloadData();
+    }//GEN-LAST:event_actionAddActionPerformed
+
+    private void actionEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionEditActionPerformed
+        // TODO add your handling code here:
+        Trainer trainer = currentModel;
+        trainer.setName(this.sName.getText());
+        String initial =    new SimpleDateFormat("yyyy-MM-dd").format(this.sInitialDate.getDate());
+        String finalize =   new SimpleDateFormat("yyyy-MM-dd").format(this.sLastDate.getDate());
+        trainer.setInitialDate(initial);
+        trainer.setFinalizeDate(finalize);
+        trainer.userPressAlter();
+        trainer.reloadData();
+        reloadData();
+    }//GEN-LAST:event_actionEditActionPerformed
+
+    private void actionDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionDeleteActionPerformed
+        // TODO add your handling code here:
+        Trainer trainer = currentModel;
+        Trainer currentTrainer = data.get(sOption.getSelectedIndex());
+        trainer.setName(currentTrainer.getName());
+        trainer.setId(currentTrainer.getId());
+        trainer.userPressDelete();
+        trainer.reloadData();
+        reloadData();
+    }//GEN-LAST:event_actionDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -166,9 +227,9 @@ public class TrainerView extends javax.swing.JPanel implements IArtifact, Observ
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField sAmount;
-    private javax.swing.JTextField sCategory;
-    private javax.swing.JTextField sCategory1;
+    private com.toedter.calendar.JDateChooser sInitialDate;
+    private com.toedter.calendar.JDateChooser sLastDate;
+    private javax.swing.JTextField sName;
     private javax.swing.JComboBox sOption;
     // End of variables declaration//GEN-END:variables
 
@@ -179,5 +240,24 @@ public class TrainerView extends javax.swing.JPanel implements IArtifact, Observ
     @Override
     public void update(Observable o, Object o1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public IModel getModel() {
+        return currentModel;
+    }
+
+    public void setModel(IModel model) {
+        this.currentModel = (Trainer) model;
+    }
+
+   
+    public void reloadData(){
+        Trainer trainer = currentModel;
+        trainer.reloadData();
+        data = trainer.getListTrainer();
+        sOption.removeAllItems();
+        for(Trainer t : data){
+            sOption.addItem(t.getName());
+        }
     }
 }
