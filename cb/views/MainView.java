@@ -36,8 +36,10 @@ import javax.swing.JPanel;
 public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
 
    
-    private final int widthView     = 500;
-    private final int heightView    = 300;
+    private final int       widthView     = 500;
+    private final int       heightView    = 300;
+    private final int       posX          = 22;
+    private final int       posY          = 22;
     private ViewConnector viewConecctor;
     private ModelConnector modelConnector;
     /**
@@ -223,7 +225,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionAwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionAwardActionPerformed
         AwardView view = (AwardView) this.viewConecctor.getAwardView();
         view.setVisible(true);
-        view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
         container.add(view);
         container.revalidate();
@@ -232,7 +234,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionCountryActionPerformed
         CountryView view = (CountryView) this.viewConecctor.getCountryView();
         view.setVisible(true);
-        view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
         view.setModel(this.modelConnector.getCountry());
         view.reloadData();
@@ -243,7 +245,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionGameActionPerformed
         GameView view = (GameView) this.viewConecctor.getGameView();
         view.setVisible(true);
-        view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
         container.add(view);
         container.revalidate();
@@ -252,7 +254,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionGrandSlamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionGrandSlamActionPerformed
         TournamentView view = (TournamentView) this.viewConecctor.getTournamentView();
         view.setVisible(true);
-        view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
         container.add(view);
         container.revalidate();
@@ -261,7 +263,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionLocationActionPerformed
         LocationView view = (LocationView) this.viewConecctor.getLocationView();
         view.setVisible(true);
-        view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
         container.add(view);
         container.revalidate();
@@ -270,7 +272,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionNacionalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionNacionalityActionPerformed
         NationalityView view = (NationalityView) this.viewConecctor.getNationalityView();
         view.setVisible(true);
-        view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
         container.add(view);
         container.revalidate();
@@ -279,7 +281,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionPlayerActionPerformed
         PlayerView view = (PlayerView) this.viewConecctor.getPlayerView();
         view.setVisible(true);
-        view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
         container.add(view);
         container.revalidate();
@@ -288,7 +290,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionRefereeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionRefereeActionPerformed
         RefereeView view = (RefereeView) this.viewConecctor.getRefereeView();
         view.setVisible(true);
-        view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
         container.add(view);
         container.revalidate();
@@ -297,7 +299,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionTrainerActionPerformed
         TrainerView view = (TrainerView) this.viewConecctor.getTrainerView();
         view.setVisible(true);
-        view.setBounds(0, 0, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
         container.add(view);
         container.revalidate();

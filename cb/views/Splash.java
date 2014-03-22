@@ -6,6 +6,9 @@
 
 package cb.views;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * Carlos Alfredo Cervantes Bedoy
@@ -20,13 +23,23 @@ package cb.views;
  */
 public class Splash extends javax.swing.JFrame implements Runnable {
 
+    Thread thread;
     /**
      * Creates new form Splash
      */
     public Splash() {
         initComponents();
+        setLocationRelativeTo(null);
+        thread = new Thread(this);
+        thread.start();
     }
 
+    
+    public void setValue(int v){
+        this.progressBar.setValue(v);
+        
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,6 +50,7 @@ public class Splash extends javax.swing.JFrame implements Runnable {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        progressBar = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,13 +62,15 @@ public class Splash extends javax.swing.JFrame implements Runnable {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(0, 2, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(progressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -97,10 +113,19 @@ public class Splash extends javax.swing.JFrame implements Runnable {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JProgressBar progressBar;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int i=0;
+        while(true){
+            progressBar.setValue(i++);
+            try {
+                Thread.sleep(7);
+            } catch (InterruptedException ex) {
+                
+            }
+        }
     }
 }

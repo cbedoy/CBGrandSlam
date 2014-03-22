@@ -50,9 +50,6 @@ public class main {
             
         Splash splash = new Splash();
         splash.setVisible(true);
-        
-        
-        
         //Artifacts 
         
         IArtifact awardView = new AwardView();
@@ -122,7 +119,7 @@ public class main {
         MainView mainView = new MainView();
         mainView.setViewConecctor(viewConecctor);
         mainView.setModelConnector(modelConnector);
-        
+        splash.dispose();
 
         
         System.out.println(conection.getConectado()?"OK":"Error");
