@@ -301,7 +301,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionTrainerActionPerformed
         TrainerView view = (TrainerView) this.viewConecctor.getTrainerView();
         view.setVisible(true);
-        view.setBounds(posX, posY, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, 200);
         view.setDelegate(this);
         container.add(view);
         container.revalidate();
