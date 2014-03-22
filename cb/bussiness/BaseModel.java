@@ -21,9 +21,9 @@ import java.sql.SQLException;
  */
 public abstract class BaseModel implements IModel, IBussiness{
 
-    protected  ConectionDB connection;
-    protected  ResultSet   rs;
-    protected  boolean     status;
+    private  ConectionDB connection;
+    private  ResultSet   rs;
+    private  boolean     status;
     
     public BaseModel(){
             
@@ -37,7 +37,7 @@ public abstract class BaseModel implements IModel, IBussiness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        this.connection.closeConnection();
+        
         
     }
 
@@ -48,17 +48,18 @@ public abstract class BaseModel implements IModel, IBussiness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        this.connection.closeConnection();
+        
     }
 
     @Override
     public void deleteITem(String query) {
+        
         try {
             this.setStatus(getConnection().getSt().execute(query));
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println(ex.getMessage());
         }
-        this.connection.closeConnection();
+        
     }
 
     @Override
@@ -68,7 +69,7 @@ public abstract class BaseModel implements IModel, IBussiness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        this.connection.closeConnection();
+        
     }
 
     @Override
@@ -78,7 +79,7 @@ public abstract class BaseModel implements IModel, IBussiness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        this.connection.closeConnection();
+        
     }
 
     public ConectionDB getConnection() {

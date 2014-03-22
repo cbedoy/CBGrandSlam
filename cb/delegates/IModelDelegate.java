@@ -25,4 +25,6 @@ public interface IModelDelegate {
     public void userPressAlter();
     public void userPressSearch();
     
+    public void reloadData();
+    
 }
