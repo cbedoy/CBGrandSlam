@@ -20,6 +20,7 @@ import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.interfaces.IModel;
 import javax.swing.JPanel;
 
 /**
@@ -301,8 +302,9 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private void optionTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionTrainerActionPerformed
         TrainerView view = (TrainerView) this.viewConecctor.getTrainerView();
         view.setVisible(true);
-        view.setBounds(posX, posY, this.widthView, this.heightView);
+        view.setBounds(posX, posY, this.widthView, 200);
         view.setDelegate(this);
+        view.setModel(this.modelConnector.getTrainer());
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionTrainerActionPerformed
