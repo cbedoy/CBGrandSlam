@@ -6,6 +6,7 @@
 
 package cb.connectors;
 
+import cb.bussiness.ViewObserver;
 import cb.interfaces.IArtifact;
 import java.util.Observable;
 import java.util.Observer;
@@ -32,7 +33,9 @@ public class ViewConnector extends Observable{
     private IArtifact PlayerView;
     private IArtifact RefereeView;
     private IArtifact TrainerView;
-
+    
+    
+    
     public IArtifact getAwardView() {
         return AwardView;
     }
@@ -106,4 +109,6 @@ public class ViewConnector extends Observable{
     public void setTournamentView(IArtifact TournamentView) {
         this.TournamentView = TournamentView;
     }
+
+
 }
