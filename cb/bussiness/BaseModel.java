@@ -1,7 +1,7 @@
 
-package cb.abstracts;
+package cb.bussiness;
 
-import cb.business.ConectionDB;
+import cb.bussiness.ConectionDB;
 import cb.interfaces.IBussiness;
 import cb.interfaces.IModel;
 import java.sql.ResultSet;
@@ -21,9 +21,9 @@ import java.sql.SQLException;
  */
 public abstract class BaseModel implements IModel, IBussiness{
 
-    private  ConectionDB connection;
-    private  ResultSet   rs;
-    private  boolean     status;
+    protected  ConectionDB connection;
+    protected  ResultSet   rs;
+    protected  boolean     status;
     
     public BaseModel(){
             

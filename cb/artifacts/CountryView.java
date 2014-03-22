@@ -2,8 +2,11 @@
 
 package cb.artifacts;
 
+import cb.bussiness.ConectionDB;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.interfaces.IModel;
+import cb.models.Country;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -22,6 +25,8 @@ import java.util.Observer;
 public class CountryView extends javax.swing.JPanel implements IArtifact, Observer{
 
     private IMainViewDelegate delegate;
+    private IModel model;
+    private IModel conection;
     /**
      * Creates new form CountryView
      */
@@ -67,6 +72,11 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
         actionAdd.setBackground(new java.awt.Color(0, 204, 51));
         actionAdd.setText("Add");
+        actionAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionAddActionPerformed(evt);
+            }
+        });
 
         actionEdit.setBackground(new java.awt.Color(255, 153, 0));
         actionEdit.setText("Edit");
@@ -127,6 +137,14 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
+        // TODO add your handling code here:
+        Country country = (Country) model;
+        country.setConnection((ConectionDB) conection);
+        country.setName(this.sName.getText());
+        country.userPressInsert();
+    }//GEN-LAST:event_actionAddActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actionAdd;
@@ -146,6 +164,22 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
     @Override
     public void update(Observable o, Object o1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+    }
+
+    public IModel getModel() {
+        return model;
+    }
+
+    public void setModel(IModel model) {
+        this.model = model;
+    }
+
+    public IModel getConection() {
+        return conection;
+    }
+
+    public void setConection(IModel conection) {
+        this.conection = conection;
     }
 }

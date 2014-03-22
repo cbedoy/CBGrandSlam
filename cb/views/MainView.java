@@ -234,6 +234,8 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
         view.setDelegate(this);
+        view.setModel(this.modelConnector.getCountry());
+        view.setConection(this.modelConnector.getConectionDB());
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionCountryActionPerformed
