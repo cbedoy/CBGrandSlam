@@ -8,6 +8,7 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.models.Referee;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -26,6 +27,7 @@ import java.util.Observer;
 public class RefereeView extends javax.swing.JPanel implements IArtifact, Observer {
 
     private IMainViewDelegate delegate;
+    private Referee currentModel;
     /**
      * Creates new form RefereeView
      */
@@ -46,15 +48,15 @@ public class RefereeView extends javax.swing.JPanel implements IArtifact, Observ
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         sOption = new javax.swing.JComboBox();
-        sCategory = new javax.swing.JTextField();
-        sCategory1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        sAmount = new javax.swing.JTextField();
+        sName = new javax.swing.JTextField();
         actionSearch = new javax.swing.JButton();
         actionEdit = new javax.swing.JButton();
         actionAdd = new javax.swing.JButton();
         actionDelete = new javax.swing.JButton();
+        sTime = new javax.swing.JComboBox();
+        sNationality = new javax.swing.JComboBox();
 
         setBackground(new java.awt.Color(71, 71, 71));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -89,9 +91,18 @@ public class RefereeView extends javax.swing.JPanel implements IArtifact, Observ
 
         actionAdd.setBackground(new java.awt.Color(0, 204, 51));
         actionAdd.setText("Add");
+        actionAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionAddActionPerformed(evt);
+            }
+        });
 
         actionDelete.setBackground(new java.awt.Color(255, 0, 0));
         actionDelete.setText("Delete");
+
+        sTime.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        sNationality.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -118,10 +129,10 @@ public class RefereeView extends javax.swing.JPanel implements IArtifact, Observ
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sCategory1)
-                            .addComponent(sCategory)
-                            .addComponent(sAmount)
-                            .addComponent(sOption, javax.swing.GroupLayout.Alignment.TRAILING, 0, 344, Short.MAX_VALUE))))
+                            .addComponent(sName)
+                            .addComponent(sOption, javax.swing.GroupLayout.Alignment.TRAILING, 0, 344, Short.MAX_VALUE)
+                            .addComponent(sTime, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sNationality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(16, 16, 16))
         );
         layout.setVerticalGroup(
@@ -136,24 +147,34 @@ public class RefereeView extends javax.swing.JPanel implements IArtifact, Observ
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(sAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(sNationality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sCategory1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(actionAdd)
-                    .addComponent(actionEdit)
-                    .addComponent(actionDelete)
-                    .addComponent(actionSearch))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(actionAdd)
+                            .addComponent(actionEdit)
+                            .addComponent(actionDelete)
+                            .addComponent(actionSearch)))
+                    .addComponent(sTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
+        // TODO add your handling code here:
+       Referee referee = currentModel;
+       referee.setName(sName.getText());
+       referee.setTime((String) sTime.getSelectedItem());
+       referee.setNacionality((String) sNationality.getSelectedItem());
+       
+    }//GEN-LAST:event_actionAddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -166,10 +187,10 @@ public class RefereeView extends javax.swing.JPanel implements IArtifact, Observ
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField sAmount;
-    private javax.swing.JTextField sCategory;
-    private javax.swing.JTextField sCategory1;
+    private javax.swing.JTextField sName;
+    private javax.swing.JComboBox sNationality;
     private javax.swing.JComboBox sOption;
+    private javax.swing.JComboBox sTime;
     // End of variables declaration//GEN-END:variables
 
     public void setDelegate(IMainViewDelegate delegate) {

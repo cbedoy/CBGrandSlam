@@ -39,10 +39,10 @@
                       </Group>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="sAmount" alignment="1" max="32767" attributes="0"/>
-                          <Component id="sCategory" alignment="1" max="32767" attributes="0"/>
-                          <Component id="sTournement" max="32767" attributes="0"/>
+                          <Component id="sName" alignment="1" max="32767" attributes="0"/>
+                          <Component id="sCountry" max="32767" attributes="0"/>
                           <Component id="sOption" max="32767" attributes="0"/>
+                          <Component id="sDate" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -73,26 +73,31 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="sAmount" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="sName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="sCategory" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="sCountry" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="actionAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="actionEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="actionDelete" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="actionSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="sDate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="sTournement" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="16" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="actionAdd" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="actionEdit" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="actionDelete" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="actionSearch" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -114,7 +119,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Player"/>
+        <Property name="text" type="java.lang.String" value="Tournament"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -151,9 +156,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sCategory">
-    </Component>
-    <Component class="javax.swing.JComboBox" name="sTournement">
+    <Component class="javax.swing.JComboBox" name="sCountry">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -195,7 +198,7 @@
         <Property name="text" type="java.lang.String" value="Country"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sAmount">
+    <Component class="javax.swing.JTextField" name="sName">
     </Component>
     <Component class="javax.swing.JButton" name="actionAdd">
       <Properties>
@@ -204,6 +207,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionAddActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="actionDelete">
       <Properties>
@@ -212,6 +218,8 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="sDate">
     </Component>
   </SubComponents>
 </Form>

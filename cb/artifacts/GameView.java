@@ -3,6 +3,7 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.models.Game;
 import cb.models.Player;
 import cb.models.Referee;
 import cb.models.Tournament;
@@ -26,6 +27,7 @@ import java.util.Observer;
 public class GameView extends javax.swing.JPanel implements IArtifact, Observer {
 
     private IMainViewDelegate       delegate;
+    private Game                    currentModel;
     private ArrayList<Referee>      listReferee;
     private ArrayList<Player>       listPlayer;
     private ArrayList<Trainer>      listTrainer;
@@ -49,17 +51,17 @@ public class GameView extends javax.swing.JPanel implements IArtifact, Observer 
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        sAmount = new javax.swing.JTextField();
+        sModality = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        sPlayer = new javax.swing.JComboBox();
+        sReferee = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         sOption = new javax.swing.JComboBox();
         jLabel7 = new javax.swing.JLabel();
-        sTrainer = new javax.swing.JComboBox();
-        sTrainer1 = new javax.swing.JComboBox();
+        sPlayer = new javax.swing.JComboBox();
+        sTournament = new javax.swing.JComboBox();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        sPlayer1 = new javax.swing.JComboBox();
+        sTrainer = new javax.swing.JComboBox();
         actionAdd = new javax.swing.JButton();
         actionEdit = new javax.swing.JButton();
         actionDelete = new javax.swing.JButton();
@@ -80,7 +82,7 @@ public class GameView extends javax.swing.JPanel implements IArtifact, Observer 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Referee");
 
-        sPlayer.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        sReferee.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,9 +94,9 @@ public class GameView extends javax.swing.JPanel implements IArtifact, Observer 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Player");
 
-        sTrainer.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        sPlayer.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        sTrainer1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        sTournament.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,10 +106,15 @@ public class GameView extends javax.swing.JPanel implements IArtifact, Observer 
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Trainer");
 
-        sPlayer1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        sTrainer.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         actionAdd.setBackground(new java.awt.Color(0, 204, 51));
         actionAdd.setText("Add");
+        actionAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionAddActionPerformed(evt);
+            }
+        });
 
         actionEdit.setBackground(new java.awt.Color(255, 153, 0));
         actionEdit.setText("Edit");
@@ -134,9 +141,9 @@ public class GameView extends javax.swing.JPanel implements IArtifact, Observer 
                             .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(sPlayer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sAmount)
-                            .addComponent(sTrainer, javax.swing.GroupLayout.Alignment.TRAILING, 0, 346, Short.MAX_VALUE)
+                            .addComponent(sReferee, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sModality)
+                            .addComponent(sPlayer, javax.swing.GroupLayout.Alignment.TRAILING, 0, 346, Short.MAX_VALUE)
                             .addComponent(sOption, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,8 +151,8 @@ public class GameView extends javax.swing.JPanel implements IArtifact, Observer 
                             .addComponent(jLabel8))
                         .addGap(57, 57, 57)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sTrainer1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sPlayer1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(sTournament, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sTrainer, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 132, Short.MAX_VALUE)
                         .addComponent(actionAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -169,22 +176,22 @@ public class GameView extends javax.swing.JPanel implements IArtifact, Observer 
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(sAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sModality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sReferee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sPlayer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sTrainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sTrainer1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sTournament, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -195,6 +202,16 @@ public class GameView extends javax.swing.JPanel implements IArtifact, Observer 
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
+        // TODO add your handling code here:
+        Game game = currentModel;
+        game.setModality(sModality.getText());
+        game.setReferee(listReferee.get(sReferee.getSelectedIndex()));
+        game.setPlayer(listPlayer.get(sPlayer.getSelectedIndex()));
+        game.setTournament(listTournament.get(sTournament.getSelectedIndex()));
+        game.setTrainer(listTrainer.get(sTrainer.getSelectedIndex()));
+    }//GEN-LAST:event_actionAddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -209,12 +226,12 @@ public class GameView extends javax.swing.JPanel implements IArtifact, Observer 
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField sAmount;
+    private javax.swing.JTextField sModality;
     private javax.swing.JComboBox sOption;
     private javax.swing.JComboBox sPlayer;
-    private javax.swing.JComboBox sPlayer1;
+    private javax.swing.JComboBox sReferee;
+    private javax.swing.JComboBox sTournament;
     private javax.swing.JComboBox sTrainer;
-    private javax.swing.JComboBox sTrainer1;
     // End of variables declaration//GEN-END:variables
 
     public void setDelegate(IMainViewDelegate delegate) {

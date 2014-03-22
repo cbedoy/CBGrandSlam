@@ -27,7 +27,7 @@ import java.util.Observer;
 public class AwardView extends javax.swing.JPanel implements IArtifact, Observer{
 
     private IMainViewDelegate delegate;
-    private Award award;
+    private Award currentModel;
     private ArrayList<Tournament>   listTournament;
     private ArrayList<Player>       listPlayer;
     private ArrayList<Trainer>      listTrainer;
@@ -212,11 +212,12 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
 
     private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
         // TODO add your handling code here:
-        this.award.setAmount(Float.parseFloat(this.sAmount.getText()));
-        this.award.setCategory((String) this.sCategory.getSelectedItem());
-        this.award.setGrandSlam(this.listTournament.get(this.sTournement.getSelectedIndex()));
-        this.award.setPlayer(this.listPlayer.get(this.sPlayer.getSelectedIndex()));
-        this.award.setTrainer(this.listTrainer.get(this.sTrainer.getSelectedIndex()));
+        Award award = currentModel;
+        award.setAmount(Float.parseFloat(this.sAmount.getText()));
+        award.setCategory((String) this.sCategory.getSelectedItem());
+        award.setGrandSlam(this.listTournament.get(this.sTournement.getSelectedIndex()));
+        award.setPlayer(this.listPlayer.get(this.sPlayer.getSelectedIndex()));
+        award.setTrainer(this.listTrainer.get(this.sTrainer.getSelectedIndex()));
         
         
     }//GEN-LAST:event_actionAddActionPerformed

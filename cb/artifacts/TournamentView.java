@@ -9,6 +9,8 @@ package cb.artifacts;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
 import cb.models.Country;
+import cb.models.Tournament;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -29,6 +31,7 @@ public class TournamentView extends javax.swing.JPanel implements IArtifact, Obs
 
     private IMainViewDelegate   delegate;
     private ArrayList<Country>  listCountry;
+    private Tournament          currentModel;
     /**
      * Creates new form GrandSlamView
      */
@@ -50,14 +53,14 @@ public class TournamentView extends javax.swing.JPanel implements IArtifact, Obs
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         sOption = new javax.swing.JComboBox();
-        sCategory = new javax.swing.JTextField();
-        sTournement = new javax.swing.JComboBox();
+        sCountry = new javax.swing.JComboBox();
         actionEdit = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        sAmount = new javax.swing.JTextField();
+        sName = new javax.swing.JTextField();
         actionAdd = new javax.swing.JButton();
         actionDelete = new javax.swing.JButton();
+        sDate = new com.toedter.calendar.JDateChooser();
 
         setBackground(new java.awt.Color(71, 71, 71));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -67,7 +70,7 @@ public class TournamentView extends javax.swing.JPanel implements IArtifact, Obs
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Player");
+        jLabel1.setText("Tournament");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -79,7 +82,7 @@ public class TournamentView extends javax.swing.JPanel implements IArtifact, Obs
 
         sOption.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        sTournement.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        sCountry.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         actionEdit.setBackground(new java.awt.Color(255, 153, 0));
         actionEdit.setText("Edit");
@@ -94,6 +97,11 @@ public class TournamentView extends javax.swing.JPanel implements IArtifact, Obs
 
         actionAdd.setBackground(new java.awt.Color(0, 204, 51));
         actionAdd.setText("Add");
+        actionAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionAddActionPerformed(evt);
+            }
+        });
 
         actionDelete.setBackground(new java.awt.Color(255, 0, 0));
         actionDelete.setText("Delete");
@@ -114,10 +122,10 @@ public class TournamentView extends javax.swing.JPanel implements IArtifact, Obs
                             .addComponent(jLabel8))
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sAmount, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(sCategory, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(sTournement, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sOption, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(sName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(sCountry, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sOption, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 132, Short.MAX_VALUE)
                         .addComponent(actionAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -141,24 +149,36 @@ public class TournamentView extends javax.swing.JPanel implements IArtifact, Obs
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(sAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(sCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sTournement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(actionAdd)
-                    .addComponent(actionEdit)
-                    .addComponent(actionDelete)
-                    .addComponent(actionSearch))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(actionAdd)
+                            .addComponent(actionEdit)
+                            .addComponent(actionDelete)
+                            .addComponent(actionSearch)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(sDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
+        // TODO add your handling code here:
+        Tournament tournament = currentModel;
+        tournament.setName(sName.getText());
+        String date =    new SimpleDateFormat("yyyy-MM-dd").format(this.sDate.getDate());
+        tournament.setDate(date);
+        tournament.setCountry(listCountry.get(sCountry.getSelectedIndex()));
+    }//GEN-LAST:event_actionAddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -171,10 +191,10 @@ public class TournamentView extends javax.swing.JPanel implements IArtifact, Obs
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField sAmount;
-    private javax.swing.JTextField sCategory;
+    private javax.swing.JComboBox sCountry;
+    private com.toedter.calendar.JDateChooser sDate;
+    private javax.swing.JTextField sName;
     private javax.swing.JComboBox sOption;
-    private javax.swing.JComboBox sTournement;
     // End of variables declaration//GEN-END:variables
 
     public void setDelegate(IMainViewDelegate delegate) {

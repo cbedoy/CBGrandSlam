@@ -8,6 +8,7 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.models.Country;
 import cb.models.Location;
 import java.util.ArrayList;
 import java.util.Observable;
@@ -28,7 +29,8 @@ import java.util.Observer;
 public class LocationView extends javax.swing.JPanel implements IArtifact, Observer {
 
     private IMainViewDelegate   delegate;
-    private ArrayList<Location> listLocation;
+    private ArrayList<Country>  listCountry;
+    private Location            currentModel;
     /**
      * Creates new form LocationView
      */
@@ -54,7 +56,7 @@ public class LocationView extends javax.swing.JPanel implements IArtifact, Obser
         jLabel3 = new javax.swing.JLabel();
         sOption = new javax.swing.JComboBox();
         actionSearch = new javax.swing.JButton();
-        sOption1 = new javax.swing.JComboBox();
+        sCountry = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 71, 71));
@@ -68,6 +70,11 @@ public class LocationView extends javax.swing.JPanel implements IArtifact, Obser
 
         actionAdd.setBackground(new java.awt.Color(0, 204, 51));
         actionAdd.setText("Add");
+        actionAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionAddActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -86,7 +93,7 @@ public class LocationView extends javax.swing.JPanel implements IArtifact, Obser
         actionSearch.setBackground(new java.awt.Color(0, 102, 204));
         actionSearch.setText("Search");
 
-        sOption1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        sCountry.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,7 +119,7 @@ public class LocationView extends javax.swing.JPanel implements IArtifact, Obser
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(sOption1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sCountry, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(actionAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -139,7 +146,7 @@ public class LocationView extends javax.swing.JPanel implements IArtifact, Obser
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(sOption1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(actionAdd)
@@ -149,6 +156,13 @@ public class LocationView extends javax.swing.JPanel implements IArtifact, Obser
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
+        // TODO add your handling code here:
+        Location location = currentModel;
+        location.setName(sName.getText());
+        location.setCountry(listCountry.get(sCountry.getSelectedIndex()));
+    }//GEN-LAST:event_actionAddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -160,9 +174,9 @@ public class LocationView extends javax.swing.JPanel implements IArtifact, Obser
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JComboBox sCountry;
     private javax.swing.JTextField sName;
     private javax.swing.JComboBox sOption;
-    private javax.swing.JComboBox sOption1;
     // End of variables declaration//GEN-END:variables
 
     public void setDelegate(IMainViewDelegate delegate) {
