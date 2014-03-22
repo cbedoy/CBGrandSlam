@@ -103,6 +103,9 @@ public class main {
         ConectionDB conection = new ConectionDB();
         
         
+        
+        System.out.println(conection.getConectado()?"OK":"Error");
+        
         System.out.println(System.currentTimeMillis()-initial+" milisegs");
     }
 }

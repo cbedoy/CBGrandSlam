@@ -25,6 +25,7 @@ public class ModelConnector {
     private IModel Referee;
     private IModel Tournament;
     private IModel Trainer;
+    private IModel ConectionDB;
 
     public IModel getAward() {
         return Award;
@@ -96,5 +97,13 @@ public class ModelConnector {
 
     public void setTrainer(IModel Trainer) {
         this.Trainer = Trainer;
+    }
+
+    public IModel getConectionDB() {
+        return ConectionDB;
+    }
+
+    public void setConectionDB(IModel ConectionDB) {
+        this.ConectionDB = ConectionDB;
     }
 }
