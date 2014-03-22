@@ -18,10 +18,13 @@ package cb.delegates;
  *
  * 17-mar-2014 - 22:22:34
  */
-public interface IViewDelegate {
-    public void userPressInsert(String query);
-    public void userPressDelete(String query);
-    public void userPressAfter(String query);
-    public void userPressSearch(String query);
+public interface IModelDelegate {
+    
+    public void userPressInsert();
+    public void userPressDelete();
+    public void userPressAlter();
+    public void userPressSearch();
+    
+    public void reloadData();
     
 }

@@ -6,7 +6,8 @@
 
 package cb.models;
 
-import cb.abstracts.BaseModel;
+import cb.bussiness.BaseModel;
+import cb.delegates.IModelDelegate;
 import cb.interfaces.IModel;
 
 /**
@@ -21,7 +22,7 @@ import cb.interfaces.IModel;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Award extends BaseModel implements IModel{
+public class Award extends BaseModel implements IModel, IModelDelegate{
     private int id;
     private float amount;
     private float category;
@@ -76,5 +77,30 @@ public class Award extends BaseModel implements IModel{
 
     public void setTrainer(Trainer trainer) {
         this.trainer = trainer;
+    }
+
+    @Override
+    public void userPressInsert() {
+        
+    }
+
+    @Override
+    public void userPressDelete() {
+        
+    }
+
+    @Override
+    public void userPressAlter() {
+        
+    }
+
+    @Override
+    public void userPressSearch() {
+        
+    }
+
+    @Override
+    public void reloadData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

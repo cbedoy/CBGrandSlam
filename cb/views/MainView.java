@@ -15,6 +15,7 @@ import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TournamentView;
 import cb.artifacts.TrainerView;
+import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
@@ -38,6 +39,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private final int widthView     = 500;
     private final int heightView    = 300;
     private ViewConnector viewConecctor;
+    private ModelConnector modelConnector;
     /**
      * Creates new form MainView
      */
@@ -232,6 +234,8 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         view.setVisible(true);
         view.setBounds(0, 0, this.widthView, this.heightView);
         view.setDelegate(this);
+        view.setModel(this.modelConnector.getCountry());
+        view.reloadData();
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionCountryActionPerformed
@@ -393,5 +397,13 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
 
     public void setViewConecctor(ViewConnector viewConecctor) {
         this.viewConecctor = viewConecctor;
+    }
+
+    public ModelConnector getModelConnector() {
+        return modelConnector;
+    }
+
+    public void setModelConnector(ModelConnector modelConnector) {
+        this.modelConnector = modelConnector;
     }
 }

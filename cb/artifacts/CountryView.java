@@ -2,8 +2,12 @@
 
 package cb.artifacts;
 
+import cb.bussiness.ConectionDB;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.interfaces.IModel;
+import cb.models.Country;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -22,6 +26,8 @@ import java.util.Observer;
 public class CountryView extends javax.swing.JPanel implements IArtifact, Observer{
 
     private IMainViewDelegate delegate;
+    private IModel model;
+    private ArrayList<Country> data;
     /**
      * Creates new form CountryView
      */
@@ -47,6 +53,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         actionEdit = new javax.swing.JButton();
         actionDelete = new javax.swing.JButton();
         actionSearch = new javax.swing.JButton();
+        sStatus = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 71, 71));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -67,15 +74,39 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
         actionAdd.setBackground(new java.awt.Color(0, 204, 51));
         actionAdd.setText("Add");
+        actionAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionAddActionPerformed(evt);
+            }
+        });
 
         actionEdit.setBackground(new java.awt.Color(255, 153, 0));
         actionEdit.setText("Edit");
+        actionEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionEditActionPerformed(evt);
+            }
+        });
 
         actionDelete.setBackground(new java.awt.Color(255, 0, 0));
         actionDelete.setText("Delete");
+        actionDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionDeleteActionPerformed(evt);
+            }
+        });
 
         actionSearch.setBackground(new java.awt.Color(0, 102, 204));
         actionSearch.setText("Search");
+        actionSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionSearchActionPerformed(evt);
+            }
+        });
+
+        sStatus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        sStatus.setForeground(new java.awt.Color(51, 204, 0));
+        sStatus.setText("Status");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -89,10 +120,15 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3))
-                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sName)
-                            .addComponent(sOption, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(sName)
+                                    .addComponent(sOption, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(sStatus))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 132, Short.MAX_VALUE)
                         .addComponent(actionAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -108,7 +144,9 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(sStatus))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -127,6 +165,37 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
+        // TODO add your handling code here:
+        Country country = (Country) model;
+        country.setName(this.sName.getText());
+        country.userPressInsert();
+        country.reloadData();
+        reloadData();
+        
+    }//GEN-LAST:event_actionAddActionPerformed
+
+    private void actionDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionDeleteActionPerformed
+        // TODO add your handling code here:
+        Country country = data.get(sOption.getSelectedIndex());
+        country.userPressDelete();
+        country.reloadData();
+        reloadData();
+    }//GEN-LAST:event_actionDeleteActionPerformed
+
+    private void actionEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionEditActionPerformed
+        // TODO add your handling code here:
+        Country country = (Country) model;
+        country.setName(this.sName.getText());
+        country.userPressAlter();
+        country.reloadData();
+        reloadData();
+    }//GEN-LAST:event_actionEditActionPerformed
+
+    private void actionSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actionSearchActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actionAdd;
@@ -138,6 +207,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField sName;
     private javax.swing.JComboBox sOption;
+    private javax.swing.JLabel sStatus;
     // End of variables declaration//GEN-END:variables
 
     public void setDelegate(IMainViewDelegate delegate) {
@@ -146,6 +216,25 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
     @Override
     public void update(Observable o, Object o1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+    }
+
+    public IModel getModel() {
+        return model;
+    }
+
+    public void setModel(IModel model) {
+        this.model = model;
+    }
+
+   
+    public void reloadData(){
+        Country country = (Country) model;
+        country.reloadData();
+        data = country.getListCountry();
+        sOption.removeAllItems();
+        for(Country c : data){
+            sOption.addItem(c.getName());
+        }
     }
 }

@@ -6,8 +6,14 @@
 
 package cb.models;
 
-import cb.abstracts.BaseModel;
+import cb.bussiness.BaseModel;
+import cb.delegates.IModelDelegate;
 import cb.interfaces.IModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,9 +27,10 @@ import cb.interfaces.IModel;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Country extends BaseModel implements IModel{
+public class Country extends BaseModel implements IModel, IModelDelegate{
     private int id;
     private String name;
+    private ArrayList<Country> listCountry;
 
     public int getId() {
         return id;
@@ -40,5 +47,62 @@ public class Country extends BaseModel implements IModel{
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public void userPressInsert() {
+        String query = ""
+                + "insert into pais "
+                + "values"
+                + "(null, '"+name+"')"
+                + "";
+        super.insertItem(query);
+    }
+
+    @Override
+    public void userPressDelete() {
+        String query = "delete from pais where idpais = "+id;
+        super.deleteITem(query);
+    }
+
+    @Override
+    public void userPressAlter() {
+        String query = "update pais set nombre = '"+name+"' where idpais = "+id;
+        super.editITem(query);
+        
+    }
+
+    @Override
+    public void userPressSearch() {
+        
+    }
+
+    @Override
+    public void reloadData() {
+        try {
+            super.getAllITems("Select * from pais");
+            ResultSet resultSet = super.getRs();
+            setListCountry(new ArrayList<Country>());
+            while(resultSet.next()){
+               Country  country = new Country();
+               country.setId(resultSet.getInt(1));
+               country.setName(resultSet.getString(2));
+               getListCountry().add(country);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
     
+
+    public ArrayList<Country> getListCountry() {
+        return listCountry;
+    }
+
+    public void setListCountry(ArrayList<Country> listCountry) {
+        this.listCountry = listCountry;
+    }
+    
+    private boolean getStatus(){
+        return super.isStatus();
+    }
 }
