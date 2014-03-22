@@ -18,7 +18,7 @@ package cb.views;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Splash extends javax.swing.JFrame {
+public class Splash extends javax.swing.JFrame implements Runnable {
 
     /**
      * Creates new form Splash
@@ -98,4 +98,9 @@ public class Splash extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void run() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

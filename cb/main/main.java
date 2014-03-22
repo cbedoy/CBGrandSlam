@@ -48,7 +48,9 @@ public class main {
     public static void main(String[]cbedoy){
         long initial = System.currentTimeMillis();
             
-          
+        Splash splash = new Splash();
+        splash.setVisible(true);
+        
         
         
         //Artifacts 
