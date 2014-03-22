@@ -2,6 +2,7 @@
 
 package cb.artifacts;
 
+import cb.bussiness.ConectionDB;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
 import cb.interfaces.IModel;
@@ -25,6 +26,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
     private IMainViewDelegate delegate;
     private IModel model;
+    private IModel conection;
     /**
      * Creates new form CountryView
      */
@@ -138,8 +140,9 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
     private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
         // TODO add your handling code here:
         Country country = (Country) model;
+        country.setConnection((ConectionDB) conection);
         country.setName(this.sName.getText());
-        
+        country.userPressInsert();
     }//GEN-LAST:event_actionAddActionPerformed
 
 
@@ -170,5 +173,13 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
     public void setModel(IModel model) {
         this.model = model;
+    }
+
+    public IModel getConection() {
+        return conection;
+    }
+
+    public void setConection(IModel conection) {
+        this.conection = conection;
     }
 }
