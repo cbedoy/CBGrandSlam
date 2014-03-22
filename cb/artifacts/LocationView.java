@@ -8,6 +8,8 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.models.Location;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -25,7 +27,8 @@ import java.util.Observer;
  */
 public class LocationView extends javax.swing.JPanel implements IArtifact, Observer {
 
-    private IMainViewDelegate delegate;
+    private IMainViewDelegate   delegate;
+    private ArrayList<Location> listLocation;
     /**
      * Creates new form LocationView
      */

@@ -8,6 +8,9 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import cb.models.Nationality;
+import cb.models.Trainer;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -25,7 +28,9 @@ import java.util.Observer;
  */
 public class PlayerView extends javax.swing.JPanel implements IArtifact, Observer {
 
-    private IMainViewDelegate delegate;
+    private IMainViewDelegate       delegate;
+    private ArrayList<Trainer>      listTrainer;
+    private ArrayList<Nationality>  listNationality;
     /**
      * Creates new form PlayerView
      */

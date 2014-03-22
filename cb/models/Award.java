@@ -25,7 +25,7 @@ import cb.interfaces.IModel;
 public class Award extends BaseModel implements IModel, IModelDelegate{
     private int id;
     private float amount;
-    private float category;
+    private String category;
     private Tournament grandSlam;
     private Player player;
     private Trainer trainer;
@@ -47,11 +47,11 @@ public class Award extends BaseModel implements IModel, IModelDelegate{
         this.amount = amount;
     }
 
-    public float getCategory() {
+    public String getCategory() {
         return category;
     }
 
-    public void setCategory(float category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 
