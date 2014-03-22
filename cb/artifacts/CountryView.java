@@ -7,6 +7,7 @@ import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
 import cb.interfaces.IModel;
 import cb.models.Country;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -52,6 +53,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         actionEdit = new javax.swing.JButton();
         actionDelete = new javax.swing.JButton();
         actionSearch = new javax.swing.JButton();
+        sStatus = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(71, 71, 71));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -87,6 +89,10 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         actionSearch.setBackground(new java.awt.Color(0, 102, 204));
         actionSearch.setText("Search");
 
+        sStatus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        sStatus.setForeground(new java.awt.Color(51, 204, 0));
+        sStatus.setText("Status");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,10 +105,15 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
                             .addComponent(jLabel2)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3))
-                        .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(sName)
-                            .addComponent(sOption, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(sName)
+                                    .addComponent(sOption, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(sStatus))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 132, Short.MAX_VALUE)
                         .addComponent(actionAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -118,7 +129,9 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(sStatus))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -143,6 +156,8 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         country.setConnection((ConectionDB) conection);
         country.setName(this.sName.getText());
         country.userPressInsert();
+        reloadData();
+        
     }//GEN-LAST:event_actionAddActionPerformed
 
 
@@ -156,6 +171,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField sName;
     private javax.swing.JComboBox sOption;
+    private javax.swing.JLabel sStatus;
     // End of variables declaration//GEN-END:variables
 
     public void setDelegate(IMainViewDelegate delegate) {
@@ -181,5 +197,15 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
     public void setConection(IModel conection) {
         this.conection = conection;
+    }
+    
+    private void reloadData(){
+        Country country = (Country) model;
+        country.reloadData();
+        ArrayList<Country> listCountry = country.getListCountry();
+        sOption.removeAllItems();
+        for(Country c : listCountry){
+            sOption.addItem(c.getName());
+        }
     }
 }
