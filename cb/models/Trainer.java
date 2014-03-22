@@ -7,7 +7,12 @@
 package cb.models;
 
 import cb.bussiness.BaseModel;
+import cb.delegates.IModelDelegate;
 import cb.interfaces.IModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -21,11 +26,12 @@ import cb.interfaces.IModel;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Trainer extends BaseModel implements IModel{
+public class Trainer extends BaseModel implements IModel, IModelDelegate{
     private int id;
     private String name;
     private String initialDate;
     private String finalizeDate;
+    private ArrayList<Trainer> listTrainer;
 
     public int getId() {
         return id;
@@ -57,5 +63,60 @@ public class Trainer extends BaseModel implements IModel{
 
     public void setFinalizeDate(String finalizeDate) {
         this.finalizeDate = finalizeDate;
+    }
+
+    @Override
+    public void userPressInsert() {
+        String query = "insert into entrenador values ("
+                + "null, "
+                + "'"+name+"', "
+                + "'"+initialDate+"', "
+                + "'"+finalizeDate+"' "
+                + ")";
+        System.out.println(query);
+        super.insertItem(query);
+    }
+
+    @Override
+    public void userPressDelete() {
+        String query = "delete from entrenador where identrenador = "+id;
+        super.deleteITem(query);
+    }
+
+    @Override
+    public void userPressAlter() {
+        
+    }
+
+    @Override
+    public void userPressSearch() {
+        
+    }
+
+    @Override
+    public void reloadData() {
+        try {
+            super.getAllITems("Select * from pais");
+            ResultSet resultSet = super.getRs();
+            setListTrainer(new ArrayList<Trainer>());
+            while(resultSet.next()){
+               Trainer  trainer = new Trainer();
+               trainer.setId(resultSet.getInt(1));
+               trainer.setName(resultSet.getString(2));
+               trainer.setInitialDate(resultSet.getString(3));
+               trainer.setFinalizeDate(resultSet.getString(4));
+               getListTrainer().add(trainer);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public ArrayList<Trainer> getListTrainer() {
+        return this.listTrainer;
+    }
+
+    private void setListTrainer(ArrayList<Trainer> arrayList) {
+        
     }
 }
