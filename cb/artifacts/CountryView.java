@@ -4,6 +4,8 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  *
@@ -17,7 +19,7 @@ import cb.interfaces.IArtifact;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class CountryView extends javax.swing.JPanel implements IArtifact {
+public class CountryView extends javax.swing.JPanel implements IArtifact, Observer{
 
     private IMainViewDelegate delegate;
     /**
@@ -140,5 +142,10 @@ public class CountryView extends javax.swing.JPanel implements IArtifact {
 
     public void setDelegate(IMainViewDelegate delegate) {
         this.delegate = delegate;
+    }
+
+    @Override
+    public void update(Observable o, Object o1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
