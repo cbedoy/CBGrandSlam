@@ -96,7 +96,7 @@ public class main {
         //MainView
         MainView mainView = new MainView();
         mainView.setViewConecctor(viewConecctor);
-        
+        mainView.setModelConnector(modelConnector);
         System.out.println(System.currentTimeMillis()-initial+" milisegs");
     }
 }
