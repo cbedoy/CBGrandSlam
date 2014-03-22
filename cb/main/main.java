@@ -15,7 +15,7 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
-import cb.bussinessTest.ConectionDB;
+import cb.bussiness.ConectionDB;
 import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.interfaces.IArtifact;

@@ -6,7 +6,7 @@
 
 package cb.models;
 
-import cb.bussinessTest.BaseModel;
+import cb.bussiness.BaseModel;
 import cb.interfaces.IModel;
 
 /**
