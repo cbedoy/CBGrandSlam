@@ -37,7 +37,7 @@ public abstract class BaseModel implements IModel, IBussiness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        this.connection.closeConnection();
+        
         
     }
 
@@ -48,7 +48,7 @@ public abstract class BaseModel implements IModel, IBussiness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        this.connection.closeConnection();
+        
     }
 
     @Override
@@ -58,7 +58,7 @@ public abstract class BaseModel implements IModel, IBussiness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        this.connection.closeConnection();
+        
     }
 
     @Override
@@ -68,7 +68,7 @@ public abstract class BaseModel implements IModel, IBussiness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        this.connection.closeConnection();
+        
     }
 
     @Override
@@ -78,7 +78,7 @@ public abstract class BaseModel implements IModel, IBussiness{
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        this.connection.closeConnection();
+        
     }
 
     public ConectionDB getConnection() {
