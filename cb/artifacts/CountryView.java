@@ -26,7 +26,7 @@ import java.util.Observer;
 public class CountryView extends javax.swing.JPanel implements IArtifact, Observer{
 
     private IMainViewDelegate delegate;
-    private IModel model;
+    private Country currentModel;
     private ArrayList<Country> data;
     /**
      * Creates new form CountryView
@@ -167,7 +167,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
     private void actionAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAddActionPerformed
         // TODO add your handling code here:
-        Country country = (Country) model;
+        Country country = currentModel;
         country.setName(this.sName.getText());
         country.userPressInsert();
         country.reloadData();
@@ -177,7 +177,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
     private void actionDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionDeleteActionPerformed
         // TODO add your handling code here:
-        Country country = (Country)model;
+        Country country = currentModel;
         Country currentCountry = data.get(sOption.getSelectedIndex());
         country.setName(currentCountry.getName());
         country.setId(currentCountry.getId());
@@ -190,7 +190,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
     private void actionEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionEditActionPerformed
         // TODO add your handling code here:
-        Country country = (Country) model;
+        Country country = currentModel;
         country.setName(this.sName.getText());
         country.userPressAlter();
         country.reloadData();
@@ -225,16 +225,16 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
     }
 
     public IModel getModel() {
-        return model;
+        return currentModel;
     }
 
     public void setModel(IModel model) {
-        this.model = model;
+        this.currentModel = (Country) model;
     }
 
    
     public void reloadData(){
-        Country country = (Country) model;
+        Country country = currentModel;
         country.reloadData();
         data = country.getListCountry();
         sOption.removeAllItems();
