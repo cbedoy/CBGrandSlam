@@ -47,23 +47,24 @@ import cb.views.*;
 public class main {
     public static void main(String[]cbedoy){
         long initial = System.currentTimeMillis();
-            
-        Splash splash = new Splash();
+        //Splash    
+        Splash      splash =            new Splash();
         splash.setVisible(true);
+        
         //Artifacts 
         
-        IArtifact awardView = new AwardView();
-        IArtifact countryView = new CountryView();
-        IArtifact gameView = new GameView();
-        IArtifact tournamentView = new TournamentView();
-        IArtifact locationView = new LocationView();
-        IArtifact nationalityView  = new NationalityView();
-        IArtifact playerView = new PlayerView();
-        IArtifact refereeView = new RefereeView();
-        IArtifact trainerView = new TrainerView();
+        IArtifact   awardView =         new AwardView();
+        IArtifact   countryView =       new CountryView();
+        IArtifact   gameView =          new GameView();
+        IArtifact   tournamentView =    new TournamentView();
+        IArtifact   locationView =      new LocationView();
+        IArtifact   nationalityView  =  new NationalityView();
+        IArtifact   playerView =        new PlayerView();
+        IArtifact   refereeView =       new RefereeView();
+        IArtifact   trainerView =       new TrainerView();
         
         //ViewConnector
-        ViewConnector viewConecctor = new ViewConnector();
+        ViewConnector viewConecctor =   new ViewConnector();
         viewConecctor.setAwardView(awardView);
         viewConecctor.setCountryView(countryView);
         viewConecctor.setGameView(gameView);

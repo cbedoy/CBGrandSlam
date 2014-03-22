@@ -40,8 +40,8 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private final int       heightView    = 300;
     private final int       posX          = 22;
     private final int       posY          = 22;
-    private ViewConnector viewConecctor;
-    private ModelConnector modelConnector;
+    private ViewConnector   viewConecctor;
+    private ModelConnector  modelConnector;
     /**
      * Creates new form MainView
      */
@@ -407,5 +407,10 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
 
     public void setModelConnector(ModelConnector modelConnector) {
         this.modelConnector = modelConnector;
+    }
+
+    @Override
+    public void reloadAllData() {
+       
     }
 }

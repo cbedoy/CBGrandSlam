@@ -33,6 +33,8 @@ public class ViewConnector extends Observable{
     private IArtifact RefereeView;
     private IArtifact TrainerView;
 
+    private 
+    
     public IArtifact getAwardView() {
         return AwardView;
     }
