@@ -41,11 +41,11 @@
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="sCategory1" max="32767" attributes="0"/>
-                          <Component id="sPlayer" alignment="0" pref="346" max="32767" attributes="0"/>
-                          <Component id="sTournement" alignment="0" max="32767" attributes="0"/>
-                          <Component id="sCategory" alignment="0" max="32767" attributes="0"/>
-                          <Component id="sAmount" alignment="0" max="32767" attributes="0"/>
+                          <Component id="sAmount" max="32767" attributes="0"/>
+                          <Component id="sNationality" alignment="0" pref="346" max="32767" attributes="0"/>
+                          <Component id="sTrainer" alignment="0" max="32767" attributes="0"/>
+                          <Component id="sAge" alignment="0" max="32767" attributes="0"/>
+                          <Component id="sName" alignment="0" max="32767" attributes="0"/>
                           <Component id="sOption" alignment="1" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -77,26 +77,26 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="sAmount" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="sName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="sCategory" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="sAge" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="sCategory1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="sAmount" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="sTournement" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="sTrainer" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="sPlayer" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="sNationality" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -123,9 +123,9 @@
         <Property name="text" type="java.lang.String" value="Trainer"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sCategory">
+    <Component class="javax.swing.JTextField" name="sAge">
     </Component>
-    <Component class="javax.swing.JComboBox" name="sTournement">
+    <Component class="javax.swing.JComboBox" name="sTrainer">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -159,7 +159,7 @@
         <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sAmount">
+    <Component class="javax.swing.JTextField" name="sName">
     </Component>
     <Component class="javax.swing.JButton" name="actionAdd">
       <Properties>
@@ -168,6 +168,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actionAddActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="actionEdit">
       <Properties>
@@ -207,7 +210,7 @@
         <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="sPlayer">
+    <Component class="javax.swing.JComboBox" name="sNationality">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -250,7 +253,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sCategory1">
+    <Component class="javax.swing.JTextField" name="sAmount">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
