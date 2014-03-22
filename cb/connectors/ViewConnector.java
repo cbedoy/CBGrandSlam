@@ -38,7 +38,6 @@ public class ViewConnector extends Observable{
     }
 
     public void setAwardView(IArtifact AwardView) {
-        this.addObserver((Observer) AwardView);
         this.AwardView = AwardView;
     }
 
