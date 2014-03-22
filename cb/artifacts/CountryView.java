@@ -177,7 +177,12 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
     private void actionDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionDeleteActionPerformed
         // TODO add your handling code here:
-        Country country = data.get(sOption.getSelectedIndex());
+        Country country = (Country)model;
+        Country currentCountry = data.get(sOption.getSelectedIndex());
+        country.setName(currentCountry.getName());
+        country.setId(currentCountry.getId());
+        
+        
         country.userPressDelete();
         country.reloadData();
         reloadData();
