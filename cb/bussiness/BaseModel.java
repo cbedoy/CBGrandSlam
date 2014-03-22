@@ -21,9 +21,9 @@ import java.sql.SQLException;
  */
 public abstract class BaseModel implements IModel, IBussiness{
 
-    protected  ConectionDB connection;
-    protected  ResultSet   rs;
-    protected  boolean     status;
+    private  ConectionDB connection;
+    private  ResultSet   rs;
+    private  boolean     status;
     
     public BaseModel(){
             

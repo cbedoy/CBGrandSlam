@@ -98,4 +98,9 @@ public class Award extends BaseModel implements IModel, IModelDelegate{
     public void userPressSearch() {
         
     }
+
+    @Override
+    public void reloadData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

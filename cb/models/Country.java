@@ -9,6 +9,11 @@ package cb.models;
 import cb.bussiness.BaseModel;
 import cb.delegates.IModelDelegate;
 import cb.interfaces.IModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,6 +30,7 @@ import cb.interfaces.IModel;
 public class Country extends BaseModel implements IModel, IModelDelegate{
     private int id;
     private String name;
+    private ArrayList<Country> listCountry;
 
     public int getId() {
         return id;
@@ -54,17 +60,46 @@ public class Country extends BaseModel implements IModel, IModelDelegate{
 
     @Override
     public void userPressDelete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void userPressAlter() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void userPressSearch() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+    }
+
+    @Override
+    public void reloadData() {
+        try {
+            super.getAllITems("Select * from pais");
+            ResultSet resultSet = super.getRs();
+            setListCountry(new ArrayList<Country>());
+            while(resultSet.next()){
+               Country  country = new Country();
+               country.setId(resultSet.getInt(1));
+               country.setName(resultSet.getString(2));
+               getListCountry().add(country);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
     
+
+    public ArrayList<Country> getListCountry() {
+        return listCountry;
+    }
+
+    public void setListCountry(ArrayList<Country> listCountry) {
+        this.listCountry = listCountry;
+    }
+    
+    private boolean getStatus(){
+        return super.isStatus();
+    }
 }
