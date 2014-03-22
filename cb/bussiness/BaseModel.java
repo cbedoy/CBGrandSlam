@@ -32,6 +32,8 @@ public abstract class BaseModel implements IModel, IBussiness{
  
     @Override
     public void getAllITems(String query) {
+        System.out.println(getConnection());
+        System.out.println(getConnection().getSt());
         try {
             this.setRs(getConnection().getSt().executeQuery(query));
         } catch (SQLException ex) {
@@ -53,10 +55,14 @@ public abstract class BaseModel implements IModel, IBussiness{
 
     @Override
     public void deleteITem(String query) {
+        
+        System.out.println(getConnection());
+        System.out.println(getConnection().getSt());
+        
         try {
             this.setStatus(getConnection().getSt().execute(query));
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println(ex.getMessage());
         }
         
     }

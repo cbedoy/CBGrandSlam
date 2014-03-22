@@ -60,11 +60,14 @@ public class Country extends BaseModel implements IModel, IModelDelegate{
 
     @Override
     public void userPressDelete() {
-        
+        String query = "delete from pais where idpais = "+id;
+        super.deleteITem(query);
     }
 
     @Override
     public void userPressAlter() {
+        String query = "update pais set nombre = '"+name+"'";
+        super.editITem(query);
         
     }
 

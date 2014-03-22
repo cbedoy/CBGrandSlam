@@ -8,8 +8,6 @@ import cb.interfaces.IArtifact;
 import cb.interfaces.IModel;
 import cb.models.Country;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -30,7 +28,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
     private IMainViewDelegate delegate;
     private IModel model;
     private IModel conection;
-    private Map<Integer, Country> data;
+    private ArrayList<Country> data;
     /**
      * Creates new form CountryView
      */
@@ -85,6 +83,11 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
         actionEdit.setBackground(new java.awt.Color(255, 153, 0));
         actionEdit.setText("Edit");
+        actionEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionEditActionPerformed(evt);
+            }
+        });
 
         actionDelete.setBackground(new java.awt.Color(255, 0, 0));
         actionDelete.setText("Delete");
@@ -96,6 +99,11 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
 
         actionSearch.setBackground(new java.awt.Color(0, 102, 204));
         actionSearch.setText("Search");
+        actionSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionSearchActionPerformed(evt);
+            }
+        });
 
         sStatus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         sStatus.setForeground(new java.awt.Color(51, 204, 0));
@@ -164,13 +172,31 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         country.setConnection((ConectionDB) conection);
         country.setName(this.sName.getText());
         country.userPressInsert();
+        country.reloadData();
         reloadData();
         
     }//GEN-LAST:event_actionAddActionPerformed
 
     private void actionDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionDeleteActionPerformed
         // TODO add your handling code here:
+        Country country = data.get(sOption.getSelectedIndex());
+        country.userPressDelete();
+        country.reloadData();
+        reloadData();
     }//GEN-LAST:event_actionDeleteActionPerformed
+
+    private void actionEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionEditActionPerformed
+        // TODO add your handling code here:
+        Country country = (Country) model;
+        country.setName(this.sName.getText());
+        country.userPressAlter();
+        country.reloadData();
+        reloadData();
+    }//GEN-LAST:event_actionEditActionPerformed
+
+    private void actionSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actionSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -211,15 +237,14 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         this.conection = conection;
     }
     
-    private void reloadData(){
+    public void reloadData(){
         Country country = (Country) model;
+        country.setConnection((ConectionDB) conection);
         country.reloadData();
-        ArrayList<Country> listCountry = country.getListCountry();
-        data = new HashMap<>();
+        data = country.getListCountry();
         sOption.removeAllItems();
-        for(Country c : listCountry){
+        for(Country c : data){
             sOption.addItem(c.getName());
-            data.put(c.getId(), c);
         }
     }
 }
