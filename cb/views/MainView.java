@@ -65,7 +65,6 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         jMenu5 = new javax.swing.JMenu();
         actionReload = new javax.swing.JMenuItem();
         actionAbout = new javax.swing.JMenuItem();
-        actionExit = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         optionAward = new javax.swing.JMenuItem();
         optionCountry = new javax.swing.JMenuItem();
@@ -103,15 +102,12 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         jMenu5.add(actionReload);
 
         actionAbout.setText("About");
-        jMenu5.add(actionAbout);
-
-        actionExit.setText("Exit");
-        actionExit.addActionListener(new java.awt.event.ActionListener() {
+        actionAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actionExitActionPerformed(evt);
+                actionAboutActionPerformed(evt);
             }
         });
-        jMenu5.add(actionExit);
+        jMenu5.add(actionAbout);
 
         jMenuBar1.add(jMenu5);
 
@@ -316,6 +312,10 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         container.revalidate();
     }//GEN-LAST:event_optionTrainerActionPerformed
 
+    private void actionAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAboutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actionAboutActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -353,7 +353,6 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem actionAbout;
-    private javax.swing.JMenuItem actionExit;
     private javax.swing.JMenuItem actionReload;
     private javax.swing.JPanel container;
     private javax.swing.JMenu jMenu1;
