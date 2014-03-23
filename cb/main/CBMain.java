@@ -47,7 +47,7 @@ public class CBMain {
     public static void main(String[]cbedoy){
         long initial = System.currentTimeMillis();
         //Splash    
-        Splash      splash =            new Splash();
+        CBSplashView      splash =            new CBSplashView();
         splash.setVisible(true);
         
         //Artifacts 
@@ -113,47 +113,24 @@ public class CBMain {
         modelConnector.setReferee(refereeModel);
         modelConnector.setTournament(tournamentModel);
         modelConnector.setTrainer(trainerModel);
-    
-         //Observers views
-        /*
-        modelConnector.addObserver(awardView);
-        modelConnector.addObserver(countryView);
-        modelConnector.addObserver(gameView);
-        modelConnector.addObserver(locationView);
-        modelConnector.addObserver(nationalityView);
-        modelConnector.addObserver(playerView);
-        modelConnector.addObserver(refereeView);
-        modelConnector.addObserver(tournamentView);
-        modelConnector.addObserver(trainerView);
-        
-        //Observers model
-        modelConnector.addObserver(awardModel);
-        modelConnector.addObserver(countryModel);
-        modelConnector.addObserver(gameModel);
-        modelConnector.addObserver(locationModel);
-        modelConnector.addObserver(nationalityModel);
-        modelConnector.addObserver(playerModel);
-        modelConnector.addObserver(refereeModel);
-        modelConnector.addObserver(tournamentModel);
-        modelConnector.addObserver(trainerModel);
-        
-        modelConnector.notifyObservers();
-        
-        
-        System.out.println(modelConnector.countObservers());
-        
-        */
-        
-        CBManagerObserver observer = new CBManagerObserver();
-        observer.addObserver(awardModel);
-        observer.addObserver(countryModel);
+          
+        CBManagerObserver manager = new CBManagerObserver();
+        manager.addObserver(awardModel);
+        manager.addObserver(countryModel);
+        manager.addObserver(gameModel);
+        manager.addObserver(locationModel);
+        manager.addObserver(nationalityModel);
+        manager.addObserver(playerModel);
+        manager.addObserver(refereeModel);
+        manager.addObserver(tournamentModel);
+        manager.addObserver(trainerModel);
         
         
         //MainView
-        MainView mainView = new MainView();
+        CBMainView mainView = new CBMainView();
         mainView.setViewConecctor(viewConecctor);
         mainView.setModelConnector(modelConnector);
-        mainView.setManagerObserver(observer);
+        mainView.setManagerObserver(manager);
         splash.dispose();
 
         

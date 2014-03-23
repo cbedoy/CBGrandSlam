@@ -34,7 +34,7 @@ import javax.swing.JPanel;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class MainView extends javax.swing.JFrame implements ICBMainViewDelegate{
+public class CBMainView extends javax.swing.JFrame implements ICBMainViewDelegate{
 
    
     private final int       widthView     = 500;
@@ -47,7 +47,7 @@ public class MainView extends javax.swing.JFrame implements ICBMainViewDelegate{
     /**
      * Creates new form MainView
      */
-    public MainView() {
+    public CBMainView() {
         initComponents();
         setVisible(true);
         setLocationRelativeTo(null);
@@ -341,20 +341,20 @@ public class MainView extends javax.swing.JFrame implements ICBMainViewDelegate{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBMainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBMainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBMainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBMainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainView().setVisible(true);
+                new CBMainView().setVisible(true);
             }
         });
     }
