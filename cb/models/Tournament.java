@@ -30,11 +30,11 @@ import java.util.Observer;
  * 17-mar-2014 - 22:22:34
  */
 public class Tournament extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
-    private int id;
-    private String name;
-    private String date;
-    private Country country;
-    private ArrayList<Tournament> listTournament;
+    private int                     id;
+    private String                  name;
+    private String                  date;
+    private Country                 country;
+    private ArrayList<Tournament>   listTournament;
 
     public int getId() {
         return id;
