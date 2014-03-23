@@ -1,7 +1,4 @@
-package cb.bussiness;
-
-import java.util.Observable;
-import java.util.Observer;
+package cb.interfaces;
 
 /**
  *
@@ -13,12 +10,9 @@ import java.util.Observer;
  * Github:          https://github.com/cbedoy
  * WebSite:         http://cbedoy.github.io/
  *
- * 22-mar-2014 - 15:19:36
+ * 23-mar-2014 - 11:38:07
  */
 
-public class ViewObserver extends Observable{
-
-    public ViewObserver(){
-        
-    }
+public interface ICBObserver {
+    public void reloadData();
 }

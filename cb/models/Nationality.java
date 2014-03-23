@@ -7,7 +7,11 @@
 package cb.models;
 
 import cb.bussiness.BaseModel;
+import cb.delegates.IModelDelegate;
+import cb.interfaces.ICBObserver;
 import cb.interfaces.IModel;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  *
@@ -21,7 +25,7 @@ import cb.interfaces.IModel;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Nationality extends BaseModel implements IModel{
+public class Nationality extends BaseModel implements IModel, IModelDelegate, ICBObserver{
     private int id;
     private String name;
 
@@ -40,4 +44,31 @@ public class Nationality extends BaseModel implements IModel{
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public void userPressInsert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void userPressDelete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void userPressAlter() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void userPressSearch() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void reloadData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 }

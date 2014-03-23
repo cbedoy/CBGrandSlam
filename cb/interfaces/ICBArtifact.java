@@ -4,9 +4,7 @@
  * and open the template in the editor.
  */
 
-package cb.delegates;
-
-import cb.interfaces.ICBArtifact;
+package cb.interfaces;
 
 /**
  *
@@ -20,8 +18,6 @@ import cb.interfaces.ICBArtifact;
  *
  * 17-mar-2014 - 22:22:34
  */
-public interface IMainViewDelegate {
-    public void removeView(ICBArtifact artifact);
+public interface ICBArtifact {
     
-    public void reloadAllData();
 }

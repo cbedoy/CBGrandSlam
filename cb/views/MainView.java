@@ -15,11 +15,12 @@ import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TournamentView;
 import cb.artifacts.TrainerView;
-import cb.bussiness.ViewObserver;
+import cb.bussiness.CBObserver;
+import cb.bussiness.ModelObserver;
 import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
-import cb.interfaces.IArtifact;
+import cb.interfaces.ICBArtifact;
 import cb.interfaces.IModel;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
@@ -45,7 +46,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private final int       posY          = 22;
     private ViewConnector   viewConecctor;
     private ModelConnector  modelConnector;
-    private ViewObserver    viewObserver;
+    private CBObserver      managerObserver;
     /**
      * Creates new form MainView
      */
@@ -99,6 +100,11 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         actionReload.setText("Reload");
+        actionReload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionReloadActionPerformed(evt);
+            }
+        });
         jMenu5.add(actionReload);
 
         actionAbout.setText("About");
@@ -316,6 +322,11 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         // TODO add your handling code here:
     }//GEN-LAST:event_actionAboutActionPerformed
 
+    private void actionReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionReloadActionPerformed
+        // TODO add your handling code here:
+        managerObserver.nofityAllObservers();
+    }//GEN-LAST:event_actionReloadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -371,7 +382,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void removeView(IArtifact artifact) {
+    public void removeView(ICBArtifact artifact) {
         
         
         switch(artifact.getClass().getName()){
@@ -424,11 +435,9 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
        
     }
 
-    public ViewObserver getViewObserver() {
-        return viewObserver;
+    public void setManagerObserver(CBObserver managerObserver) {
+        this.managerObserver = managerObserver;
     }
 
-    public void setViewObserver(ViewObserver viewObserver) {
-        this.viewObserver = viewObserver;
-    }
+    
 }

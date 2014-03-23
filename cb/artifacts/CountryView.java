@@ -4,7 +4,7 @@ package cb.artifacts;
 
 import cb.bussiness.ConectionDB;
 import cb.delegates.IMainViewDelegate;
-import cb.interfaces.IArtifact;
+import cb.interfaces.ICBArtifact;
 import cb.interfaces.IModel;
 import cb.models.Country;
 import java.util.ArrayList;
@@ -23,12 +23,11 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class CountryView extends javax.swing.JPanel implements IArtifact, Observer{
+public class CountryView extends javax.swing.JPanel implements ICBArtifact{
 
     private IMainViewDelegate   delegate;
     private Country             currentModel;
     private ArrayList<Country>  data;
-
     public CountryView() {
         initComponents();
     }
@@ -210,10 +209,7 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
         this.delegate = delegate;
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
-       
-    }
+
 
     public IModel getModel() {
         return currentModel;

@@ -6,8 +6,8 @@
 
 package cb.connectors;
 
-import cb.bussiness.ViewObserver;
-import cb.interfaces.IArtifact;
+import cb.bussiness.ModelObserver;
+import cb.interfaces.ICBArtifact;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -24,90 +24,86 @@ import java.util.Observer;
  * 17-mar-2014 - 22:22:34
  */
 public class ViewConnector extends Observable{
-    private IArtifact AwardView;
-    private IArtifact CountryView;
-    private IArtifact GameView;
-    private IArtifact TournamentView;
-    private IArtifact LocationView;
-    private IArtifact NationalityView;
-    private IArtifact PlayerView;
-    private IArtifact RefereeView;
-    private IArtifact TrainerView;
-    
-    
-    
-    public IArtifact getAwardView() {
+    private ICBArtifact AwardView;
+    private ICBArtifact CountryView;
+    private ICBArtifact GameView;
+    private ICBArtifact LocationView;
+    private ICBArtifact NationalityView;
+    private ICBArtifact PlayerView;
+    private ICBArtifact RefereeView;
+    private ICBArtifact TournamentView;
+    private ICBArtifact TrainerView;
+
+    public ICBArtifact getAwardView() {
         return AwardView;
     }
 
-    public void setAwardView(IArtifact AwardView) {
+    public void setAwardView(ICBArtifact AwardView) {
         this.AwardView = AwardView;
     }
 
-    public IArtifact getCountryView() {
+    public ICBArtifact getCountryView() {
         return CountryView;
     }
 
-    public void setCountryView(IArtifact CountryView) {
+    public void setCountryView(ICBArtifact CountryView) {
         this.CountryView = CountryView;
     }
 
-    public IArtifact getGameView() {
+    public ICBArtifact getGameView() {
         return GameView;
     }
 
-    public void setGameView(IArtifact GameView) {
+    public void setGameView(ICBArtifact GameView) {
         this.GameView = GameView;
     }
 
-
-
-    public IArtifact getLocationView() {
+    public ICBArtifact getLocationView() {
         return LocationView;
     }
 
-    public void setLocationView(IArtifact LocationView) {
+    public void setLocationView(ICBArtifact LocationView) {
         this.LocationView = LocationView;
     }
 
-    public IArtifact getNationalityView() {
+    public ICBArtifact getNationalityView() {
         return NationalityView;
     }
 
-    public void setNationalityView(IArtifact NationalityView) {
+    public void setNationalityView(ICBArtifact NationalityView) {
         this.NationalityView = NationalityView;
     }
 
-    public IArtifact getPlayerView() {
+    public ICBArtifact getPlayerView() {
         return PlayerView;
     }
 
-    public void setPlayerView(IArtifact PlayerView) {
+    public void setPlayerView(ICBArtifact PlayerView) {
         this.PlayerView = PlayerView;
     }
 
-    public IArtifact getRefereeView() {
+    public ICBArtifact getRefereeView() {
         return RefereeView;
     }
 
-    public void setRefereeView(IArtifact RefereeView) {
+    public void setRefereeView(ICBArtifact RefereeView) {
         this.RefereeView = RefereeView;
     }
 
-    public IArtifact getTrainerView() {
-        return TrainerView;
-    }
-
-    public void setTrainerView(IArtifact TrainerView) {
-        this.TrainerView = TrainerView;
-    }
-
-    public IArtifact getTournamentView() {
+    public ICBArtifact getTournamentView() {
         return TournamentView;
     }
 
-    public void setTournamentView(IArtifact TournamentView) {
+    public void setTournamentView(ICBArtifact TournamentView) {
         this.TournamentView = TournamentView;
+    }
+
+    public ICBArtifact getTrainerView() {
+        return TrainerView;
+    }
+
+    public void setTrainerView(ICBArtifact TrainerView) {
+        this.TrainerView = TrainerView;
     }
 
 

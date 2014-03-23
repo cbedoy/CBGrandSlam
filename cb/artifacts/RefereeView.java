@@ -7,8 +7,9 @@
 package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
-import cb.interfaces.IArtifact;
+import cb.interfaces.ICBArtifact;
 import cb.models.Referee;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -24,10 +25,11 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class RefereeView extends javax.swing.JPanel implements IArtifact, Observer {
+public class RefereeView extends javax.swing.JPanel implements ICBArtifact {
 
-    private IMainViewDelegate delegate;
-    private Referee currentModel;
+    private IMainViewDelegate   delegate;
+    private Referee             currentModel;
+    private ArrayList<Referee>  data;
     /**
      * Creates new form RefereeView
      */
@@ -197,8 +199,4 @@ public class RefereeView extends javax.swing.JPanel implements IArtifact, Observ
         this.delegate = delegate;
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

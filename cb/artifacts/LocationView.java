@@ -7,7 +7,7 @@
 package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
-import cb.interfaces.IArtifact;
+import cb.interfaces.ICBArtifact;
 import cb.models.Country;
 import cb.models.Location;
 import java.util.ArrayList;
@@ -26,11 +26,12 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class LocationView extends javax.swing.JPanel implements IArtifact, Observer {
+public class LocationView extends javax.swing.JPanel implements ICBArtifact {
 
     private IMainViewDelegate   delegate;
     private ArrayList<Country>  listCountry;
     private Location            currentModel;
+    private ArrayList<Location> data;
     /**
      * Creates new form LocationView
      */
@@ -183,8 +184,5 @@ public class LocationView extends javax.swing.JPanel implements IArtifact, Obser
         this.delegate = delegate;
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 }

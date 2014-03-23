@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package cb.main;
-
+//Artifacts 
 import cb.artifacts.AwardView;
 import cb.artifacts.CountryView;
 import cb.artifacts.GameView;
@@ -15,12 +11,13 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
+import cb.bussiness.CBObserver;
+//Bussiness
 import cb.bussiness.ConectionDB;
-import cb.bussiness.ViewObserver;
+//Connectors
 import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
-import cb.interfaces.IArtifact;
-import cb.interfaces.IModel;
+//Models
 import cb.models.Award;
 import cb.models.Country;
 import cb.models.Game;
@@ -30,9 +27,9 @@ import cb.models.Player;
 import cb.models.Referee;
 import cb.models.Tournament;
 import cb.models.Trainer;
-
+//
 import cb.views.*;
-import java.util.Observer;
+
 
 /**
  *
@@ -77,22 +74,6 @@ public class main {
         viewConecctor.setRefereeView(refereeView);
         viewConecctor.setTrainerView(trainerView);
         
-        //Observers
-        ViewObserver viewObserver =         new ViewObserver();
-        viewObserver.addObserver(awardView);
-        viewObserver.addObserver(countryView);
-        viewObserver.addObserver(gameView);
-        viewObserver.addObserver(tournamentView);
-        viewObserver.addObserver(nationalityView);
-        viewObserver.addObserver(playerView);
-        viewObserver.addObserver(refereeView);
-        viewObserver.addObserver(trainerView);
-        
-        
-        
-        
-        
-        
         //Business
         ConectionDB conection = new ConectionDB();
         
@@ -121,7 +102,7 @@ public class main {
         
         
         
-        
+        //ModelConector
         ModelConnector modelConnector = new ModelConnector();
         modelConnector.setAward(awardModel);
         modelConnector.setCountry(countryModel);
@@ -133,14 +114,46 @@ public class main {
         modelConnector.setTournament(tournamentModel);
         modelConnector.setTrainer(trainerModel);
     
+         //Observers views
+        /*
+        modelConnector.addObserver(awardView);
+        modelConnector.addObserver(countryView);
+        modelConnector.addObserver(gameView);
+        modelConnector.addObserver(locationView);
+        modelConnector.addObserver(nationalityView);
+        modelConnector.addObserver(playerView);
+        modelConnector.addObserver(refereeView);
+        modelConnector.addObserver(tournamentView);
+        modelConnector.addObserver(trainerView);
         
+        //Observers model
+        modelConnector.addObserver(awardModel);
+        modelConnector.addObserver(countryModel);
+        modelConnector.addObserver(gameModel);
+        modelConnector.addObserver(locationModel);
+        modelConnector.addObserver(nationalityModel);
+        modelConnector.addObserver(playerModel);
+        modelConnector.addObserver(refereeModel);
+        modelConnector.addObserver(tournamentModel);
+        modelConnector.addObserver(trainerModel);
+        
+        modelConnector.notifyObservers();
+        
+        
+        System.out.println(modelConnector.countObservers());
+        
+        */
+        
+        CBObserver observer = new CBObserver();
+        observer.addObserver(awardModel);
+        observer.addObserver(countryModel);
         
         
         //MainView
         MainView mainView = new MainView();
         mainView.setViewConecctor(viewConecctor);
         mainView.setModelConnector(modelConnector);
-        mainView.setViewObserver(viewObserver);
+        mainView.setManagerObserver(observer);
         splash.dispose();
 
         
