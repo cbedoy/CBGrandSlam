@@ -89,8 +89,12 @@ public class Player extends CBBaseModel implements ICBModel, ICBModelDelegate, I
 
     @Override
     public void userPressInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        String query = ""
+                + "insert into jugador "
+                + "values"
+                + "(null, '"+name+"', "+age+", "+amount+", "+trainer.getId()+", "+nationality.getId()+"    )"
+                + "";
+        super.insertItem(query);    }
 
     @Override
     public void userPressDelete() {

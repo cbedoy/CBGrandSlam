@@ -61,7 +61,12 @@ public class Location extends CBBaseModel implements ICBModel, ICBModelDelegate,
 
     @Override
     public void userPressInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query = ""
+                + "insert into lugar "
+                + "values"
+                + "(null, '"+name+",'   "+country.getId()+"    )"
+                + "";
+        super.insertItem(query);
     }
 
     @Override

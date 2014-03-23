@@ -70,8 +70,12 @@ public class Tournament extends CBBaseModel implements ICBModel, ICBModelDelegat
 
     @Override
     public void userPressInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        String query = ""
+                + "insert into grandslam "
+                + "values"
+                + "(null, '"+name+"', '"+date+"', "+country.getId()+"    )"
+                + "";
+        super.insertItem(query);    }
 
     @Override
     public void userPressDelete() {
