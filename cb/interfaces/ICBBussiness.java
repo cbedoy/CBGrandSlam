@@ -18,7 +18,7 @@ package cb.interfaces;
  *
  * 17-mar-2014 - 22:22:34
  */
-public interface IBussiness {
+public interface ICBBussiness {
     
     public void     getAllITems(String query);
     public void     insertItem(String query);

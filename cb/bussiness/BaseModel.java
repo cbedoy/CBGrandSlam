@@ -2,7 +2,7 @@
 package cb.bussiness;
 
 import cb.bussiness.ConectionDB;
-import cb.interfaces.IBussiness;
+import cb.interfaces.ICBBussiness;
 import cb.interfaces.ICBModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +19,7 @@ import java.sql.SQLException;
  *
  * 17-mar-2014 - 22:22:34
  */
-public abstract class BaseModel implements ICBModel, IBussiness{
+public abstract class BaseModel implements ICBModel, ICBBussiness{
 
     private  ConectionDB connection;
     private  ResultSet   rs;
