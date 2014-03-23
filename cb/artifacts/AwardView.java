@@ -26,8 +26,8 @@ import java.util.Observer;
  */
 public class AwardView extends javax.swing.JPanel implements IArtifact, Observer{
 
-    private IMainViewDelegate delegate;
-    private Award currentModel;
+    private IMainViewDelegate       delegate;
+    private Award                   currentModel;
     private ArrayList<Tournament>   listTournament;
     private ArrayList<Player>       listPlayer;
     private ArrayList<Trainer>      listTrainer;

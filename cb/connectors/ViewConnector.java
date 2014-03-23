@@ -6,7 +6,7 @@
 
 package cb.connectors;
 
-import cb.bussiness.ViewObserver;
+import cb.bussiness.ModelObserver;
 import cb.interfaces.IArtifact;
 import java.util.Observable;
 import java.util.Observer;

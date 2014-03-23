@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package cb.main;
-
+//Artifacts 
 import cb.artifacts.AwardView;
 import cb.artifacts.CountryView;
 import cb.artifacts.GameView;
@@ -15,12 +11,13 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
+//Bussiness
 import cb.bussiness.ConectionDB;
-import cb.bussiness.ViewObserver;
+import cb.bussiness.ModelObserver;
+//Connectors
 import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
-import cb.interfaces.IArtifact;
-import cb.interfaces.IModel;
+//Models
 import cb.models.Award;
 import cb.models.Country;
 import cb.models.Game;
@@ -30,9 +27,9 @@ import cb.models.Player;
 import cb.models.Referee;
 import cb.models.Tournament;
 import cb.models.Trainer;
-
+//
 import cb.views.*;
-import java.util.Observer;
+
 
 /**
  *
@@ -78,7 +75,7 @@ public class main {
         viewConecctor.setTrainerView(trainerView);
         
         //Observers
-        ViewObserver viewObserver =         new ViewObserver();
+        ModelObserver viewObserver =         new ModelObserver();
         viewObserver.addObserver(awardView);
         viewObserver.addObserver(countryView);
         viewObserver.addObserver(gameView);
@@ -90,7 +87,7 @@ public class main {
         
         
         
-        
+        System.out.println(viewObserver.countObservers());
         
         
         //Business

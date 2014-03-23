@@ -15,7 +15,7 @@ import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TournamentView;
 import cb.artifacts.TrainerView;
-import cb.bussiness.ViewObserver;
+import cb.bussiness.ModelObserver;
 import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
@@ -45,7 +45,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private final int       posY          = 22;
     private ViewConnector   viewConecctor;
     private ModelConnector  modelConnector;
-    private ViewObserver    viewObserver;
+    private ModelObserver    viewObserver;
     /**
      * Creates new form MainView
      */
@@ -99,6 +99,11 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         actionReload.setText("Reload");
+        actionReload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actionReloadActionPerformed(evt);
+            }
+        });
         jMenu5.add(actionReload);
 
         actionAbout.setText("About");
@@ -316,6 +321,12 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         // TODO add your handling code here:
     }//GEN-LAST:event_actionAboutActionPerformed
 
+    private void actionReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionReloadActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_actionReloadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -424,11 +435,11 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
        
     }
 
-    public ViewObserver getViewObserver() {
+    public ModelObserver getViewObserver() {
         return viewObserver;
     }
 
-    public void setViewObserver(ViewObserver viewObserver) {
+    public void setViewObserver(ModelObserver viewObserver) {
         this.viewObserver = viewObserver;
     }
 }

@@ -16,9 +16,9 @@ import java.util.Observer;
  * 22-mar-2014 - 15:19:36
  */
 
-public class ViewObserver extends Observable{
+public class ModelObserver extends Observable{
 
-    public ViewObserver(){
+    public ModelObserver(){
         
     }
 }
