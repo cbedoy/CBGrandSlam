@@ -90,9 +90,9 @@ public class Game extends CBBaseModel implements ICBModel, ICBModelDelegate,  IC
     @Override
     public void userPressInsert() {
         String query = ""
-                + "insert into premio "
+                + "insert into partido "
                 + "values"
-                + "(null, "+modality+", '"+referee.getId()+"', "+player.getId()+", "+trainer.getId()+", "+tournament.getId()+"    )"
+                + "(null, '"+modality+"', "+referee.getId()+", "+player.getId()+", "+trainer.getId()+", "+tournament.getId()+"    )"
                 + "";
         super.insertItem(query);
     
