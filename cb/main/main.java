@@ -74,22 +74,6 @@ public class main {
         viewConecctor.setRefereeView(refereeView);
         viewConecctor.setTrainerView(trainerView);
         
-        //Observers
-        ModelObserver viewObserver =         new ModelObserver();
-        viewObserver.addObserver(awardView);
-        viewObserver.addObserver(countryView);
-        viewObserver.addObserver(gameView);
-        viewObserver.addObserver(tournamentView);
-        viewObserver.addObserver(nationalityView);
-        viewObserver.addObserver(playerView);
-        viewObserver.addObserver(refereeView);
-        viewObserver.addObserver(trainerView);
-        
-        
-        
-        System.out.println(viewObserver.countObservers());
-        
-        
         //Business
         ConectionDB conection = new ConectionDB();
         
@@ -118,7 +102,7 @@ public class main {
         
         
         
-        
+        //ModelConector
         ModelConnector modelConnector = new ModelConnector();
         modelConnector.setAward(awardModel);
         modelConnector.setCountry(countryModel);
@@ -130,14 +114,35 @@ public class main {
         modelConnector.setTournament(tournamentModel);
         modelConnector.setTrainer(trainerModel);
     
+         //Observers views
         
+        modelConnector.addObserver(awardView);
+        modelConnector.addObserver(countryView);
+        modelConnector.addObserver(gameView);
+        modelConnector.addObserver(locationView);
+        modelConnector.addObserver(nationalityView);
+        modelConnector.addObserver(playerView);
+        modelConnector.addObserver(refereeView);
+        modelConnector.addObserver(tournamentView);
+        modelConnector.addObserver(trainerView);
+        //Observers model
+        modelConnector.addObserver(awardModel);
+        modelConnector.addObserver(countryModel);
+        modelConnector.addObserver(gameModel);
+        modelConnector.addObserver(locationModel);
+        modelConnector.addObserver(nationalityModel);
+        modelConnector.addObserver(playerModel);
+        modelConnector.addObserver(refereeModel);
+        modelConnector.addObserver(tournamentModel);
+        modelConnector.addObserver(trainerModel);
+        
+        System.out.println(modelConnector.countObservers());
         
         
         //MainView
         MainView mainView = new MainView();
         mainView.setViewConecctor(viewConecctor);
         mainView.setModelConnector(modelConnector);
-        mainView.setViewObserver(viewObserver);
         splash.dispose();
 
         

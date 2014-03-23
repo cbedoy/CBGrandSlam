@@ -1,6 +1,8 @@
 package cb.connectors;
 
 import cb.interfaces.IModel;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  *
@@ -15,7 +17,7 @@ import cb.interfaces.IModel;
  * 22-mar-2014 - 11:12:37
  */
 
-public class ModelConnector {
+public class ModelConnector extends Observable{
     private IModel Award;
     private IModel Country;
     private IModel Game;

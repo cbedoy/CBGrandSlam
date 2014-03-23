@@ -12,6 +12,8 @@ import cb.interfaces.IModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -27,7 +29,7 @@ import java.util.logging.Logger;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Country extends BaseModel implements IModel, IModelDelegate{
+public class Country extends BaseModel implements IModel, IModelDelegate, Observer{
     private int id;
     private String name;
     private ArrayList<Country> listCountry;
@@ -104,5 +106,10 @@ public class Country extends BaseModel implements IModel, IModelDelegate{
     
     private boolean getStatus(){
         return super.isStatus();
+    }
+
+    @Override
+    public void update(Observable o, Object o1) {
+        System.out.println("Reload data of country");
     }
 }

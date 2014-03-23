@@ -45,7 +45,6 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     private final int       posY          = 22;
     private ViewConnector   viewConecctor;
     private ModelConnector  modelConnector;
-    private ModelObserver    viewObserver;
     /**
      * Creates new form MainView
      */
@@ -323,8 +322,8 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
 
     private void actionReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionReloadActionPerformed
         // TODO add your handling code here:
-        
-        
+        this.modelConnector.notifyObservers("TEST");
+        System.out.println(this.modelConnector.countObservers());
     }//GEN-LAST:event_actionReloadActionPerformed
 
     /**
@@ -435,11 +434,5 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
        
     }
 
-    public ModelObserver getViewObserver() {
-        return viewObserver;
-    }
-
-    public void setViewObserver(ModelObserver viewObserver) {
-        this.viewObserver = viewObserver;
-    }
+    
 }
