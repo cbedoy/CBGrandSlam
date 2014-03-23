@@ -32,7 +32,7 @@ public class GameView extends javax.swing.JPanel implements IArtifact, Observer 
     private ArrayList<Player>       listPlayer;
     private ArrayList<Trainer>      listTrainer;
     private ArrayList<Tournament>   listTournament;
-
+    private ArrayList<Game>         data;
     /**
      * Creates new form GameView
      */

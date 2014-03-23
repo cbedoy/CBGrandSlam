@@ -28,7 +28,6 @@ public class CountryView extends javax.swing.JPanel implements IArtifact, Observ
     private IMainViewDelegate   delegate;
     private Country             currentModel;
     private ArrayList<Country>  data;
-
     public CountryView() {
         initComponents();
     }

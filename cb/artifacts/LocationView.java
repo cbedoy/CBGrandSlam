@@ -31,6 +31,7 @@ public class LocationView extends javax.swing.JPanel implements IArtifact, Obser
     private IMainViewDelegate   delegate;
     private ArrayList<Country>  listCountry;
     private Location            currentModel;
+    private ArrayList<Location> data;
     /**
      * Creates new form LocationView
      */

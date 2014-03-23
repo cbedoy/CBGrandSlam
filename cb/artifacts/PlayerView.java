@@ -33,6 +33,7 @@ public class PlayerView extends javax.swing.JPanel implements IArtifact, Observe
     private ArrayList<Trainer>      listTrainer;
     private ArrayList<Nationality>  listNationality;
     private Player                  currentModel;
+    private ArrayList<Player>       data;
     /**
      * Creates new form PlayerView
      */

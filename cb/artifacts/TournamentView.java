@@ -29,9 +29,10 @@ import java.util.Observer;
  */
 public class TournamentView extends javax.swing.JPanel implements IArtifact, Observer {
 
-    private IMainViewDelegate   delegate;
-    private ArrayList<Country>  listCountry;
-    private Tournament          currentModel;
+    private IMainViewDelegate       delegate;
+    private ArrayList<Country>      listCountry;
+    private Tournament              currentModel;
+    private ArrayList<Tournament>   data;
     /**
      * Creates new form GrandSlamView
      */

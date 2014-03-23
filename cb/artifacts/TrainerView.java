@@ -30,9 +30,9 @@ import java.util.Observer;
  */
 public class TrainerView extends javax.swing.JPanel implements IArtifact, Observer {
 
-    private IMainViewDelegate delegate;
-    private Trainer currentModel;
-    private ArrayList<Trainer> data;
+    private IMainViewDelegate   delegate;
+    private Trainer             currentModel;
+    private ArrayList<Trainer>  data;
     /**
      * Creates new form TrainerView
      */

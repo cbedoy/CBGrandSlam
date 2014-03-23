@@ -9,6 +9,7 @@ package cb.artifacts;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.IArtifact;
 import cb.models.Referee;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -26,8 +27,9 @@ import java.util.Observer;
  */
 public class RefereeView extends javax.swing.JPanel implements IArtifact, Observer {
 
-    private IMainViewDelegate delegate;
-    private Referee currentModel;
+    private IMainViewDelegate   delegate;
+    private Referee             currentModel;
+    private ArrayList<Referee>  data;
     /**
      * Creates new form RefereeView
      */

@@ -31,6 +31,8 @@ public class AwardView extends javax.swing.JPanel implements IArtifact, Observer
     private ArrayList<Tournament>   listTournament;
     private ArrayList<Player>       listPlayer;
     private ArrayList<Trainer>      listTrainer;
+    private ArrayList<Award>        data;
+    
     /**
      * Creates new form AwardView
      */
