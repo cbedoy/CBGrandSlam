@@ -2,14 +2,11 @@
 
 package cb.artifacts;
 
-import cb.bussiness.ConectionDB;
-import cb.delegates.IMainViewDelegate;
+import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.interfaces.IModel;
+import cb.interfaces.ICBModel;
 import cb.models.Country;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  *
@@ -25,7 +22,7 @@ import java.util.Observer;
  */
 public class CountryView extends javax.swing.JPanel implements ICBArtifact{
 
-    private IMainViewDelegate   delegate;
+    private ICBMainViewDelegate   delegate;
     private Country             currentModel;
     private ArrayList<Country>  data;
     public CountryView() {
@@ -205,17 +202,17 @@ public class CountryView extends javax.swing.JPanel implements ICBArtifact{
     private javax.swing.JLabel sStatus;
     // End of variables declaration//GEN-END:variables
 
-    public void setDelegate(IMainViewDelegate delegate) {
+    public void setDelegate(ICBMainViewDelegate delegate) {
         this.delegate = delegate;
     }
 
 
 
-    public IModel getModel() {
+    public ICBModel getModel() {
         return currentModel;
     }
 
-    public void setModel(IModel model) {
+    public void setModel(ICBModel model) {
         this.currentModel = (Country) model;
     }
 

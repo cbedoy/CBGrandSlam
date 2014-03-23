@@ -18,7 +18,7 @@ package cb.delegates;
  *
  * 17-mar-2014 - 22:22:34
  */
-public interface IModelDelegate {
+public interface ICBModelDelegate {
     
     public void userPressInsert();
     public void userPressDelete();

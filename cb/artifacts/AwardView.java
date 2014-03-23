@@ -2,15 +2,13 @@
 
 package cb.artifacts;
 
-import cb.delegates.IMainViewDelegate;
+import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
 import cb.models.Award;
 import cb.models.Player;
 import cb.models.Tournament;
 import cb.models.Trainer;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  *
@@ -26,7 +24,7 @@ import java.util.Observer;
  */
 public class AwardView extends javax.swing.JPanel implements ICBArtifact{
 
-    private IMainViewDelegate       delegate;
+    private ICBMainViewDelegate       delegate;
     private Award                   currentModel;
     private ArrayList<Tournament>   listTournament;
     private ArrayList<Player>       listPlayer;
@@ -245,7 +243,7 @@ public class AwardView extends javax.swing.JPanel implements ICBArtifact{
     private javax.swing.JComboBox sTrainer;
     // End of variables declaration//GEN-END:variables
 
-    public void setDelegate(IMainViewDelegate delegate) {
+    public void setDelegate(ICBMainViewDelegate delegate) {
         System.out.println("Set delegate");
         this.delegate = delegate;
     }
