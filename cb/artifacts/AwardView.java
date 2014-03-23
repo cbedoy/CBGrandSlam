@@ -24,7 +24,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class AwardView extends javax.swing.JPanel implements ICBArtifact, Observer{
+public class AwardView extends javax.swing.JPanel implements ICBArtifact{
 
     private IMainViewDelegate       delegate;
     private Award                   currentModel;
@@ -250,9 +250,5 @@ public class AwardView extends javax.swing.JPanel implements ICBArtifact, Observ
         this.delegate = delegate;
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
-        
-    
-    }
+
 }

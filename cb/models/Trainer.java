@@ -8,6 +8,7 @@ package cb.models;
 
 import cb.bussiness.BaseModel;
 import cb.delegates.IModelDelegate;
+import cb.interfaces.ICBObserver;
 import cb.interfaces.IModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,7 +29,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Trainer extends BaseModel implements IModel, IModelDelegate, Observer{
+public class Trainer extends BaseModel implements IModel, IModelDelegate, ICBObserver{
     private int id;
     private String name;
     private String initialDate;
@@ -122,8 +123,5 @@ public class Trainer extends BaseModel implements IModel, IModelDelegate, Observ
         
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 }

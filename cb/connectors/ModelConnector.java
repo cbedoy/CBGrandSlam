@@ -17,7 +17,7 @@ import java.util.Observer;
  * 22-mar-2014 - 11:12:37
  */
 
-public class ModelConnector extends Observable{
+public class ModelConnector{
     private IModel Award;
     private IModel Country;
     private IModel Game;

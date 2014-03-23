@@ -26,7 +26,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class LocationView extends javax.swing.JPanel implements ICBArtifact, Observer {
+public class LocationView extends javax.swing.JPanel implements ICBArtifact {
 
     private IMainViewDelegate   delegate;
     private ArrayList<Country>  listCountry;
@@ -184,8 +184,5 @@ public class LocationView extends javax.swing.JPanel implements ICBArtifact, Obs
         this.delegate = delegate;
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 }

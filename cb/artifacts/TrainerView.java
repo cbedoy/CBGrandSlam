@@ -28,7 +28,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class TrainerView extends javax.swing.JPanel implements ICBArtifact, Observer {
+public class TrainerView extends javax.swing.JPanel implements ICBArtifact {
 
     private IMainViewDelegate   delegate;
     private Trainer             currentModel;
@@ -237,10 +237,7 @@ public class TrainerView extends javax.swing.JPanel implements ICBArtifact, Obse
         this.delegate = delegate;
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
     
     public IModel getModel() {
         return currentModel;

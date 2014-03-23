@@ -8,6 +8,7 @@ package cb.models;
 
 import cb.bussiness.BaseModel;
 import cb.delegates.IModelDelegate;
+import cb.interfaces.ICBObserver;
 import cb.interfaces.IModel;
 import java.util.Observable;
 import java.util.Observer;
@@ -24,7 +25,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Referee extends BaseModel implements IModel, IModelDelegate, Observer{
+public class Referee extends BaseModel implements IModel, IModelDelegate, ICBObserver{
     private int id;
     private String name;
     private String nacionality;
@@ -87,8 +88,5 @@ public class Referee extends BaseModel implements IModel, IModelDelegate, Observ
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+
 }

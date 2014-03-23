@@ -11,6 +11,7 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
+import cb.bussiness.CBObserver;
 //Bussiness
 import cb.bussiness.ConectionDB;
 //Connectors
@@ -114,7 +115,7 @@ public class main {
         modelConnector.setTrainer(trainerModel);
     
          //Observers views
-        
+        /*
         modelConnector.addObserver(awardView);
         modelConnector.addObserver(countryView);
         modelConnector.addObserver(gameView);
@@ -141,11 +142,18 @@ public class main {
         
         System.out.println(modelConnector.countObservers());
         
+        */
+        
+        CBObserver observer = new CBObserver();
+        observer.addObserver(awardModel);
+        observer.addObserver(countryModel);
+        
         
         //MainView
         MainView mainView = new MainView();
         mainView.setViewConecctor(viewConecctor);
         mainView.setModelConnector(modelConnector);
+        mainView.setManagerObserver(observer);
         splash.dispose();
 
         

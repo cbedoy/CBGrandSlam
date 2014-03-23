@@ -8,6 +8,7 @@ package cb.models;
 
 import cb.bussiness.BaseModel;
 import cb.delegates.IModelDelegate;
+import cb.interfaces.ICBObserver;
 import cb.interfaces.IModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,7 +30,7 @@ import java.util.logging.Logger;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Country extends BaseModel implements IModel, IModelDelegate, Observer{
+public class Country extends BaseModel implements IModel, IModelDelegate, ICBObserver{
     private int id;
     private String name;
     private ArrayList<Country> listCountry;
@@ -80,6 +81,7 @@ public class Country extends BaseModel implements IModel, IModelDelegate, Observ
 
     @Override
     public void reloadData() {
+        System.out.println("Reload data of country view");
         try {
             super.getAllITems("Select * from pais");
             ResultSet resultSet = super.getRs();
@@ -108,9 +110,5 @@ public class Country extends BaseModel implements IModel, IModelDelegate, Observ
         return super.isStatus();
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
-        
-        System.out.println("Reload data of country");
-    }
+
 }

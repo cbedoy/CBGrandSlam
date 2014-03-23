@@ -23,7 +23,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class CountryView extends javax.swing.JPanel implements ICBArtifact, Observer{
+public class CountryView extends javax.swing.JPanel implements ICBArtifact{
 
     private IMainViewDelegate   delegate;
     private Country             currentModel;
@@ -209,10 +209,7 @@ public class CountryView extends javax.swing.JPanel implements ICBArtifact, Obse
         this.delegate = delegate;
     }
 
-    @Override
-    public void update(Observable o, Object o1) {
-       
-    }
+
 
     public IModel getModel() {
         return currentModel;
