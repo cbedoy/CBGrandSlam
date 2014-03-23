@@ -52,7 +52,13 @@ public class Nationality extends CBBaseModel implements ICBModel, ICBModelDelega
 
     @Override
     public void userPressInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query = ""
+                + "insert into nacionalidad "
+                + "values"
+                + "(null, '"+name+"')"
+                + "";
+        super.insertItem(query);
+    
     }
 
     @Override
