@@ -20,6 +20,7 @@ import cb.connectors.CBModelConnector;
 import cb.connectors.CBViewConnector;
 import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
+import cb.interfaces.ICBModel;
 import javax.swing.JPanel;
 
 /**
@@ -321,7 +322,9 @@ public class CBMainView extends javax.swing.JFrame implements ICBMainViewDelegat
 
     private void actionReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionReloadActionPerformed
         // TODO add your handling code here:
-        managerObserver.nofityAllObservers();
+       refreshViewConecctor();
+       
+       
     }//GEN-LAST:event_actionReloadActionPerformed
 
     /**
@@ -434,6 +437,20 @@ public class CBMainView extends javax.swing.JFrame implements ICBMainViewDelegat
 
     public void setManagerObserver(CBManagerObserver managerObserver) {
         this.managerObserver = managerObserver;
+    }
+
+    private void refreshViewConecctor() {
+        managerObserver.nofityAllObservers();
+        
+        modelConnector.setAward((ICBModel)      managerObserver.getModel(0));
+        modelConnector.setCountry((ICBModel)    managerObserver.getModel(1));
+        modelConnector.setGame((ICBModel)       managerObserver.getModel(2));
+        modelConnector.setLocation((ICBModel)   managerObserver.getModel(3));
+        modelConnector.setNationality((ICBModel)managerObserver.getModel(4));
+        modelConnector.setPlayer((ICBModel)     managerObserver.getModel(5));
+        modelConnector.setReferee((ICBModel)    managerObserver.getModel(6));
+        modelConnector.setTournament((ICBModel) managerObserver.getModel(7));
+        modelConnector.setTrainer((ICBModel)    managerObserver.getModel(8));
     }
 
     
