@@ -19,7 +19,7 @@ import cb.bussiness.ModelObserver;
 import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
-import cb.interfaces.IArtifact;
+import cb.interfaces.ICBArtifact;
 import cb.interfaces.IModel;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
@@ -381,7 +381,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void removeView(IArtifact artifact) {
+    public void removeView(ICBArtifact artifact) {
         
         
         switch(artifact.getClass().getName()){

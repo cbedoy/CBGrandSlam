@@ -110,6 +110,7 @@ public class Country extends BaseModel implements IModel, IModelDelegate, Observ
 
     @Override
     public void update(Observable o, Object o1) {
+        
         System.out.println("Reload data of country");
     }
 }

@@ -6,7 +6,7 @@
 
 package cb.delegates;
 
-import cb.interfaces.IArtifact;
+import cb.interfaces.ICBArtifact;
 
 /**
  *
@@ -21,7 +21,7 @@ import cb.interfaces.IArtifact;
  * 17-mar-2014 - 22:22:34
  */
 public interface IMainViewDelegate {
-    public void removeView(IArtifact artifact);
+    public void removeView(ICBArtifact artifact);
     
     public void reloadAllData();
 }

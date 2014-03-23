@@ -13,7 +13,6 @@ import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
 //Bussiness
 import cb.bussiness.ConectionDB;
-import cb.bussiness.ModelObserver;
 //Connectors
 import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
@@ -125,6 +124,7 @@ public class main {
         modelConnector.addObserver(refereeView);
         modelConnector.addObserver(tournamentView);
         modelConnector.addObserver(trainerView);
+        
         //Observers model
         modelConnector.addObserver(awardModel);
         modelConnector.addObserver(countryModel);
@@ -135,6 +135,9 @@ public class main {
         modelConnector.addObserver(refereeModel);
         modelConnector.addObserver(tournamentModel);
         modelConnector.addObserver(trainerModel);
+        
+        modelConnector.notifyObservers();
+        
         
         System.out.println(modelConnector.countObservers());
         

@@ -7,7 +7,7 @@
 package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
-import cb.interfaces.IArtifact;
+import cb.interfaces.ICBArtifact;
 import cb.models.Country;
 import cb.models.Tournament;
 import java.text.SimpleDateFormat;
@@ -27,7 +27,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class TournamentView extends javax.swing.JPanel implements IArtifact, Observer {
+public class TournamentView extends javax.swing.JPanel implements ICBArtifact, Observer {
 
     private IMainViewDelegate       delegate;
     private ArrayList<Country>      listCountry;

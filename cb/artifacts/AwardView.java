@@ -3,7 +3,7 @@
 package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
-import cb.interfaces.IArtifact;
+import cb.interfaces.ICBArtifact;
 import cb.models.Award;
 import cb.models.Player;
 import cb.models.Tournament;
@@ -24,7 +24,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class AwardView extends javax.swing.JPanel implements IArtifact, Observer{
+public class AwardView extends javax.swing.JPanel implements ICBArtifact, Observer{
 
     private IMainViewDelegate       delegate;
     private Award                   currentModel;
