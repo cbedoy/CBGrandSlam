@@ -31,13 +31,18 @@ import java.util.Observer;
  * 17-mar-2014 - 22:22:34
  */
 public class Player extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
-    private int id;
-    private String name;
-    private int age;
-    private float amount;
-    private Trainer trainer;
-    private Nationality nationality;
-    private ArrayList<Player> listPlayer;
+    private int                     id;
+    private String                  name;
+    private int                     age;
+    private float                   amount;
+    private Trainer                 trainer;
+    private Nationality             nationality;
+    private ArrayList<Player>       listPlayer;
+    
+    private String                  addQuery;
+    private String                  deleteQuery;
+    private String                  selectQuery;
+    private String                  editQuery;
 
     public int getId() {
         return id;
