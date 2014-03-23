@@ -35,6 +35,11 @@ public class CBManagerObserver {
         obs.reloadData();
     }
     
+    public ICBObserver getModel(int i){
+        return observers.get(i);
+        
+    }
+    
     public void nofityAllObservers(){
         for(ICBObserver obs: observers)
             obs.reloadData();

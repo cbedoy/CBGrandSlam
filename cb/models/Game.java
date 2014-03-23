@@ -105,12 +105,12 @@ public class Game extends CBBaseModel implements ICBModel, ICBModelDelegate,  IC
 
     @Override
     public void userPressAlter() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void userPressSearch() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override

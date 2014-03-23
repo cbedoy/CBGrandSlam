@@ -6,40 +6,20 @@
 
 package cb.views;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
- * Carlos Alfredo Cervantes Bedoy
- * Mobile Developer
- * CBGrandSlam
- * Email:           carlos.bedoy@gmail.com
- * Facebook:        https://www.facebook.com/carlos.bedoy
- * Github:          https://github.com/cbedoy
- * WebSite:         http://cbedoy.github.io/
- *
- * 17-mar-2014 - 22:22:34
+ * @author Carlos
  */
-public class CBSplashView extends javax.swing.JFrame implements Runnable {
+public class CBAbout extends javax.swing.JFrame {
 
-    Thread thread;
     /**
-     * Creates new form Splash
+     * Creates new form CBAbout
      */
-    public CBSplashView() {
+    public CBAbout() {
         initComponents();
-        setLocationRelativeTo(null);
-        thread = new Thread(this);
-        thread.start();
+        setVisible(true);
     }
 
-    
-    public void setValue(int v){
-        this.progressBar.setValue(v);
-        
-    }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,28 +30,22 @@ public class CBSplashView extends javax.swing.JFrame implements Runnable {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        progressBar = new javax.swing.JProgressBar();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cb/assets/logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cb/assets/about.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(progressBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(progressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
 
         pack();
@@ -94,39 +68,25 @@ public class CBSplashView extends javax.swing.JFrame implements Runnable {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CBSplashView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBAbout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CBSplashView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBAbout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CBSplashView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBAbout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CBSplashView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBAbout.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CBSplashView().setVisible(true);
+                new CBAbout().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JProgressBar progressBar;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void run() {
-        int i=0;
-        while(true){
-            progressBar.setValue(i++);
-            try {
-                Thread.sleep(8);
-            } catch (InterruptedException ex) {
-                
-            }
-        }
-    }
 }
