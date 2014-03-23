@@ -3,10 +3,12 @@ package cb.artifacts;
 
 import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
+import cb.interfaces.ICBModel;
 import cb.models.Game;
 import cb.models.Player;
 import cb.models.single.Referee;
 import cb.models.Tournament;
+import cb.models.single.Country;
 import cb.models.single.Trainer;
 import java.util.ArrayList;
 import java.util.Observable;
@@ -230,6 +232,18 @@ public class GameView extends javax.swing.JPanel implements ICBArtifact {
 
     public void setDelegate(ICBMainViewDelegate delegate) {
         this.delegate = delegate;
+    }
+    
+    public ICBModel getModel() {
+        return currentModel;
+    }
+
+    public void setModel(ICBModel model) {
+        this.currentModel = (Game) model;
+    }
+
+    public void reloadData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

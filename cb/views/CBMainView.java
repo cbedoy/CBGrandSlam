@@ -21,6 +21,15 @@ import cb.connectors.CBViewConnector;
 import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
 import cb.interfaces.ICBModel;
+import cb.models.Award;
+import cb.models.Game;
+import cb.models.Location;
+import cb.models.Player;
+import cb.models.Tournament;
+import cb.models.single.Country;
+import cb.models.single.Nationality;
+import cb.models.single.Referee;
+import cb.models.single.Trainer;
 import javax.swing.JPanel;
 
 /**
@@ -233,91 +242,189 @@ public class CBMainView extends javax.swing.JFrame implements ICBMainViewDelegat
     }// </editor-fold>//GEN-END:initComponents
 
     private void optionAwardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionAwardActionPerformed
+        //Create view
         AwardView view = (AwardView) this.viewConecctor.getAwardView();
         view.setVisible(true);
         view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
+        
+        //Create model
+        Award model = (Award)           this.modelConnector.getAward();
+        model.setPlayer((Player)        this.modelConnector.getPlayer());
+        model.setTrainer((Trainer)      this.modelConnector.getTrainer());
+        model.setGrandSlam((Tournament) this.modelConnector.getTournament());
+        
+        //Set model in view
+        view.setModel(model);
+        view.reloadData();
+        
+        //Reload window
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionAwardActionPerformed
 
     private void optionCountryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionCountryActionPerformed
+        //Create view
         CountryView view = (CountryView) this.viewConecctor.getCountryView();
         view.setVisible(true);
         view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
-        view.setModel(this.modelConnector.getCountry());
+        
+        //Create model
+        Country model = (Country)       this.modelConnector.getCountry();
+        
+        //Set model
+        view.setModel(model);
         view.reloadData();
+        
+        //View reload
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionCountryActionPerformed
 
     private void optionGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionGameActionPerformed
+        //Create view
         GameView view = (GameView) this.viewConecctor.getGameView();
         view.setVisible(true);
         view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
+        
+        //Create model
+        Game model = (Game)                 this.modelConnector.getGame();
+        model.setPlayer((Player)            this.modelConnector.getPlayer());
+        model.setReferee((Referee)          this.modelConnector.getReferee());
+        model.setTournament((Tournament)    this.modelConnector.getTournament());
+        model.setTrainer((Trainer)          this.modelConnector.getTrainer());
+        
+        //Set model in view
+        view.setModel(model);
+        view.reloadData();
+        
+        //refresh window
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionGameActionPerformed
 
     private void optionGrandSlamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionGrandSlamActionPerformed
+        //Create view
         TournamentView view = (TournamentView) this.viewConecctor.getTournamentView();
         view.setVisible(true);
         view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
+        
+        //Create model
+        Tournament model = (Tournament) this.modelConnector.getTournament();
+        model.setCountry((Country) this.modelConnector.getCountry());
+        
+        //Set model in view
+        view.setModel(model);
+        view.reloadData();
+        
+        //Refresh view
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionGrandSlamActionPerformed
 
     private void optionLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionLocationActionPerformed
+        //Create view
         LocationView view = (LocationView) this.viewConecctor.getLocationView();
         view.setVisible(true);
         view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
+        
+        //Create model
+        Location model = (Location) this.modelConnector.getLocation();
+        model.setCountry((Country) this.modelConnector.getCountry());
+        
+        //Set model in view
+        view.setModel(model);
+        view.reloadData();
+        
+        //refresh
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionLocationActionPerformed
 
     private void optionNacionalityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionNacionalityActionPerformed
+        //Create viw
         NationalityView view = (NationalityView) this.viewConecctor.getNationalityView();
         view.setVisible(true);
         view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
+        
+        //Create model
+        Nationality model = (Nationality) this.modelConnector.getNationality();
+        
+        //Set model in view
+        view.setModel(model);
+        view.reloadData();
+        
+        //Refresh
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionNacionalityActionPerformed
 
     private void optionPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionPlayerActionPerformed
+        //Create view
         PlayerView view = (PlayerView) this.viewConecctor.getPlayerView();
         view.setVisible(true);
         view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
+        
+        //Create model
+        Player model = (Player) this.modelConnector.getPlayer();
+        model.setNationality((Nationality) this.modelConnector.getNationality());
+        model.setTrainer((Trainer) this.modelConnector.getTrainer());
+        
+        //Set model in view
+        view.setModel(model);
+        view.reloadData();
+        
+        //Refresh
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionPlayerActionPerformed
 
     private void optionRefereeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionRefereeActionPerformed
+        //Create view
         RefereeView view = (RefereeView) this.viewConecctor.getRefereeView();
         view.setVisible(true);
         view.setBounds(posX, posY, this.widthView, this.heightView);
         view.setDelegate(this);
+        
+        //create model
+        Referee model = (Referee) this.modelConnector.getReferee();
+        
+        //set model in view
+        view.setModel(model);
+        view.reloadData();
+        
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionRefereeActionPerformed
 
     private void optionTrainerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_optionTrainerActionPerformed
+        //Create view
         TrainerView view = (TrainerView) this.viewConecctor.getTrainerView();
         view.setVisible(true);
         view.setBounds(posX, posY, this.widthView, 200);
         view.setDelegate(this);
-        view.setModel(this.modelConnector.getTrainer());
+
+        //Create model
+        Trainer model = (Trainer) this.modelConnector.getTrainer();
+        
+        
+        //Set model in view
+        view.setModel(model);
+        view.reloadData();
+        
         container.add(view);
         container.revalidate();
     }//GEN-LAST:event_optionTrainerActionPerformed
 
     private void actionAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionAboutActionPerformed
         // TODO add your handling code here:
+        new CBAbout();
     }//GEN-LAST:event_actionAboutActionPerformed
 
     private void actionReloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actionReloadActionPerformed

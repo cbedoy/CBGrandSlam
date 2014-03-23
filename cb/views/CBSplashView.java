@@ -53,6 +53,7 @@ public class CBSplashView extends javax.swing.JFrame implements Runnable {
         progressBar = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cb/assets/logo.png"))); // NOI18N
 
