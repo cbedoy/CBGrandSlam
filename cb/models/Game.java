@@ -89,12 +89,18 @@ public class Game extends CBBaseModel implements ICBModel, ICBModelDelegate,  IC
 
     @Override
     public void userPressInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String query = ""
+                + "insert into premio "
+                + "values"
+                + "(null, "+modality+", '"+referee.getId()+"', "+player.getId()+", "+trainer.getId()+", "+tournament.getId()+"    )"
+                + "";
+        super.insertItem(query);
+    
     }
 
     @Override
     public void userPressDelete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
