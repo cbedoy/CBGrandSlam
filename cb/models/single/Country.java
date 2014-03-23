@@ -35,10 +35,7 @@ public class Country extends CBBaseModel implements ICBModel, ICBModelDelegate, 
     private String              name;
     private ArrayList<Country>  listCountry;
     
-    private String              addQuery;
-    private String              deleteQuery;
-    private String              selectQuery;
-    private String              editQuery;
+
 
     public int getId() {
         return id;

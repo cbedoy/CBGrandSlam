@@ -33,10 +33,6 @@ public class Nationality extends CBBaseModel implements ICBModel, ICBModelDelega
     private String                  name;
     private ArrayList<Nationality>  listNationality;
     
-    private String                  addQuery;
-    private String                  deleteQuery;
-    private String                  selectQuery;
-    private String                  editQuery;
 
     public int getId() {
         return id;

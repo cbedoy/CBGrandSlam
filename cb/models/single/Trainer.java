@@ -36,11 +36,6 @@ public class Trainer extends CBBaseModel implements ICBModel, ICBModelDelegate, 
     private String              finalizeDate;
     private ArrayList<Trainer>  listTrainer;
     
-    private String              addQuery;
-    private String              deleteQuery;
-    private String              selectQuery;
-    private String              editQuery;
-
     public int getId() {
         return id;
     }

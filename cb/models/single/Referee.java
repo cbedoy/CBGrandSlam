@@ -36,14 +36,6 @@ public class Referee extends CBBaseModel implements ICBModel, ICBModelDelegate, 
     private String              time;
     private ArrayList<Referee>  listReferee;
     
-    private String              addQuery;
-    private String              deleteQuery;
-    private String              selectQuery;
-    private String              editQuery;
-    
-    
-    
-
     public int getId() {
         return id;
     }

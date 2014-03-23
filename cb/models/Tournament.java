@@ -35,11 +35,6 @@ public class Tournament extends CBBaseModel implements ICBModel, ICBModelDelegat
     private String                  date;
     private Country                 country;
     private ArrayList<Tournament>   listTournament;
-    
-    private String                  addQuery;
-    private String                  deleteQuery;
-    private String                  selectQuery;
-    private String                  editQuery;
 
     public int getId() {
         return id;

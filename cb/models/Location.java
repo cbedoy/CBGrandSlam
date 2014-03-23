@@ -34,11 +34,6 @@ public class Location extends CBBaseModel implements ICBModel, ICBModelDelegate,
     private String              name;
     private Country             country;
     private ArrayList<Location> listLocation;
-    
-    private String              addQuery;
-    private String              deleteQuery;
-    private String              selectQuery;
-    private String              editQuery;
 
     public int getId() {
         return id;

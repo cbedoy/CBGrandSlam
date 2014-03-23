@@ -38,11 +38,6 @@ public class Player extends CBBaseModel implements ICBModel, ICBModelDelegate, I
     private Trainer                 trainer;
     private Nationality             nationality;
     private ArrayList<Player>       listPlayer;
-    
-    private String                  addQuery;
-    private String                  deleteQuery;
-    private String                  selectQuery;
-    private String                  editQuery;
 
     public int getId() {
         return id;

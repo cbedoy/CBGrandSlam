@@ -38,11 +38,6 @@ public class Game extends CBBaseModel implements ICBModel, ICBModelDelegate,  IC
     private Trainer             trainer;
     private Tournament          tournament;
     private ArrayList<Game>     listGame;
-    
-    private String              addQuery;
-    private String              deleteQuery;
-    private String              selectQuery;
-    private String              editQuery;
 
     public int getId() {
         return id;

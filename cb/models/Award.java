@@ -38,12 +38,6 @@ public class Award extends CBBaseModel implements ICBModel, ICBModelDelegate, IC
     private Trainer             trainer;
     private ArrayList<Award>    listAward;
     
-    private String              addQuery;
-    private String              deleteQuery;
-    private String              selectQuery;
-    private String              editQuery;
-    
-
     public int getId() {
         return id;
     }
