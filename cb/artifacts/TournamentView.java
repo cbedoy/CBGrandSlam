@@ -6,9 +6,9 @@
 
 package cb.artifacts;
 
-import cb.delegates.IMainViewDelegate;
+import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.models.Country;
+import cb.models.single.Country;
 import cb.models.Tournament;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import java.util.Observer;
  */
 public class TournamentView extends javax.swing.JPanel implements ICBArtifact {
 
-    private IMainViewDelegate       delegate;
+    private ICBMainViewDelegate       delegate;
     private ArrayList<Country>      listCountry;
     private Tournament              currentModel;
     private ArrayList<Tournament>   data;
@@ -198,7 +198,7 @@ public class TournamentView extends javax.swing.JPanel implements ICBArtifact {
     private javax.swing.JComboBox sOption;
     // End of variables declaration//GEN-END:variables
 
-    public void setDelegate(IMainViewDelegate delegate) {
+    public void setDelegate(ICBMainViewDelegate delegate) {
         this.delegate = delegate;
     }
 

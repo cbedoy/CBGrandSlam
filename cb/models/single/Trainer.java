@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package cb.models;
+package cb.models.single;
 
-import cb.bussiness.BaseModel;
-import cb.delegates.IModelDelegate;
+import cb.bussiness.CBBaseModel;
+import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
-import cb.interfaces.IModel;
+import cb.interfaces.ICBModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Trainer extends BaseModel implements IModel, IModelDelegate, ICBObserver{
+public class Trainer extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
     private int id;
     private String name;
     private String initialDate;
@@ -98,8 +98,9 @@ public class Trainer extends BaseModel implements IModel, IModelDelegate, ICBObs
 
     @Override
     public void reloadData() {
+        System.out.println("Reload data of trainer");
         try {
-            super.getAllITems("Select * from pais");
+            super.getAllITems("Select * from entrenador");
             ResultSet resultSet = super.getRs();
             setListTrainer(new ArrayList<Trainer>());
             while(resultSet.next()){

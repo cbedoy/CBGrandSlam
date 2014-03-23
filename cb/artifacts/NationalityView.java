@@ -6,9 +6,9 @@
 
 package cb.artifacts;
 
-import cb.delegates.IMainViewDelegate;
+import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.models.Nationality;
+import cb.models.single.Nationality;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -27,7 +27,7 @@ import java.util.Observer;
  */
 public class NationalityView extends javax.swing.JPanel implements ICBArtifact {
 
-    private IMainViewDelegate       delegate;
+    private ICBMainViewDelegate       delegate;
     private Nationality             currentModel;
     private ArrayList<Nationality>  data;
     /**
@@ -159,7 +159,7 @@ public class NationalityView extends javax.swing.JPanel implements ICBArtifact {
     private javax.swing.JComboBox sOption;
     // End of variables declaration//GEN-END:variables
 
-    public void setDelegate(IMainViewDelegate delegate) {
+    public void setDelegate(ICBMainViewDelegate delegate) {
         this.delegate = delegate;
     }
 

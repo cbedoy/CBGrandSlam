@@ -6,10 +6,14 @@
 
 package cb.models;
 
-import cb.bussiness.BaseModel;
-import cb.delegates.IModelDelegate;
+import cb.models.single.Country;
+import cb.bussiness.CBBaseModel;
+import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
-import cb.interfaces.IModel;
+import cb.interfaces.ICBModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -25,11 +29,12 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Tournament extends BaseModel implements IModel, IModelDelegate, ICBObserver{
+public class Tournament extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
     private int id;
     private String name;
     private String date;
     private Country country;
+    private ArrayList<Tournament> listTournament;
 
     public int getId() {
         return id;
@@ -85,7 +90,27 @@ public class Tournament extends BaseModel implements IModel, IModelDelegate, ICB
 
     @Override
     public void reloadData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Reload data of tournament");
+        try {
+            super.getAllITems("Select * from grandslam");
+            ResultSet resultSet = super.getRs();
+            setListTournament(new ArrayList<Tournament>());
+            while(resultSet.next()){
+               Tournament  tournament = new Tournament();
+               
+               getListTournament().add(tournament);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } 
+    }
+
+    public ArrayList<Tournament> getListTournament() {
+        return listTournament;
+    }
+
+    public void setListTournament(ArrayList<Tournament> listTournament) {
+        this.listTournament = listTournament;
     }
 
 

@@ -6,10 +6,14 @@
 
 package cb.models;
 
-import cb.bussiness.BaseModel;
-import cb.delegates.IModelDelegate;
+import cb.models.single.Country;
+import cb.bussiness.CBBaseModel;
+import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
-import cb.interfaces.IModel;
+import cb.interfaces.ICBModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -25,10 +29,11 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Location extends BaseModel implements IModel, IModelDelegate, ICBObserver{
+public class Location extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
     private int id;
     private String name;
     private Country country;
+    private ArrayList<Location> listLocation;
 
     public int getId() {
         return id;
@@ -76,7 +81,27 @@ public class Location extends BaseModel implements IModel, IModelDelegate, ICBOb
 
     @Override
     public void reloadData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Reload data of location");
+        try {
+            super.getAllITems("Select * from premio");
+            ResultSet resultSet = super.getRs();
+            setListLocation(new ArrayList<Location>());
+            while(resultSet.next()){
+               Location  location = new Location();
+               
+               getListLocation().add(location);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public ArrayList<Location> getListLocation() {
+        return listLocation;
+    }
+
+    public void setListLocation(ArrayList<Location> listLocation) {
+        this.listLocation = listLocation;
     }
 
 

@@ -15,14 +15,11 @@ import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TournamentView;
 import cb.artifacts.TrainerView;
-import cb.bussiness.CBObserver;
-import cb.bussiness.ModelObserver;
-import cb.connectors.ModelConnector;
-import cb.connectors.ViewConnector;
-import cb.delegates.IMainViewDelegate;
+import cb.bussiness.CBManagerObserver;
+import cb.connectors.CBModelConnector;
+import cb.connectors.CBViewConnector;
+import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.interfaces.IModel;
-import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 
 /**
@@ -37,20 +34,20 @@ import javax.swing.JPanel;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
+public class CBMainView extends javax.swing.JFrame implements ICBMainViewDelegate{
 
    
     private final int       widthView     = 500;
     private final int       heightView    = 300;
     private final int       posX          = 22;
     private final int       posY          = 22;
-    private ViewConnector   viewConecctor;
-    private ModelConnector  modelConnector;
-    private CBObserver      managerObserver;
+    private CBViewConnector   viewConecctor;
+    private CBModelConnector  modelConnector;
+    private CBManagerObserver      managerObserver;
     /**
      * Creates new form MainView
      */
-    public MainView() {
+    public CBMainView() {
         initComponents();
         setVisible(true);
         setLocationRelativeTo(null);
@@ -344,20 +341,20 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBMainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBMainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBMainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBMainView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainView().setVisible(true);
+                new CBMainView().setVisible(true);
             }
         });
     }
@@ -418,15 +415,15 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
         view.setVisible(false);   
     }
 
-    public void setViewConecctor(ViewConnector viewConecctor) {
+    public void setViewConecctor(CBViewConnector viewConecctor) {
         this.viewConecctor = viewConecctor;
     }
 
-    public ModelConnector getModelConnector() {
+    public CBModelConnector getModelConnector() {
         return modelConnector;
     }
 
-    public void setModelConnector(ModelConnector modelConnector) {
+    public void setModelConnector(CBModelConnector modelConnector) {
         this.modelConnector = modelConnector;
     }
 
@@ -435,7 +432,7 @@ public class MainView extends javax.swing.JFrame implements IMainViewDelegate{
        
     }
 
-    public void setManagerObserver(CBObserver managerObserver) {
+    public void setManagerObserver(CBManagerObserver managerObserver) {
         this.managerObserver = managerObserver;
     }
 

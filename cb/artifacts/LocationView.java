@@ -6,9 +6,9 @@
 
 package cb.artifacts;
 
-import cb.delegates.IMainViewDelegate;
+import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.models.Country;
+import cb.models.single.Country;
 import cb.models.Location;
 import java.util.ArrayList;
 import java.util.Observable;
@@ -28,7 +28,7 @@ import java.util.Observer;
  */
 public class LocationView extends javax.swing.JPanel implements ICBArtifact {
 
-    private IMainViewDelegate   delegate;
+    private ICBMainViewDelegate   delegate;
     private ArrayList<Country>  listCountry;
     private Location            currentModel;
     private ArrayList<Location> data;
@@ -180,7 +180,7 @@ public class LocationView extends javax.swing.JPanel implements ICBArtifact {
     private javax.swing.JComboBox sOption;
     // End of variables declaration//GEN-END:variables
 
-    public void setDelegate(IMainViewDelegate delegate) {
+    public void setDelegate(ICBMainViewDelegate delegate) {
         this.delegate = delegate;
     }
 

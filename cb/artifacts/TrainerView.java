@@ -6,11 +6,11 @@
 
 package cb.artifacts;
 
-import cb.delegates.IMainViewDelegate;
+import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.interfaces.IModel;
-import cb.models.Country;
-import cb.models.Trainer;
+import cb.interfaces.ICBModel;
+import cb.models.single.Country;
+import cb.models.single.Trainer;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Observable;
@@ -30,7 +30,7 @@ import java.util.Observer;
  */
 public class TrainerView extends javax.swing.JPanel implements ICBArtifact {
 
-    private IMainViewDelegate   delegate;
+    private ICBMainViewDelegate   delegate;
     private Trainer             currentModel;
     private ArrayList<Trainer>  data;
     /**
@@ -233,17 +233,17 @@ public class TrainerView extends javax.swing.JPanel implements ICBArtifact {
     private javax.swing.JComboBox sOption;
     // End of variables declaration//GEN-END:variables
 
-    public void setDelegate(IMainViewDelegate delegate) {
+    public void setDelegate(ICBMainViewDelegate delegate) {
         this.delegate = delegate;
     }
 
 
     
-    public IModel getModel() {
+    public ICBModel getModel() {
         return currentModel;
     }
 
-    public void setModel(IModel model) {
+    public void setModel(ICBModel model) {
         this.currentModel = (Trainer) model;
     }
 

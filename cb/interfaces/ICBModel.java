@@ -1,7 +1,10 @@
-package cb.bussiness;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-import java.util.Observable;
-import java.util.Observer;
+package cb.interfaces;
 
 /**
  *
@@ -13,12 +16,8 @@ import java.util.Observer;
  * Github:          https://github.com/cbedoy
  * WebSite:         http://cbedoy.github.io/
  *
- * 22-mar-2014 - 15:19:36
+ * 17-mar-2014 - 22:22:34
  */
-
-public class ModelObserver extends Observable{
-
-    public ModelObserver(){
-        
-    }
+public interface ICBModel {
+    
 }

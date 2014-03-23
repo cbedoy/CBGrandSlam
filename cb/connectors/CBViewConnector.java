@@ -6,7 +6,7 @@
 
 package cb.connectors;
 
-import cb.bussiness.ModelObserver;
+
 import cb.interfaces.ICBArtifact;
 import java.util.Observable;
 import java.util.Observer;
@@ -23,7 +23,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class ViewConnector extends Observable{
+public class CBViewConnector{
     private ICBArtifact AwardView;
     private ICBArtifact CountryView;
     private ICBArtifact GameView;

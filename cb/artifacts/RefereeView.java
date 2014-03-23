@@ -6,9 +6,9 @@
 
 package cb.artifacts;
 
-import cb.delegates.IMainViewDelegate;
+import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.models.Referee;
+import cb.models.single.Referee;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -27,7 +27,7 @@ import java.util.Observer;
  */
 public class RefereeView extends javax.swing.JPanel implements ICBArtifact {
 
-    private IMainViewDelegate   delegate;
+    private ICBMainViewDelegate   delegate;
     private Referee             currentModel;
     private ArrayList<Referee>  data;
     /**
@@ -195,7 +195,7 @@ public class RefereeView extends javax.swing.JPanel implements ICBArtifact {
     private javax.swing.JComboBox sTime;
     // End of variables declaration//GEN-END:variables
 
-    public void setDelegate(IMainViewDelegate delegate) {
+    public void setDelegate(ICBMainViewDelegate delegate) {
         this.delegate = delegate;
     }
 

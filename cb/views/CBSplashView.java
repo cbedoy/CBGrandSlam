@@ -21,13 +21,13 @@ import java.util.logging.Logger;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Splash extends javax.swing.JFrame implements Runnable {
+public class CBSplashView extends javax.swing.JFrame implements Runnable {
 
     Thread thread;
     /**
      * Creates new form Splash
      */
-    public Splash() {
+    public CBSplashView() {
         initComponents();
         setLocationRelativeTo(null);
         thread = new Thread(this);
@@ -93,20 +93,20 @@ public class Splash extends javax.swing.JFrame implements Runnable {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBSplashView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBSplashView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBSplashView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Splash.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CBSplashView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Splash().setVisible(true);
+                new CBSplashView().setVisible(true);
             }
         });
     }
@@ -122,7 +122,7 @@ public class Splash extends javax.swing.JFrame implements Runnable {
         while(true){
             progressBar.setValue(i++);
             try {
-                Thread.sleep(7);
+                Thread.sleep(8);
             } catch (InterruptedException ex) {
                 
             }

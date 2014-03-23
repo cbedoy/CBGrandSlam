@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 
-package cb.interfaces;
+package cb.delegates;
+
+import cb.interfaces.ICBArtifact;
 
 /**
  *
@@ -18,13 +20,8 @@ package cb.interfaces;
  *
  * 17-mar-2014 - 22:22:34
  */
-public interface IBussiness {
+public interface ICBMainViewDelegate {
+    public void removeView(ICBArtifact artifact);
     
-    public void     getAllITems(String query);
-    public void     insertItem(String query);
-    public void     deleteITem(String query);
-    public void     editITem(String query);
-    public void     getITem(String query);
-    
-    
+    public void reloadAllData();
 }

@@ -6,10 +6,15 @@
 
 package cb.models;
 
-import cb.bussiness.BaseModel;
-import cb.delegates.IModelDelegate;
+import cb.models.single.Referee;
+import cb.models.single.Trainer;
+import cb.bussiness.CBBaseModel;
+import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
-import cb.interfaces.IModel;
+import cb.interfaces.ICBModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -25,13 +30,14 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Game extends BaseModel implements IModel, IModelDelegate,  ICBObserver{
+public class Game extends CBBaseModel implements ICBModel, ICBModelDelegate,  ICBObserver{
     private int id;
     private String modality;
     private Referee referee;
     private Player player;
     private Trainer trainer;
     private Tournament tournament;
+    private ArrayList<Game> listGame;
 
     public int getId() {
         return id;
@@ -103,7 +109,27 @@ public class Game extends BaseModel implements IModel, IModelDelegate,  ICBObser
 
     @Override
     public void reloadData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Reload data of Game");
+        try {
+            super.getAllITems("Select * from partido");
+            ResultSet resultSet = super.getRs();
+            setListGame(new ArrayList<Game>());
+            while(resultSet.next()){
+               Game  game = new Game();
+               
+               getListGame().add(game);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } 
+    }
+
+    public ArrayList<Game> getListGame() {
+        return listGame;
+    }
+
+    public void setListGame(ArrayList<Game> listGame) {
+        this.listGame = listGame;
     }
 
 
