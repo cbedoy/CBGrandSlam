@@ -6,7 +6,7 @@
 
 package cb.artifacts;
 
-import cb.delegates.IMainViewDelegate;
+import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
 import cb.models.Nationality;
 import cb.models.Player;
@@ -29,7 +29,7 @@ import java.util.Observer;
  */
 public class PlayerView extends javax.swing.JPanel implements ICBArtifact {
 
-    private IMainViewDelegate       delegate;
+    private ICBMainViewDelegate       delegate;
     private ArrayList<Trainer>      listTrainer;
     private ArrayList<Nationality>  listNationality;
     private Player                  currentModel;
@@ -228,7 +228,7 @@ public class PlayerView extends javax.swing.JPanel implements ICBArtifact {
     private javax.swing.JComboBox sTrainer;
     // End of variables declaration//GEN-END:variables
 
-    public void setDelegate(IMainViewDelegate delegate) {
+    public void setDelegate(ICBMainViewDelegate delegate) {
         this.delegate = delegate;
     }
 

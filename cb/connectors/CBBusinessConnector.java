@@ -6,7 +6,7 @@
 
 package cb.connectors;
 
-import cb.bussiness.BaseModel;
+import cb.bussiness.CBBaseModel;
 import cb.interfaces.ICBModel;
 
 /**
@@ -21,91 +21,91 @@ import cb.interfaces.ICBModel;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class BusinessConnector {
-    private BaseModel AwardBusiness;
-    private BaseModel CountryBusiness;
-    private BaseModel GameBusiness;
-    private BaseModel TournamentBusiness;
-    private BaseModel LocationBusiness;
-    private BaseModel NAtionalityBusiness;
-    private BaseModel PlayerBusiness;
-    private BaseModel RefereeBusiness;
-    private BaseModel TrainerBusiness;
+public class CBBusinessConnector {
+    private CBBaseModel AwardBusiness;
+    private CBBaseModel CountryBusiness;
+    private CBBaseModel GameBusiness;
+    private CBBaseModel TournamentBusiness;
+    private CBBaseModel LocationBusiness;
+    private CBBaseModel NAtionalityBusiness;
+    private CBBaseModel PlayerBusiness;
+    private CBBaseModel RefereeBusiness;
+    private CBBaseModel TrainerBusiness;
     private ICBModel   Conection;
     
-    public  BusinessConnector(){
+    public  CBBusinessConnector(){
         
     }
 
-    public BaseModel getAwardBusiness() {
+    public CBBaseModel getAwardBusiness() {
         return AwardBusiness;
     }
 
-    public void setAwardBusiness(BaseModel AwardBusiness) {
+    public void setAwardBusiness(CBBaseModel AwardBusiness) {
         this.AwardBusiness = AwardBusiness;
     }
 
-    public BaseModel getCountryBusiness() {
+    public CBBaseModel getCountryBusiness() {
         return CountryBusiness;
     }
 
-    public void setCountryBusiness(BaseModel CountryBusiness) {
+    public void setCountryBusiness(CBBaseModel CountryBusiness) {
         this.CountryBusiness = CountryBusiness;
     }
 
-    public BaseModel getGameBusiness() {
+    public CBBaseModel getGameBusiness() {
         return GameBusiness;
     }
 
-    public void setGameBusiness(BaseModel GameBusiness) {
+    public void setGameBusiness(CBBaseModel GameBusiness) {
         this.GameBusiness = GameBusiness;
     }
 
-    public BaseModel getTournamentBusiness() {
+    public CBBaseModel getTournamentBusiness() {
         return TournamentBusiness;
     }
 
-    public void setGrandSlamBusiness(BaseModel TournamentBusiness) {
+    public void setGrandSlamBusiness(CBBaseModel TournamentBusiness) {
         this.TournamentBusiness = TournamentBusiness;
     }
 
-    public BaseModel getLocationBusiness() {
+    public CBBaseModel getLocationBusiness() {
         return LocationBusiness;
     }
 
-    public void setLocationBusiness(BaseModel LocationBusiness) {
+    public void setLocationBusiness(CBBaseModel LocationBusiness) {
         this.LocationBusiness = LocationBusiness;
     }
 
-    public BaseModel getNAtionalityBusiness() {
+    public CBBaseModel getNAtionalityBusiness() {
         return NAtionalityBusiness;
     }
 
-    public void setNAtionalityBusiness(BaseModel NAtionalityBusiness) {
+    public void setNAtionalityBusiness(CBBaseModel NAtionalityBusiness) {
         this.NAtionalityBusiness = NAtionalityBusiness;
     }
 
-    public BaseModel getPlayerBusiness() {
+    public CBBaseModel getPlayerBusiness() {
         return PlayerBusiness;
     }
 
-    public void setPlayerBusiness(BaseModel PlayerBusiness) {
+    public void setPlayerBusiness(CBBaseModel PlayerBusiness) {
         this.PlayerBusiness = PlayerBusiness;
     }
 
-    public BaseModel getRefereeBusiness() {
+    public CBBaseModel getRefereeBusiness() {
         return RefereeBusiness;
     }
 
-    public void setRefereeBusiness(BaseModel RefereeBusiness) {
+    public void setRefereeBusiness(CBBaseModel RefereeBusiness) {
         this.RefereeBusiness = RefereeBusiness;
     }
 
-    public BaseModel getTrainerBusiness() {
+    public CBBaseModel getTrainerBusiness() {
         return TrainerBusiness;
     }
 
-    public void setTrainerBusiness(BaseModel TrainerBusiness) {
+    public void setTrainerBusiness(CBBaseModel TrainerBusiness) {
         this.TrainerBusiness = TrainerBusiness;
     }
 

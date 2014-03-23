@@ -1,7 +1,7 @@
 
 package cb.bussiness;
 
-import cb.bussiness.ConectionDB;
+import cb.bussiness.CBConectionMySQL;
 import cb.interfaces.ICBBussiness;
 import cb.interfaces.ICBModel;
 import java.sql.ResultSet;
@@ -19,13 +19,13 @@ import java.sql.SQLException;
  *
  * 17-mar-2014 - 22:22:34
  */
-public abstract class BaseModel implements ICBModel, ICBBussiness{
+public abstract class CBBaseModel implements ICBModel, ICBBussiness{
 
-    private  ConectionDB connection;
+    private  CBConectionMySQL connection;
     private  ResultSet   rs;
     private  boolean     status;
     
-    public BaseModel(){
+    public CBBaseModel(){
             
     }
     
@@ -82,11 +82,11 @@ public abstract class BaseModel implements ICBModel, ICBBussiness{
         
     }
 
-    public ConectionDB getConnection() {
+    public CBConectionMySQL getConnection() {
         return connection;
     }
 
-    public void setConnection(ConectionDB connection) {
+    public void setConnection(CBConectionMySQL connection) {
         this.connection = connection;
     }
 

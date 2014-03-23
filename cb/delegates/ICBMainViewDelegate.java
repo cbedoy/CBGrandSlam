@@ -20,7 +20,7 @@ import cb.interfaces.ICBArtifact;
  *
  * 17-mar-2014 - 22:22:34
  */
-public interface IMainViewDelegate {
+public interface ICBMainViewDelegate {
     public void removeView(ICBArtifact artifact);
     
     public void reloadAllData();

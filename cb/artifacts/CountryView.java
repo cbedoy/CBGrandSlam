@@ -2,7 +2,7 @@
 
 package cb.artifacts;
 
-import cb.delegates.IMainViewDelegate;
+import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
 import cb.interfaces.ICBModel;
 import cb.models.Country;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
  */
 public class CountryView extends javax.swing.JPanel implements ICBArtifact{
 
-    private IMainViewDelegate   delegate;
+    private ICBMainViewDelegate   delegate;
     private Country             currentModel;
     private ArrayList<Country>  data;
     public CountryView() {
@@ -202,7 +202,7 @@ public class CountryView extends javax.swing.JPanel implements ICBArtifact{
     private javax.swing.JLabel sStatus;
     // End of variables declaration//GEN-END:variables
 
-    public void setDelegate(IMainViewDelegate delegate) {
+    public void setDelegate(ICBMainViewDelegate delegate) {
         this.delegate = delegate;
     }
 

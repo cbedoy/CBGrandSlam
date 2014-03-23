@@ -11,12 +11,12 @@ import cb.artifacts.NationalityView;
 import cb.artifacts.PlayerView;
 import cb.artifacts.RefereeView;
 import cb.artifacts.TrainerView;
-import cb.bussiness.CBObserver;
+import cb.bussiness.CBManagerObserver;
 //Bussiness
-import cb.bussiness.ConectionDB;
+import cb.bussiness.CBConectionMySQL;
 //Connectors
-import cb.connectors.ModelConnector;
-import cb.connectors.ViewConnector;
+import cb.connectors.CBModelConnector;
+import cb.connectors.CBViewConnector;
 //Models
 import cb.models.Award;
 import cb.models.Country;
@@ -43,7 +43,7 @@ import cb.views.*;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class main {
+public class CBMain {
     public static void main(String[]cbedoy){
         long initial = System.currentTimeMillis();
         //Splash    
@@ -63,7 +63,7 @@ public class main {
         TrainerView     trainerView =       new TrainerView();
         
         //ViewConnector
-        ViewConnector viewConecctor =   new ViewConnector();
+        CBViewConnector viewConecctor =   new CBViewConnector();
         viewConecctor.setAwardView(awardView);
         viewConecctor.setCountryView(countryView);
         viewConecctor.setGameView(gameView);
@@ -75,7 +75,7 @@ public class main {
         viewConecctor.setTrainerView(trainerView);
         
         //Business
-        ConectionDB conection = new ConectionDB();
+        CBConectionMySQL conection = new CBConectionMySQL();
         
         //Models
         Award       awardModel =        new Award();
@@ -103,7 +103,7 @@ public class main {
         
         
         //ModelConector
-        ModelConnector modelConnector = new ModelConnector();
+        CBModelConnector modelConnector = new CBModelConnector();
         modelConnector.setAward(awardModel);
         modelConnector.setCountry(countryModel);
         modelConnector.setGame(gameModel);
@@ -144,7 +144,7 @@ public class main {
         
         */
         
-        CBObserver observer = new CBObserver();
+        CBManagerObserver observer = new CBManagerObserver();
         observer.addObserver(awardModel);
         observer.addObserver(countryModel);
         

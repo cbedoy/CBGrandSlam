@@ -17,7 +17,7 @@ import java.util.Observer;
  * 22-mar-2014 - 11:12:37
  */
 
-public class ModelConnector{
+public class CBModelConnector{
     private ICBModel Award;
     private ICBModel Country;
     private ICBModel Game;

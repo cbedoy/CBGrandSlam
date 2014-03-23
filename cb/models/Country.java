@@ -6,8 +6,8 @@
 
 package cb.models;
 
-import cb.bussiness.BaseModel;
-import cb.delegates.IModelDelegate;
+import cb.bussiness.CBBaseModel;
+import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
 import cb.interfaces.ICBModel;
 import java.sql.ResultSet;
@@ -30,7 +30,7 @@ import java.util.logging.Logger;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Country extends BaseModel implements ICBModel, IModelDelegate, ICBObserver{
+public class Country extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
     private int id;
     private String name;
     private ArrayList<Country> listCountry;

@@ -26,7 +26,7 @@ import javax.swing.JOptionPane;
  * 17-mar-2014 - 22:22:34
  */
 
-public class ConectionDB implements ICBModel {
+public class CBConectionMySQL implements ICBModel {
     private Connection ct;
     private Statement st;  
     private final static String driver = "com.mysql.jdbc.Driver";
@@ -35,7 +35,7 @@ public class ConectionDB implements ICBModel {
     private boolean conectado;
     
     
-    public ConectionDB(){
+    public CBConectionMySQL(){
         try{
             Class.forName(driver).newInstance();
             ct = DriverManager.getConnection(db, "root", "");

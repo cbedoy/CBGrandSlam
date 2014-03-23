@@ -16,10 +16,10 @@ import java.util.ArrayList;
  * 23-mar-2014 - 11:31:27
  */
 
-public class CBObserver {
+public class CBManagerObserver {
     private ArrayList<ICBObserver> observers;
     
-    public CBObserver(){
+    public CBManagerObserver(){
         observers = new ArrayList<>();
     }
     
