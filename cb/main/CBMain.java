@@ -19,14 +19,14 @@ import cb.connectors.CBModelConnector;
 import cb.connectors.CBViewConnector;
 //Models
 import cb.models.Award;
-import cb.models.Country;
+import cb.models.single.Country;
 import cb.models.Game;
 import cb.models.Location;
-import cb.models.Nationality;
+import cb.models.single.Nationality;
 import cb.models.Player;
-import cb.models.Referee;
+import cb.models.single.Referee;
 import cb.models.Tournament;
-import cb.models.Trainer;
+import cb.models.single.Trainer;
 //
 import cb.views.*;
 

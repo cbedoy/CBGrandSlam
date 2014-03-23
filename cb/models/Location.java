@@ -6,10 +6,13 @@
 
 package cb.models;
 
+import cb.models.single.Country;
 import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
 import cb.interfaces.ICBModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -79,6 +82,18 @@ public class Location extends CBBaseModel implements ICBModel, ICBModelDelegate,
     @Override
     public void reloadData() {
         System.out.println("Reload data of location");
+        try {
+            super.getAllITems("Select * from premio");
+            ResultSet resultSet = super.getRs();
+            setListLocation(new ArrayList<Location>());
+            while(resultSet.next()){
+               Location  location = new Location();
+               
+               getListLocation().add(location);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public ArrayList<Location> getListLocation() {

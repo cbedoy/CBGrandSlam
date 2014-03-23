@@ -7,7 +7,7 @@ import cb.interfaces.ICBArtifact;
 import cb.models.Award;
 import cb.models.Player;
 import cb.models.Tournament;
-import cb.models.Trainer;
+import cb.models.single.Trainer;
 import java.util.ArrayList;
 
 /**

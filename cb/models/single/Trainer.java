@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cb.models;
+package cb.models.single;
 
 import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
@@ -13,10 +13,9 @@ import cb.interfaces.ICBModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -30,10 +29,12 @@ import java.util.logging.Logger;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Country extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
+public class Trainer extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
     private int id;
     private String name;
-    private ArrayList<Country> listCountry;
+    private String initialDate;
+    private String finalizeDate;
+    private ArrayList<Trainer> listTrainer;
 
     public int getId() {
         return id;
@@ -51,26 +52,42 @@ public class Country extends CBBaseModel implements ICBModel, ICBModelDelegate, 
         this.name = name;
     }
 
+    public String getInitialDate() {
+        return initialDate;
+    }
+
+    public void setInitialDate(String initialDate) {
+        this.initialDate = initialDate;
+    }
+
+    public String getFinalizeDate() {
+        return finalizeDate;
+    }
+
+    public void setFinalizeDate(String finalizeDate) {
+        this.finalizeDate = finalizeDate;
+    }
+
     @Override
     public void userPressInsert() {
-        String query = ""
-                + "insert into pais "
-                + "values"
-                + "(null, '"+name+"')"
-                + "";
+        String query = "insert into entrenador values ("
+                + "null, "
+                + "'"+name+"', "
+                + "'"+initialDate+"', "
+                + "'"+finalizeDate+"' "
+                + ")";
+        System.out.println(query);
         super.insertItem(query);
     }
 
     @Override
     public void userPressDelete() {
-        String query = "delete from pais where idpais = "+id;
+        String query = "delete from entrenador where identrenador = "+id;
         super.deleteITem(query);
     }
 
     @Override
     public void userPressAlter() {
-        String query = "update pais set nombre = '"+name+"' where idpais = "+id;
-        super.editITem(query);
         
     }
 
@@ -81,33 +98,30 @@ public class Country extends CBBaseModel implements ICBModel, ICBModelDelegate, 
 
     @Override
     public void reloadData() {
-        System.out.println("Reload data of country view");
+        System.out.println("Reload data of trainer");
         try {
-            super.getAllITems("Select * from pais");
+            super.getAllITems("Select * from entrenador");
             ResultSet resultSet = super.getRs();
-            setListCountry(new ArrayList<Country>());
+            setListTrainer(new ArrayList<Trainer>());
             while(resultSet.next()){
-               Country  country = new Country();
-               country.setId(resultSet.getInt(1));
-               country.setName(resultSet.getString(2));
-               getListCountry().add(country);
+               Trainer  trainer = new Trainer();
+               trainer.setId(resultSet.getInt(1));
+               trainer.setName(resultSet.getString(2));
+               trainer.setInitialDate(resultSet.getString(3));
+               trainer.setFinalizeDate(resultSet.getString(4));
+               getListTrainer().add(trainer);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
-    
 
-    public ArrayList<Country> getListCountry() {
-        return listCountry;
+    public ArrayList<Trainer> getListTrainer() {
+        return this.listTrainer;
     }
 
-    public void setListCountry(ArrayList<Country> listCountry) {
-        this.listCountry = listCountry;
-    }
-    
-    private boolean getStatus(){
-        return super.isStatus();
+    private void setListTrainer(ArrayList<Trainer> arrayList) {
+        
     }
 
 

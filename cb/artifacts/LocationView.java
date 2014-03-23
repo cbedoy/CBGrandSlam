@@ -8,7 +8,7 @@ package cb.artifacts;
 
 import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.models.Country;
+import cb.models.single.Country;
 import cb.models.Location;
 import java.util.ArrayList;
 import java.util.Observable;

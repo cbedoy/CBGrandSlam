@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package cb.models;
+package cb.models.single;
 
 import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
@@ -13,9 +13,10 @@ import cb.interfaces.ICBModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,12 +30,10 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Trainer extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
+public class Country extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
     private int id;
     private String name;
-    private String initialDate;
-    private String finalizeDate;
-    private ArrayList<Trainer> listTrainer;
+    private ArrayList<Country> listCountry;
 
     public int getId() {
         return id;
@@ -52,42 +51,26 @@ public class Trainer extends CBBaseModel implements ICBModel, ICBModelDelegate, 
         this.name = name;
     }
 
-    public String getInitialDate() {
-        return initialDate;
-    }
-
-    public void setInitialDate(String initialDate) {
-        this.initialDate = initialDate;
-    }
-
-    public String getFinalizeDate() {
-        return finalizeDate;
-    }
-
-    public void setFinalizeDate(String finalizeDate) {
-        this.finalizeDate = finalizeDate;
-    }
-
     @Override
     public void userPressInsert() {
-        String query = "insert into entrenador values ("
-                + "null, "
-                + "'"+name+"', "
-                + "'"+initialDate+"', "
-                + "'"+finalizeDate+"' "
-                + ")";
-        System.out.println(query);
+        String query = ""
+                + "insert into pais "
+                + "values"
+                + "(null, '"+name+"')"
+                + "";
         super.insertItem(query);
     }
 
     @Override
     public void userPressDelete() {
-        String query = "delete from entrenador where identrenador = "+id;
+        String query = "delete from pais where idpais = "+id;
         super.deleteITem(query);
     }
 
     @Override
     public void userPressAlter() {
+        String query = "update pais set nombre = '"+name+"' where idpais = "+id;
+        super.editITem(query);
         
     }
 
@@ -98,30 +81,33 @@ public class Trainer extends CBBaseModel implements ICBModel, ICBModelDelegate, 
 
     @Override
     public void reloadData() {
-        System.out.println("Reload data of trainer");
+        System.out.println("Reload data of country view");
         try {
             super.getAllITems("Select * from pais");
             ResultSet resultSet = super.getRs();
-            setListTrainer(new ArrayList<Trainer>());
+            setListCountry(new ArrayList<Country>());
             while(resultSet.next()){
-               Trainer  trainer = new Trainer();
-               trainer.setId(resultSet.getInt(1));
-               trainer.setName(resultSet.getString(2));
-               trainer.setInitialDate(resultSet.getString(3));
-               trainer.setFinalizeDate(resultSet.getString(4));
-               getListTrainer().add(trainer);
+               Country  country = new Country();
+               country.setId(resultSet.getInt(1));
+               country.setName(resultSet.getString(2));
+               getListCountry().add(country);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }
+    
 
-    public ArrayList<Trainer> getListTrainer() {
-        return this.listTrainer;
+    public ArrayList<Country> getListCountry() {
+        return listCountry;
     }
 
-    private void setListTrainer(ArrayList<Trainer> arrayList) {
-        
+    public void setListCountry(ArrayList<Country> listCountry) {
+        this.listCountry = listCountry;
+    }
+    
+    private boolean getStatus(){
+        return super.isStatus();
     }
 
 

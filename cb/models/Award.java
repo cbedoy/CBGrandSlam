@@ -6,6 +6,7 @@
 
 package cb.models;
 
+import cb.models.single.Trainer;
 import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;

@@ -6,10 +6,14 @@
 
 package cb.models;
 
+import cb.models.single.Trainer;
+import cb.models.single.Nationality;
 import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
 import cb.interfaces.ICBModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -106,6 +110,18 @@ public class Player extends CBBaseModel implements ICBModel, ICBModelDelegate, I
     @Override
     public void reloadData() {
         System.out.println("Reload data of player");
+        try {
+            super.getAllITems("Select * from jugador");
+            ResultSet resultSet = super.getRs();
+            setListPlayer(new ArrayList<Player>());
+            while(resultSet.next()){
+               Player  player = new Player();
+               
+               getListPlayer().add(player);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } 
     }
 
     public ArrayList<Player> getListPlayer() {

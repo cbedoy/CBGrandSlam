@@ -4,12 +4,15 @@
  * and open the template in the editor.
  */
 
-package cb.models;
+package cb.models.single;
 
 import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
 import cb.interfaces.ICBModel;
+import cb.models.single.Country;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -26,10 +29,12 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Nationality extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
+public class Referee extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
     private int id;
     private String name;
-    private ArrayList<Nationality> listNationality;
+    private String nacionality;
+    private String time;
+    private ArrayList<Referee> listReferee;
 
     public int getId() {
         return id;
@@ -45,6 +50,22 @@ public class Nationality extends CBBaseModel implements ICBModel, ICBModelDelega
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getNacionality() {
+        return nacionality;
+    }
+
+    public void setNacionality(String nacionality) {
+        this.nacionality = nacionality;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     @Override
@@ -69,15 +90,30 @@ public class Nationality extends CBBaseModel implements ICBModel, ICBModelDelega
 
     @Override
     public void reloadData() {
-        System.out.println("Reload data of nationality");
+        System.out.println("Reload data of referee");
+        try {
+            super.getAllITems("Select * from pais");
+            ResultSet resultSet = super.getRs();
+            setListReferee(new ArrayList<Referee>());
+            while(resultSet.next()){
+               Referee  referee = new Referee();
+               referee.setId(resultSet.getInt(1));
+               referee.setName(resultSet.getString(2));
+               referee.setNacionality(resultSet.getString(3));
+               referee.setTime(resultSet.getString(4));
+               getListReferee().add(referee);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
-    public ArrayList<Nationality> getListNationality() {
-        return listNationality;
+    public ArrayList<Referee> getListReferee() {
+        return listReferee;
     }
 
-    public void setListNationality(ArrayList<Nationality> listNationality) {
-        this.listNationality = listNationality;
+    public void setListReferee(ArrayList<Referee> listReferee) {
+        this.listReferee = listReferee;
     }
 
 

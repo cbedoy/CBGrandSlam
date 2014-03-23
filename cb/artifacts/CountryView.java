@@ -5,7 +5,7 @@ package cb.artifacts;
 import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
 import cb.interfaces.ICBModel;
-import cb.models.Country;
+import cb.models.single.Country;
 import java.util.ArrayList;
 
 /**

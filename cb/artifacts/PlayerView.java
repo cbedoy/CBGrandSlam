@@ -8,9 +8,9 @@ package cb.artifacts;
 
 import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.models.Nationality;
+import cb.models.single.Nationality;
 import cb.models.Player;
-import cb.models.Trainer;
+import cb.models.single.Trainer;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;

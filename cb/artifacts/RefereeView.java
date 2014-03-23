@@ -8,7 +8,7 @@ package cb.artifacts;
 
 import cb.delegates.ICBMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.models.Referee;
+import cb.models.single.Referee;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;

@@ -6,10 +6,13 @@
 
 package cb.models;
 
+import cb.models.single.Country;
 import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
 import cb.interfaces.ICBModel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -88,6 +91,18 @@ public class Tournament extends CBBaseModel implements ICBModel, ICBModelDelegat
     @Override
     public void reloadData() {
         System.out.println("Reload data of tournament");
+        try {
+            super.getAllITems("Select * from grandslam");
+            ResultSet resultSet = super.getRs();
+            setListTournament(new ArrayList<Tournament>());
+            while(resultSet.next()){
+               Tournament  tournament = new Tournament();
+               
+               getListTournament().add(tournament);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } 
     }
 
     public ArrayList<Tournament> getListTournament() {
