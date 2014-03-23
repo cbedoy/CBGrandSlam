@@ -7,7 +7,7 @@
 package cb.connectors;
 
 import cb.bussiness.BaseModel;
-import cb.interfaces.IModel;
+import cb.interfaces.ICBModel;
 
 /**
  *
@@ -31,7 +31,7 @@ public class BusinessConnector {
     private BaseModel PlayerBusiness;
     private BaseModel RefereeBusiness;
     private BaseModel TrainerBusiness;
-    private IModel    Conection;
+    private ICBModel   Conection;
     
     public  BusinessConnector(){
         
@@ -109,11 +109,11 @@ public class BusinessConnector {
         this.TrainerBusiness = TrainerBusiness;
     }
 
-    public IModel getConection() {
+    public ICBModel getConection() {
         return Conection;
     }
 
-    public void setConection(IModel Conection) {
+    public void setConnection(ICBModel Conection) {
         this.Conection = Conection;
     }
 

@@ -1,6 +1,6 @@
 package cb.connectors;
 
-import cb.interfaces.IModel;
+import cb.interfaces.ICBModel;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -18,94 +18,94 @@ import java.util.Observer;
  */
 
 public class ModelConnector{
-    private IModel Award;
-    private IModel Country;
-    private IModel Game;
-    private IModel Location;
-    private IModel Nationality;
-    private IModel Player;
-    private IModel Referee;
-    private IModel Tournament;
-    private IModel Trainer;
-    private IModel ConectionDB;
+    private ICBModel Award;
+    private ICBModel Country;
+    private ICBModel Game;
+    private ICBModel Location;
+    private ICBModel Nationality;
+    private ICBModel Player;
+    private ICBModel Referee;
+    private ICBModel Tournament;
+    private ICBModel Trainer;
+    private ICBModel ConectionDB;
 
-    public IModel getAward() {
+    public ICBModel getAward() {
         return Award;
     }
 
-    public void setAward(IModel Award) {
+    public void setAward(ICBModel Award) {
         this.Award = Award;
     }
 
-    public IModel getCountry() {
+    public ICBModel getCountry() {
         return Country;
     }
 
-    public void setCountry(IModel Country) {
+    public void setCountry(ICBModel Country) {
         this.Country = Country;
     }
 
-    public IModel getGame() {
+    public ICBModel getGame() {
         return Game;
     }
 
-    public void setGame(IModel Game) {
+    public void setGame(ICBModel Game) {
         this.Game = Game;
     }
 
-    public IModel getLocation() {
+    public ICBModel getLocation() {
         return Location;
     }
 
-    public void setLocation(IModel Location) {
+    public void setLocation(ICBModel Location) {
         this.Location = Location;
     }
 
-    public IModel getNationality() {
+    public ICBModel getNationality() {
         return Nationality;
     }
 
-    public void setNationality(IModel Nationality) {
+    public void setNationality(ICBModel Nationality) {
         this.Nationality = Nationality;
     }
 
-    public IModel getPlayer() {
+    public ICBModel getPlayer() {
         return Player;
     }
 
-    public void setPlayer(IModel Player) {
+    public void setPlayer(ICBModel Player) {
         this.Player = Player;
     }
 
-    public IModel getReferee() {
+    public ICBModel getReferee() {
         return Referee;
     }
 
-    public void setReferee(IModel Referee) {
+    public void setReferee(ICBModel Referee) {
         this.Referee = Referee;
     }
 
-    public IModel getTournament() {
+    public ICBModel getTournament() {
         return Tournament;
     }
 
-    public void setTournament(IModel Tournament) {
+    public void setTournament(ICBModel Tournament) {
         this.Tournament = Tournament;
     }
 
-    public IModel getTrainer() {
+    public ICBModel getTrainer() {
         return Trainer;
     }
 
-    public void setTrainer(IModel Trainer) {
+    public void setTrainer(ICBModel Trainer) {
         this.Trainer = Trainer;
     }
 
-    public IModel getConectionDB() {
+    public ICBModel getConectionDB() {
         return ConectionDB;
     }
 
-    public void setConectionDB(IModel ConectionDB) {
+    public void setConectionDB(ICBModel ConectionDB) {
         this.ConectionDB = ConectionDB;
     }
 }

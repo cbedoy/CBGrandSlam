@@ -21,7 +21,7 @@ import cb.connectors.ModelConnector;
 import cb.connectors.ViewConnector;
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.interfaces.IModel;
+import cb.interfaces.ICBModel;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 

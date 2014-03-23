@@ -8,7 +8,7 @@ package cb.artifacts;
 
 import cb.delegates.IMainViewDelegate;
 import cb.interfaces.ICBArtifact;
-import cb.interfaces.IModel;
+import cb.interfaces.ICBModel;
 import cb.models.Country;
 import cb.models.Trainer;
 import java.text.SimpleDateFormat;
@@ -239,11 +239,11 @@ public class TrainerView extends javax.swing.JPanel implements ICBArtifact {
 
 
     
-    public IModel getModel() {
+    public ICBModel getModel() {
         return currentModel;
     }
 
-    public void setModel(IModel model) {
+    public void setModel(ICBModel model) {
         this.currentModel = (Trainer) model;
     }
 

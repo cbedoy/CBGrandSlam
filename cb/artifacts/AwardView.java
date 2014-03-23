@@ -9,8 +9,6 @@ import cb.models.Player;
 import cb.models.Tournament;
 import cb.models.Trainer;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  *

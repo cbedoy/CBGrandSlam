@@ -9,7 +9,7 @@ package cb.models;
 import cb.bussiness.BaseModel;
 import cb.delegates.IModelDelegate;
 import cb.interfaces.ICBObserver;
-import cb.interfaces.IModel;
+import cb.interfaces.ICBModel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ import java.util.Observer;
  *
  * 17-mar-2014 - 22:22:34
  */
-public class Trainer extends BaseModel implements IModel, IModelDelegate, ICBObserver{
+public class Trainer extends BaseModel implements ICBModel, IModelDelegate, ICBObserver{
     private int id;
     private String name;
     private String initialDate;

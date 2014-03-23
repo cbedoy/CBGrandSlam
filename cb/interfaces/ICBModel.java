@@ -18,6 +18,6 @@ package cb.interfaces;
  *
  * 17-mar-2014 - 22:22:34
  */
-public interface IModel {
+public interface ICBModel {
     
 }
