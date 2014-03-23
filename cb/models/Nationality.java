@@ -10,6 +10,7 @@ import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
 import cb.interfaces.ICBModel;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -28,6 +29,7 @@ import java.util.Observer;
 public class Nationality extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
     private int id;
     private String name;
+    private ArrayList<Nationality> listNationality;
 
     public int getId() {
         return id;
@@ -67,7 +69,15 @@ public class Nationality extends CBBaseModel implements ICBModel, ICBModelDelega
 
     @Override
     public void reloadData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Reload data of nationality");
+    }
+
+    public ArrayList<Nationality> getListNationality() {
+        return listNationality;
+    }
+
+    public void setListNationality(ArrayList<Nationality> listNationality) {
+        this.listNationality = listNationality;
     }
 
 

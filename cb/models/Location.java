@@ -10,6 +10,7 @@ import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
 import cb.interfaces.ICBModel;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -29,6 +30,7 @@ public class Location extends CBBaseModel implements ICBModel, ICBModelDelegate,
     private int id;
     private String name;
     private Country country;
+    private ArrayList<Location> listLocation;
 
     public int getId() {
         return id;
@@ -76,7 +78,15 @@ public class Location extends CBBaseModel implements ICBModel, ICBModelDelegate,
 
     @Override
     public void reloadData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Reload data of location");
+    }
+
+    public ArrayList<Location> getListLocation() {
+        return listLocation;
+    }
+
+    public void setListLocation(ArrayList<Location> listLocation) {
+        this.listLocation = listLocation;
     }
 
 

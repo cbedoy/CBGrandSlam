@@ -10,6 +10,7 @@ import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
 import cb.interfaces.ICBModel;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -30,6 +31,7 @@ public class Referee extends CBBaseModel implements ICBModel, ICBModelDelegate, 
     private String name;
     private String nacionality;
     private String time;
+    private ArrayList<Referee> listReferee;
 
     public int getId() {
         return id;
@@ -85,7 +87,15 @@ public class Referee extends CBBaseModel implements ICBModel, ICBModelDelegate, 
 
     @Override
     public void reloadData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Reload data of referee");
+    }
+
+    public ArrayList<Referee> getListReferee() {
+        return listReferee;
+    }
+
+    public void setListReferee(ArrayList<Referee> listReferee) {
+        this.listReferee = listReferee;
     }
 
 

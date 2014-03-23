@@ -98,6 +98,7 @@ public class Trainer extends CBBaseModel implements ICBModel, ICBModelDelegate, 
 
     @Override
     public void reloadData() {
+        System.out.println("Reload data of trainer");
         try {
             super.getAllITems("Select * from pais");
             ResultSet resultSet = super.getRs();

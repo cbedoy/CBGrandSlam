@@ -10,6 +10,7 @@ import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
 import cb.interfaces.ICBModel;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -30,6 +31,7 @@ public class Tournament extends CBBaseModel implements ICBModel, ICBModelDelegat
     private String name;
     private String date;
     private Country country;
+    private ArrayList<Tournament> listTournament;
 
     public int getId() {
         return id;
@@ -85,7 +87,15 @@ public class Tournament extends CBBaseModel implements ICBModel, ICBModelDelegat
 
     @Override
     public void reloadData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Reload data of tournament");
+    }
+
+    public ArrayList<Tournament> getListTournament() {
+        return listTournament;
+    }
+
+    public void setListTournament(ArrayList<Tournament> listTournament) {
+        this.listTournament = listTournament;
     }
 
 

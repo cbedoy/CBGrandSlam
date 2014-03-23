@@ -10,6 +10,7 @@ import cb.bussiness.CBBaseModel;
 import cb.delegates.ICBModelDelegate;
 import cb.interfaces.ICBObserver;
 import cb.interfaces.ICBModel;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -32,6 +33,7 @@ public class Player extends CBBaseModel implements ICBModel, ICBModelDelegate, I
     private float amount;
     private Trainer trainer;
     private Nationality nationality;
+    private ArrayList<Player> listPlayer;
 
     public int getId() {
         return id;
@@ -103,7 +105,15 @@ public class Player extends CBBaseModel implements ICBModel, ICBModelDelegate, I
 
     @Override
     public void reloadData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Reload data of player");
+    }
+
+    public ArrayList<Player> getListPlayer() {
+        return listPlayer;
+    }
+
+    public void setListPlayer(ArrayList<Player> listPlayer) {
+        this.listPlayer = listPlayer;
     }
 
 

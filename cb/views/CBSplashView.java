@@ -122,7 +122,7 @@ public class CBSplashView extends javax.swing.JFrame implements Runnable {
         while(true){
             progressBar.setValue(i++);
             try {
-                Thread.sleep(7);
+                Thread.sleep(8);
             } catch (InterruptedException ex) {
                 
             }
