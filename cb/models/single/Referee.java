@@ -71,7 +71,7 @@ public class Referee extends CBBaseModel implements ICBModel, ICBModelDelegate, 
     @Override
     public void userPressInsert() {
         String query = ""
-                + "insert into nacionalidad "
+                + "insert into arbitro "
                 + "values"
                 + "(null, '"+name+"',  '"+nacionality+"', '"+time+"')"
                 + "";

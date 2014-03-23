@@ -88,7 +88,12 @@ public class Award extends CBBaseModel implements ICBModel, ICBModelDelegate, IC
 
     @Override
     public void userPressInsert() {
-        
+        String query = ""
+                + "insert into premio "
+                + "values"
+                + "(null, "+amount+", '"+category+"', "+grandSlam.getId()+", "+player.getId()+", "+trainer.getId()+"    )"
+                + "";
+        super.insertItem(query);
     }
 
     @Override
