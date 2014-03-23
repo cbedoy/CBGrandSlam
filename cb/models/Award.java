@@ -30,15 +30,14 @@ import java.util.Observer;
  * 17-mar-2014 - 22:22:34
  */
 public class Award extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
-    private int id;
-    private float amount;
-    private String category;
-    private Tournament grandSlam;
-    private Player player;
-    private Trainer trainer;
-    private ArrayList<Award> listAward;
+    private int                 id;
+    private float               amount;
+    private String              category;
+    private Tournament          grandSlam;
+    private Player              player;
+    private Trainer             trainer;
+    private ArrayList<Award>    listAward;
     
-
     public int getId() {
         return id;
     }

@@ -30,12 +30,12 @@ import java.util.Observer;
  * 17-mar-2014 - 22:22:34
  */
 public class Referee extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
-    private int id;
-    private String name;
-    private String nacionality;
-    private String time;
-    private ArrayList<Referee> listReferee;
-
+    private int                 id;
+    private String              name;
+    private String              nacionality;
+    private String              time;
+    private ArrayList<Referee>  listReferee;
+    
     public int getId() {
         return id;
     }
@@ -92,11 +92,11 @@ public class Referee extends CBBaseModel implements ICBModel, ICBModelDelegate, 
     public void reloadData() {
         System.out.println("Reload data of referee");
         try {
-            super.getAllITems("Select * from pais");
+            super.getAllITems("Select * from entrenador");
             ResultSet resultSet = super.getRs();
             setListReferee(new ArrayList<Referee>());
             while(resultSet.next()){
-               Referee  referee = new Referee();
+               Referee  referee = new Referee();    
                referee.setId(resultSet.getInt(1));
                referee.setName(resultSet.getString(2));
                referee.setNacionality(resultSet.getString(3));

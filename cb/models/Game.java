@@ -31,13 +31,13 @@ import java.util.Observer;
  * 17-mar-2014 - 22:22:34
  */
 public class Game extends CBBaseModel implements ICBModel, ICBModelDelegate,  ICBObserver{
-    private int id;
-    private String modality;
-    private Referee referee;
-    private Player player;
-    private Trainer trainer;
-    private Tournament tournament;
-    private ArrayList<Game> listGame;
+    private int                 id;
+    private String              modality;
+    private Referee             referee;
+    private Player              player;
+    private Trainer             trainer;
+    private Tournament          tournament;
+    private ArrayList<Game>     listGame;
 
     public int getId() {
         return id;

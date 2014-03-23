@@ -30,9 +30,9 @@ import java.util.Observer;
  * 17-mar-2014 - 22:22:34
  */
 public class Location extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
-    private int id;
-    private String name;
-    private Country country;
+    private int                 id;
+    private String              name;
+    private Country             country;
     private ArrayList<Location> listLocation;
 
     public int getId() {

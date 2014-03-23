@@ -31,9 +31,11 @@ import java.util.logging.Logger;
  * 17-mar-2014 - 22:22:34
  */
 public class Country extends CBBaseModel implements ICBModel, ICBModelDelegate, ICBObserver{
-    private int id;
-    private String name;
-    private ArrayList<Country> listCountry;
+    private int                 id;
+    private String              name;
+    private ArrayList<Country>  listCountry;
+    
+
 
     public int getId() {
         return id;
